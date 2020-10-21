@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const ages = [32, 15, 19, 12]
+    const adultPerson = ages.some(age => age >= 18)
+    console.log(adultPerson);
+
+    // 是否所有人都18岁+
+    const allOldEnough = ages.every(age => age>= 18)
+    console.log(allOldEnough);
+  </script>
+</body>
+</html>
