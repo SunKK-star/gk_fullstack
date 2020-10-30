@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    function foo(a) {
+      var b = a * 2
+
+      function bar(c) {
+        console.log(a,b,c);
+      }
+
+      bar(b * 3)
+    }
+
+    foo(2)
+    
+
+  </script> -->
+
+  <!-- <script>
+    // eval() 欺骗词法作用域   能把不属于域内的标识符搬到该作用域内
+    function foo(str, a) {
+      eval(str)
+      console.log(a, b);
+    }
+    var b = 2
+    foo('var b =3', 1)
+  </script> -->
+
+  <!-- <script>
+    // with方法只能修改作用域内存在的值
+
+    // with 
+    // var obj = {
+    //   a: 1,
+    //   b: 2,
+    //   c: 3
+    // }
+    // // obj.a = 2
+    // // obj.b = 3
+    // // obj.c = 4
+    // with (obj) {
+    //   a = 3,
+    //   b = 4,
+    //   c = 5
+    // }
+
+    function obj() {
+      a = 2
+    }
+  </script> -->
+
+  <script>
+    function foo() {
+      var b = 2
+
+      function bar() {
+
+      } 
+
+      var c = 3
+    }
+  </script>
+</body>
+</html>
