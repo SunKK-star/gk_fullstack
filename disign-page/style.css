@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.section1 {
+  position: relative;
+  width: 100%;
+  height: 813px;
+  background: url('./image/section1-bg.png');
+  background-size: cover;   
+  overflow: hidden;
+}
+.p1 {
+  margin: 0 auto;
+  margin-top: 230px;
+  width: 780px;
+  height: 138px;
+  
+}
+.p1 p {
+  text-align: center;
+  font-family: Exo-Thin;
+  font-size: 60px;
+  font-weight: 100px;
+  font-stretch: normal;
+  letter-spacing: 2px;
+	color: #282828;
+}
+.play-btn {
+  width: 59px;
+  height: 59px;
+  margin: 0 auto;
+  margin-top: 63px;
+  background: url('./image/video-icon.png') no-repeat;
+  background-size: cover;
+}
+.rec-btn {
+  margin: 0 auto;
+  margin-top: 49px; 
+  width: 190px;
+  height: 50px;
+  background-color: #ff6d6d;
+  border-radius: 3px;
+}
+.rec-btn p {
+  text-align: center;
+  font-family: Exo-Regular;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 75px;
+  letter-spacing: 3px;
+  line-height: 50px;
+	color: #ffffff;
+}
+.p2 {
+  width: 203px;
+  height: 11px;
+  margin: 0 auto;
+  margin-top: 29px;
+}
+.p2 p {
+  text-align: center;
+  font-family: Exo-Regular;
+	font-size: 5px;
+	font-weight: normal;
+	font-stretch: normal;
+	color: #282828; 
+	opacity: 0.6;
+}
+.section2 {
+  display: flex;
+  width: 100%;
+  height: 965px;
+}
+.wrapper-l {
+  flex: 872;
+}
+.wrapper-r {
+  flex: 568;
+  background-color: #ededed;
+  position: relative;
+}
+.wrapper-l .detail {
+  width: 65%;
+  height: 367px;
+  margin: 0 auto;
+  margin-top: 356px;
+}
+.wrapper-l .detail h1 {
+  letter-spacing: 3px;
+  color: #ff6d6d;
+  font-family: Exo-Medium;
+	font-size: 16px;
+}
+.wrapper-l .detail .p1 {
+  width: 90%;
+  padding-top: 10px;
+  margin: 0;
+  font-family: Exo-Medium;
+	font-size: 40px;
+}
+.wrapper-l .detail .p2 {
+  width: 100%;
+  padding-top: 0;
+  margin: 0;
+	height: 200px;
+	font-family: Exo-Medium;
+  font-size: 16px;
+  line-height: 26px;
+	letter-spacing: 1px;
+	color: #282828;
+	opacity: 0.66;
+}
+.wrapper-r::after{
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 300px solid red;
+  border-bottom: 300px solid green;
+  border-top: 300px solid blue;
+  border-left: 300px solid black;
+}
+.section3 {
+  width: 100%;
+  height: 900px;
+  background: url('./image/pen-holder.png') no-repeat;
+  background-size: 100% 900px;
+}
+.section3 .img-wrap {
+  width: 11.25%;
+  height: 32%;
+  background: url('./image/earphones.png') no-repeat;
+  margin-left: 80%;
+
+}
+
+
+
