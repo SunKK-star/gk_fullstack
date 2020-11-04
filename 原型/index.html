@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    // new 构造函数的三部曲
+    function Person() {
+      // this.name= name
+      // var this = {
+      //   __proto__: Person.prototype
+      // }
+      // return this
+
+    }
+    var obj = {
+
+    }
+    var person = new Person()
+    console.log(person);
+
+    person.__proto__ = 
+
+    // __proto__ 指向谁，就向谁那里找属性
+  </script> -->
+
+  <script>
+    // 深浅拷贝
+    // var a = 1
+    // var b = a
+    // a = 2
+    Person.prototype.name = 'wn'
+    function Person() {
+    }
+    var person = new Person()
+    Person.prototype.name = '蜗牛'
+    Person.prototype = {
+      name: '蜗牛'
+    }
+  </script>
+</body>
+</html>
