@@ -1,0 +1,23 @@
+<!--components/problem/problem.wxml-->
+<view class="container">
+  <view class="container-title">
+    <view class="h1">常见问题</view>
+    <view class="h2">
+      <view class="txt">更多问题</view>
+      <van-icon class="txt" name="arrow" />
+    </view>
+  </view>
+  <view class="content">
+    <view class="wrapper">
+      <view class="item" wx:for="{{plist}}" wx:key="index">
+        <view class="item-l">
+          <view class="circle">{{item.number}}</view>
+          <view class="p">{{item.value}}</view>
+        </view>
+        <view class="item-r">
+          <van-icon name="arrow-down" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

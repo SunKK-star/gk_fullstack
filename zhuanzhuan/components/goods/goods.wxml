@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="goods_title">
+        <view class="goods_title_left">精选好货</view>
+        <view class="goods_title_right">极致的性价比/专业的服务</view>
+    </view>
+    <view class="image">
+        <image src="https://s1.ax1x.com/2020/11/07/B5QZYn.jpg" mode="widthFix"></image>
+    </view>
+    <view class="goods_item">
+        <view class="goods_item_image" wx:for="{{goodsList}}" wx:key="index">
+            <image src="{{item.src}}" mode="widthFix"></image>
+            <view class="goods_item_text">{{item.text}}</view>
+            <view class="goods_item_price">{{item.price}}<text class="goods_item_price_before">
+              {{item.price_before}}
+            </text>
+            </view>
+
+        </view>
+    </view>
+</view>

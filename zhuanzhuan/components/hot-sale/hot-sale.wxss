@@ -1,0 +1,81 @@
+/* components/hot-sale/hot-sale.wxss */
+.hotsale-wrapper {
+  display: flex;
+  width: 92%;
+  height: 436rpx;
+  border-radius: 20rpx;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+.hot-goods {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 9;
+}
+.hot-list {
+  flex: 2;
+  border-top: 1rpx solid #f4f4f4;
+}
+.wrapper-item {
+  flex: 20%;
+}
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  margin: 35rpx auto 0 ;
+  background-color: #f0f2f7;
+}
+.img .item-img {
+  width: 44rpx;
+  height: 44rpx;
+}
+.text {
+  display: block;
+  text-align: center;
+  font-size: 25rpx; 
+  margin-top: 18rpx;
+  color: #7a7a7a;
+}
+
+.aaaa {
+  white-space: nowrap;
+  height: 60rpx;
+}
+.listcont {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  width: 645rpx;
+  height: 100%;
+  margin: 0 auto;
+}
+.listcont-l {
+  display: inline-block;
+  width: 10%;
+  columns: #c9c9c9;
+  font-size: 25rpx;
+}
+.listcont-r {
+  display: inline-block;
+  width: 90%;
+}
+.scrool-item {
+  display: inline-block;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 150rpx;
+  border-radius: 30rpx;
+  background-color: #f8f8f8;
+  margin: 0 8rpx;
+  color: #7a7a7a;
+  text-align: center;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+}
+
+

@@ -1,0 +1,12 @@
+<!--components/procedure/procedure.wxml-->
+<view class="container">
+  <view class="wrap-title">保卖流程</view>
+  <view class="wrap-content">
+    <view class="content-item" wx:for="{{procedureList}}" wx:key="index">
+      <view class="wrapper">
+        <image class="wrap-img" src="{{item.src}}"></image>
+        <view class="wrap-p">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
+</view>

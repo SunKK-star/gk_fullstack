@@ -1,0 +1,116 @@
+/* components/bulletin/bulletin.wxss */
+.container {
+  width: 92%;
+  height: 390rpx;
+  margin: 0 auto 30rpx;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+}
+.container-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 85rpx;
+}
+.h1 {
+  font-size: 35rpx;
+  font-weight: bolder;
+  font-family: sans-serif;
+  margin-left: 34rpx;
+}
+.h2 {
+  display: flex;
+  align-items: center;
+  margin-right: 34rpx;
+}
+.txt {
+  color: #b7b7b7;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300rpx;
+}
+.wrapper {
+  width: 640rpx;
+  height: 256rpx;
+}
+
+
+
+
+
+.evaluate-item {
+  display: flex;
+  flex-direction: column;
+  width: 580rpx;
+  height: 256rpx;
+  border-radius: 20rpx;
+  background-color: #fafafa;
+}
+.item-title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.userinfo {
+  display: flex;
+  width: 100%;
+}
+
+.massage {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15rpx;
+  align-items: center;
+  justify-content: center;
+  flex: 3;
+  
+  height: 120rpx;
+}
+.price {
+  flex: 1.5;
+  margin: -50rpx 0 0 -35rpx;
+}
+
+.userid {
+  font-size: 25rpx;
+  margin-left: 30rpx;
+}
+.userimg {
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-left: 20rpx;
+}
+.item-content {
+  flex: 1;
+}
+.fontstyle {
+  font-size: 25rpx;
+  color: #b1b1b1;
+}
+.a2 {
+  font-size: 28rpx;
+  font-weight: bold;
+  font-family: serif;
+  color: red;
+}
+.model {
+  margin: 15rpx 0 0 -40rpx;
+}
+.content-wrapper {
+  width: 88%;
+  height: 85%;
+  margin: 0 auto;
+}
+.content-wrapper {
+  font-size: 25rpx;
+  font-family: sans-serif;
+  color: #666666;
+}

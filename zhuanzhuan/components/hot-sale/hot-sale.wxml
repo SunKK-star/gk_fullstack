@@ -1,0 +1,22 @@
+<!--components/hot-sale/hot-sale.wxml-->
+<view class="hotsale-wrapper">
+  <view class="hot-goods">
+    <view class="wrapper-item" wx:for="{{saleList}}" wx:key="index">
+      <view class="img">
+        <image class="item-img" src="{{item.src}}" mode="aspectFit" lazy-load="false" binderror="" bindload="">  
+        </image>
+      </view>
+      <view class="text">{{item.text}}</view>
+    </view>
+  </view>
+  <view class="hot-list">
+    <view class="listcont">
+      <view class="listcont-l">热卖</view>
+      <view class="listcont-r">
+        <scroll-view class="aaaa" scroll-x="true">
+          <view class="scrool-item" wx:for="{{goodsList}}" wx:key="index">{{item.value}}</view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+page {
+    background-color: Gainsboro;
+}
+
+.container {
+    width: 90%;
+    height: 140rpx;
+    margin: 0 auto;
+    margin-top: 80rpx;
+}
+
+.pressional_quaility {
+    display: flex;
+    height: 50%;
+    background-color: #e7d5b3;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15rpx 15rpx 0 0;
+}
+
+.quaility_num {
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+}
+
+.quaility_text {
+    color: hsl(28, 71%, 52%);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.yanji {
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 15rpx 15rpx;
+    background-color: #fff;
+}
+
+.yanji_item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 2rpx;
+    font-size: 25rpx;
+    line-height: 70rpx;
+    color: #cc9362;
+}

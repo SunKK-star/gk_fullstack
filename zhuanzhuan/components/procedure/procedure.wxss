@@ -1,0 +1,39 @@
+/* components/procedure/procedure.wxss */
+.container {
+  width: 92%;
+  height: 225rpx;
+  margin: 0 auto 30rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+}
+.wrap-title {
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  margin-left: 33rpx;
+  font-size: 35rpx;
+  font-weight: bolder;
+  font-family: sans-serif;
+}
+.wrap-content {
+  display: flex;
+}
+.content-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 25%;
+}
+.wrapper {
+  width: 100rpx;
+  height: 100rpx;
+}
+.wrap-img {
+  width: 55rpx;
+  height: 55rpx;
+  margin-left: 20rpx;
+}
+.wrap-p {
+  text-align: center;
+  font-size: 25rpx;
+}

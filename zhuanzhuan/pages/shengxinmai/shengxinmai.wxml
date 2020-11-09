@@ -1,0 +1,42 @@
+<!--pages/shengxinmai/shengxinmai.wxml-->
+
+<view class="container">
+  <!--搜索栏开始-->
+  <view class="wrapper">
+    <van-search class="wrap-search" shape="round" value="{{ value }}" placeholder="搜索你想卖的商品" />
+    <van-icon class="wrap-icon" size="20px" name="service-o" />
+  </view>
+  <!--搜索栏结束-->
+
+  <!--投资栏开始-->
+  <invest></invest>
+  <!--投资栏结束-->
+
+  <!--商品热销栏开始-->
+  <hot-sale class="a"></hot-sale>
+  <!--商品热销栏结束-->
+
+  <!--推销栏开始-->
+  <handset></handset>
+  <!--推销栏结束-->
+  
+  <!--为什么选保卖开始-->
+  <reason></reason>
+  <!--为什么选保卖结束-->
+
+  <!--保卖流程开始-->
+  <procedure></procedure>
+  <!--保卖流程结束-->
+
+  <!--交易快报开始-->
+  <bulletin></bulletin>
+  <!--交易快报结束-->
+
+  <!--常见问题开始-->
+  <problem></problem>
+  <!--常见问题结束-->
+
+  <myservice></myservice>
+
+</view>
+

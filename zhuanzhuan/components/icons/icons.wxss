@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border-radius: 15rpx;
+}
+
+.icon {
+    flex: 25%;
+    width: 50rpx;
+}
+
+.icon_item {
+    width: 60%;
+    margin: 20rpx 5rpx;
+}
+
+.item_image {
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 15rpx;
+    width: 100%;
+}
+
+.item_text {
+    text-align: center;
+    font-size: 25rpx;
+}

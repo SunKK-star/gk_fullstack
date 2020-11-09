@@ -1,0 +1,19 @@
+<!--components/myservice/myservice.wxml-->
+<view class="container">
+  <view class="box1 border">
+    <view class="wrapper">
+      <view class="img">
+        <image class="wrapper-img" src="https://i.loli.net/2020/11/08/mHq5MRc3fVSla8U.png"></image>
+      </view>
+      <view class="txt">联系客服</view>
+    </view>
+  </view>
+  <view class="box1">
+    <view class="wrapper">
+      <view class="img">
+        <image class="wrapper-img" src="https://i.loli.net/2020/11/08/pbAs2Vveq6dnrNS.png"></image>
+      </view>
+      <view class="txt">我的订单</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+.scroll-view_H {
+    white-space: nowrap;
+    background-color: #eb373d;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+}
+
+.special {
+    width: 100rpx!important;
+    padding: 0 10rpx;
+    display: inline-block;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 25rpx;
+}
+
+.scroll-view-item_H {
+    padding: 0 10rpx;
+    display: inline-block;
+    background-color: #f35d67;
+    margin: 0 10rpx;
+    border-radius: 20rpx;
+    text-align: center;
+    font-size: 25rpx;
+    opacity: 0.9;
+    border-radius: 10rpx;
+}
+
+.tianchong {
+    height: 100rpx;
+    width: 100%;
+    background-color: #eb373d;
+    border-radius: 0 0 25rpx 25rpx;
+}

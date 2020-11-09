@@ -1,0 +1,53 @@
+<!--components/handset/handset.wxml-->
+<view class="middle">
+  <view class="wrapt">
+    <view class="wrapt-l">
+      <view class="wrapt-l-img">
+        <image class="" src="/image/timg.jpg">
+        </image>
+      </view>
+      <view class="wrapt-l-cox">
+        <view class="h1">最高可卖</view>
+        <view class="h2">
+          <text class="m">￥</text>
+          <text class="number">1235</text>
+          <text class="p1">含加价券</text>
+        </view>
+        <view class="h3">
+          <text class="p2">本机</text>
+          <text>nova 5 Pro</text>
+        </view>
+      </view>
+    </view>
+    <view class="wrapt-r">
+      <view class="price-btn">
+        加价卖  
+      </view>
+    </view>
+  </view>
+  <view class="wrapb">
+    <view class="content">
+      <view class="cont-l">
+        <view class="a1">
+          <tex class="plus">+</tex>
+          <tex class="digit">10</tex>
+          <tex class="percentage">%</tex>
+          <view class="bt-h1">无门槛</view>
+        </view>
+      </view>
+      <view class="cont-m">
+        <!-- <view class="a2"> -->
+          <view class="cont-m-title">手机平板 限时加价券</view>
+          <text class="nomal">倒计时</text>
+          <text class="time">46</text>
+          <text class="nomal">时</text>
+          <text class="time">29</text>
+          <text class="nomal">分</text>
+          <text class="time">15.6</text>
+          <text class="nomal">秒</text>
+        <!-- </view> -->
+      </view>
+      <view class="cont-r">已领取</view>
+    </view>
+  </view>
+  </view>

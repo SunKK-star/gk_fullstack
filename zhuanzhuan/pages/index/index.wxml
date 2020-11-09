@@ -1,0 +1,40 @@
+<!--pages/index/index.wxml-->
+<!-- 搜索栏开始 -->
+
+<view class="search_wrap">
+    <van-search value="{{ value }}" class="search_content" shape="round" background="#eb373d" placeholder="请输入搜索关键词" />
+    <van-icon name="comment-o" class="search_message" size="60rpx" color="white" />
+</view>
+<view style="height: 94rpx;"></view>
+
+
+<!-- 搜索栏结束 -->
+<!-- 热搜开始 -->
+<searchHot></searchHot>
+<!-- 热搜结束 -->
+<!-- 轮播图开始 -->
+
+<swiper class="swiper_wrap" autoplay="true" interval="2000" circular="true">
+    <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index">
+        <image src="{{item.src}}" mode="widthFix" class="image">
+        </image>
+    </swiper-item>
+</swiper>
+<!-- 轮播图结束 -->
+<!-- 质检模块开始 -->
+<qualityTest></qualityTest>
+<!-- 质检模块结束 -->
+<view class="touzi">
+    —— 腾讯战略投资 ——
+</view>
+<!-- icons开始 -->
+<icons></icons>
+<!-- icons结束 -->
+
+<!-- 推荐开始 -->
+<recommand></recommand>
+<!-- 推荐结束 -->
+
+<!-- 精选好物开始 -->
+<goods></goods>
+<!-- 精选好物结束 -->

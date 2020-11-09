@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "van-search": "@vant/weapp/search/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "searchHot": "../../components/hotsearch/hotsearch",
+        "qualityTest": "../../components/quality-test/quality-test",
+        "icons": "../../components/icons/icons",
+        "recommand": "../../components/recommand/recommand",
+        "goods": "../../components/goods/goods"
+    }
+}

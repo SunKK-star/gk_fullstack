@@ -1,0 +1,51 @@
+/* pages/index/index.wxss */
+
+page {
+    height: 100%;
+    background-color: Gainsboro;
+}
+
+.search_wrap {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 2;
+}
+
+.search_content {
+    flex: 9;
+}
+
+.search_message {
+    flex: 1;
+    background-color: #eb373d;
+    padding-right: 10rpx;
+}
+
+swiper {
+    width: 90%;
+    display: block;
+    height: 140rpx;
+    position: absolute;
+    top: 180rpx;
+    left: 36rpx;
+    border-radius: 15rpx;
+}
+
+swiper-item {
+    border-radius: 15rpx;
+}
+
+.image {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15rpx;
+}
+
+.touzi {
+    text-align: center;
+    font-size: 25rpx;
+    margin: 20rpx 0;
+    color: #5f5043;
+}

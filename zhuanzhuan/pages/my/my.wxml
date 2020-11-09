@@ -1,0 +1,92 @@
+<view class="user-info">
+    <view class="user-info-my">
+        <image  src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=387639067,1599589691&fm=26&gp=0.jpg"/>
+        <view class="user-info-right">
+            <view class="user-info-account">不差钱AO</view>
+            <view class="user-info-txt">虽然没赚钱，没事来转转</view>
+        </view>
+        
+    </view>
+</view>
+    <view class="user-content">
+        <view class="user-main">
+            <view class="history-wrap">
+                <navigator>
+                    <view class="num">0</view>
+                    <view class="name">我发布的</view>
+                </navigator>
+                <navigator>
+                    <view class="num">0</view>
+                    <view class="name">我卖出的</view>
+                </navigator>
+                <navigator>
+                    <view class="num">0</view>
+                    <view class="name">我买到的</view>
+                </navigator>
+                <navigator>
+                    <view class="num">0</view>
+                    <view class="name">我想要的</view>
+                </navigator>
+                  
+            </view>
+            <view class="wrap-content">
+                <navigator>
+                    <view class="iconfont icon-hongbao"></view>
+                    <view class="icon-name">我的红包</view>
+                </navigator>
+                <navigator>
+                    <view class="iconfont icon-huodongzhongxin"></view>
+                    <view class="icon-name">活动中心</view>
+                </navigator>
+                <navigator>
+                    <view class="iconfont icon-xiaoxiong"></view>
+                    <view class="icon-name">客服中心</view>
+                </navigator>
+                <navigator>
+                    <view class="iconfont icon-qian"></view>
+                    <view class="icon-name">借钱</view>
+                </navigator>
+                <navigator>
+                    <view class="iconfont icon-qiehuanqianbao"></view>
+                    <view class="icon-name">旧机换钱</view>
+                </navigator>
+
+                  
+            </view>
+            <view class="wrap-test">
+                <view class="test-title">测一测，手机还能卖多少钱</view>
+                <view class="test-bottom">
+                    <view class="bottom-left">
+                        <image mode="widthFix" src="https://img11.360buyimg.com/n1/s450x450_jfs/t1/122354/13/17605/101256/5fa50efbE9c410e2c/116b059ea3432d23.jpg"/>
+                        <view class="bottom-center">
+                            <view class="price">最高可卖￥3417</view>
+                            <view class="type">
+                                <text class="type-name">本机</text>
+                                <text class="type-jixing">小米8</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="bottom-right">
+                        <view>测一测</view>
+                    </view>
+                    
+                </view>
+            </view>
+            <view class="wrap-list">
+                <navigator class="navigator1" >
+                    转转软件许可使用协议
+                    <view class="arrow"></view>
+                </navigator>
+                <navigator class="navigator1" >
+                    转转隐私条款
+                    <view class="arrow"></view>
+                </navigator>
+                <navigator class="navigator1" >
+                    平台规则
+                    <view class="arrow"></view>
+                </navigator>
+                  
+            </view>
+        </view>
+       
+    </view>

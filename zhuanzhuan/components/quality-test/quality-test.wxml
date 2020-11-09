@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="pressional_quaility">
+        <view class="quaility_text">
+            <van-icon name="gem-o" class="quaility_icon" />
+            <view>专业质检</view>
+        </view>
+        <view class="quaility_num">
+            <view>已完成<text style="color: red; font-weight: bold;">165156156</text>次验机服务</view>
+            <van-icon name="arrow" />
+        </view>
+    </view>
+    <view class="yanji">
+        <view class="yanji_item">
+            <van-icon name="search" />
+            <view>专业智能验机</view>
+        </view>
+        <view class="yanji_item">
+            <van-icon name="free-postage" />
+            <view>放心严选好货</view>
+        </view>
+        <view class="yanji_item">
+            <van-icon name="goods-collect-o" />
+            <view>手机3c保卖</view>
+        </view>
+    </view>
+</view>

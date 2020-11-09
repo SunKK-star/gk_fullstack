@@ -1,0 +1,144 @@
+page, view, text, swiper, swiper-item, image, navigator {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.user-info{
+    width: 100%;
+    height: 310rpx;
+    background-color: #f74454;
+    overflow:hidden;
+}
+.user-info-right{
+    font-size: 36rpx;
+    color:#fff;
+    padding-left: 10rpx;
+
+}
+.user-info-my{
+    display:flex;
+    margin: 63rpx 0 121rpx 25rpx;
+}
+.user-info-my image{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+.user-info-my .user-info-account{
+    padding-top: 32rpx;
+    padding-bottom: 10rpx;
+}
+.user-info-txt{
+    font-size: 22rpx;
+}
+.user-content{
+    position: relative;
+}
+.user-main{
+    position: absolute;
+    width: 90%;
+    top:-40rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.history-wrap{
+    background-color: #fff;
+    display:flex;
+    margin-bottom: 20rpx;
+    border-radius: 10rpx;
+}
+.history-wrap .num{
+    font-size: 43rpx;
+}
+.history-wrap navigator{
+    flex:1;
+    text-align: center;
+    padding: 30rpx 0;
+    font-size: 35rpx;
+    /* color:black; */
+}
+.wrap-content{
+    background-color: #fff;
+    margin-top: 38rpx;
+    /* display: flex; */
+    padding: 20rpx 0;
+    border-radius: 10rpx;
+}
+.wrap-content navigator{
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+    padding-bottom: 30rpx;
+}
+.wrap-content .iconfont{
+    font-size: 69rpx;
+}
+.wrap-test{
+    /* width: 90%; */
+    height: 239rpx;
+    background: -webkit-linear-gradient(top,#fce3e1,white);    
+    border-radius: 10rpx;
+}
+.bottom-left image{
+    height: 79rpx;
+    width: 67rpx;
+
+}
+.wrap-test .test-title{
+    padding: 30rpx;
+    font-size: 35rpx;
+
+}
+.test-bottom{
+    padding: 10rpx 30rpx;
+    display: flex;
+    margin-top: 10rpx;
+}
+.test-bottom .bottom-left{
+    display: flex;
+    flex:2;
+}
+.test-bottom .type{
+    font-size: 24rpx;
+}
+.test-bottom .type-name{
+    width: 10rpx;
+    height: 10rpx;
+    /* text-align: center; */
+
+    margin-right: 20rpx;
+    background-color: #ffecde;
+    color:red;
+}
+.bottom-right{
+    flex:1;
+}
+.bottom-center{
+    margin-left: 30rpx;
+}
+.bottom-right view{
+    width: 150rpx;
+    padding: 10rpx;
+    border-radius: 30rpx;
+    background-color: #fd1810;
+    color:#fff;
+    text-align: center;
+}
+.wrap-list{
+    margin-top: 60rpx;
+    margin-bottom: 60rpx;
+    border-radius: 15rpx;
+}
+.wrap-list navigator{
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx;
+    margin-bottom: 25rpx;
+}
+.wrap-list .arrow{
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    transform: rotate(45deg);
+}

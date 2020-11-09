@@ -1,0 +1,8 @@
+<!--components/invest/invest.wxml-->
+<view class="invset-bg">
+  <view class="wrapper">
+    <view class="h1">腾 / 讯 / 战 / 略 / 投 / 资</view>
+    <view class="h2">转转保卖 帮你卖高价</view>
+    <view class="h3">-累计帮助 {{number}} 位用户卖出商品</view>
+  </view>
+</view>

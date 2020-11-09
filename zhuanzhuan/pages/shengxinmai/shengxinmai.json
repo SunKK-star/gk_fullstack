@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "invest": "/components/invest/invest",
+    "hot-sale": "/components/hot-sale/hot-sale",
+    "handset": "/components/handset/handset",
+    "reason": "/components/reason/reason",
+    "procedure": "/components/procedure/procedure",
+    "bulletin": "/components/bulletin/bulletin",
+    "problem": "/components/problem/problem",
+    "myservice": "/components/myservice/myservice"
+  },
+  "navigationBarTitleText": "转转保卖",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,13 @@
+<scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+    <view id="demo1" class=" demo-text-1 special">热搜:</view>
+    <view id="demo2" class="scroll-view-item_H demo-text-2">限时加入</view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">iPhone11</view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">iPhone12</view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">小米八</view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">小米九</view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">iPhoneX</view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">iPhoneX</view>
+</scroll-view>
+<view class="tianchong">
+
+</view>

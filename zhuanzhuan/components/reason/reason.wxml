@@ -1,0 +1,17 @@
+<!--components/reason/reason.wxml-->
+<view class="container">
+  <view class="wrap-title">为什么选保卖</view>
+  <view class="wrap-ctx">
+    <view class="ctx-item" wx:for="{{reasonList}}" wx:key="index">
+      <view class="wrapper">
+        <view class="item-img">
+          <image src="{{item.src}}" class=""></image>
+        </view>
+        <view class="content">
+          <view class="h1">{{item.h1}}</view>
+          <text class="p1">{{item.p}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

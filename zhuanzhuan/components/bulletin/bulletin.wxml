@@ -1,0 +1,41 @@
+<!--components/bulletin/bulletin.wxml-->
+<view class="container">
+  <view class="container-title">
+    <view class="h1">交易快报</view>
+    <view class="h2">
+      <view class="txt">历史成交</view>
+      <van-icon class="txt" name="arrow" />
+    </view>
+  </view>
+  <view class="content">
+    <view class="wrapper">
+      <swiper class="" indicator-dots="{{indicatorDots}}" 
+      autoplay="{{autoplay}}" interval="{{interval}}" 
+      duration="{{duration}}" circular="{{circular}}}}"
+      next-margin="{{nextmargin}}px">
+        <block wx:for="{{evaluateList}}" wx:key="index">
+          <swiper-item class="" item-id="">
+            <view class="evaluate-item">
+              <view class="item-title">
+                <view class="massage">
+                  <view class="userinfo">
+                    <image class="userimg" src="{{item.userInfo.src}}"></image>
+                    <view class="userid fontstyle">{{item.userInfo.id}}</view>
+                  </view>
+                  <view class="model fontstyle">{{item.model}}/{{item.ram}}G/{{item.color}}/{{item.originplace}}</view>
+                </view>
+                <view class="price">
+                  <text class="a1 fontstyle">成交价:</text>
+                  <text class="a2">￥{{item.finalPrice}}</text>
+                </view>
+              </view>
+              <view class="item-content">
+                <view class="content-wrapper">{{item.value}}</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
