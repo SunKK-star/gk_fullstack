@@ -1,0 +1,11 @@
+<view class="main">
+    <swiper autoplay="true">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+            <swiper-item>
+                <image class="slide-image" src="{{item}}">
+                </image>
+            </swiper-item>
+        </bock>
+
+    </swiper>
+<view>

@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  height: 31px;
+  background-color: #f1f1f1;
+  width: 1535px;
+  margin: 0 auto;
+}
+.nav li { 
+  float: left;
+  font-size: 11px;
+}
+.f1 {
+  float: left;
+  line-height: 31px;
+  margin-left: 150px;
+}
+
+.f1 ul li .style-red {
+  color: #c81623;
+}
+.f1 ul .jufe {
+  font-size: 15px;
+}
+
+.f2 {
+  float: right;
+  margin-right: 150px;  
+}
+.f2 ul {
+  line-height: 31px;
+  
+}
+.f2 ul li {
+  margin-right: 15px;
+  float: left
+}
+
+.spacer {
+  width: 1px;
+  height: 15px;
+  background-color: #fff;
+  margin-top: 8px;
+}
+.icon-arrow-right {
+  vertical-align: middle;
+}
+
+.wrap {
+  width: 1535px;
+}
+
+.newflash {
+  position: relative;
+  width: 250px;
+  height: 450px;
+  right: 0;
+}
+.bargain {
+  height: 75px;
+  margin-top: 8px;  
+}
+.bargain img {
+  max-width: 100%;
+}
+.news {
+  height: 163px;
+  border: 1px solid #ccc;
+}
+.news_hd {
+  height: 32px;
+  border-bottom: 1px dotted #000;
+}
+.news_hd {
+  display: flex;
+  justify-content: space-between;
+  line-height: 32px;
+  font-size: 16px;
+  padding: 0 20px;
+}
+.news_bd li {
+  padding: 4px 0 0 15px;
+}
+.news_bd li a {
+  font-size: small;
+}
+.lifesrevice {
+  height: 215px;
+  border: 1px solid #ccc;
+}
+.lifesrevice li {
+  float: left;
+  width: 60px;
+  height: 70px;
+  
+  overflow: hidden;
+}
+.lifesrevice li a {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  vertical-align: middle;
+  top: 50%;
+  margin-top: -20px;
+}

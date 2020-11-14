@@ -11,6 +11,10 @@
     // 描述性很强的语言
     // 对象字面量 
     class Flower {
+      constructor(flowerType,flowernum){
+        this.flowerType = flowerType;
+        this.flowernum = flowernum;
+      }
 
     }
     const lyb = {
@@ -25,7 +29,7 @@
       sendFlower: function(receiver) { //功能
         // 送花的对象
         // 花的实例  11 
-        let flower = new Flower('红玫瑰', 11);
+        let flower = new Flower('红玫瑰', 11); 
         // 把花送给她
         // talk in js uml 
         receiver.receiveFlower(lyb, flower);
@@ -49,8 +53,11 @@
       receiveFlower: function(sender, flower) {
         if (sender.name == '刘杨宝') {
           // console.log('男神， 还是让我们在一起吧');
-          console.log('小红， 请帮我转送给：')
+          console.log('小红,请帮我转送给：' + sender.name)
           xm.receiveFlower(sender, flower);
+          console.log('送花人：' + sender.name)
+          console.log('花名：' + flower.flowerType)
+          console.log ("花的数量：" + flower.flowernum)
         } else {
           console.log('收到了花');
         }

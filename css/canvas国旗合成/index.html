@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .cicle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid red;
+    } */
+  </style>
+</head>
+<body>
+  <div class="cicle"></div>
+  <input type="file" id="file">
+  <!-- drawRac rect -->
+  <canvas id="preview" width="290px" height="290px"></canvas>
+  <img src="./img/icon.png" alt="" id="img" style="display: none;" >
+  <img src="" alt="" id="avatar" style="display: none;">
+  <!-- url/i
+    http://
+    data://
+    file://
+  -->
+  <script>
+    let pic = document.createElement('p')
+      let text = document.createTextNode('Hello')
+      pic.appendChild(text)
+      let b = document.getElementsByClassName('cicle')
+      b[0].appendChild(pic)
+
+    window.onload = function() {
+      const file = document.getElementById('file');
+      const img = document.getElementById('img')
+      const preview = document.getElementById('preview')
+      const ctx = preview.getContext('2d');
+      // ctx.drawImage(img, 0 ,0, 290, 290); 
+
+      
+
+      file.addEventListener('change', (event) => {
+        let file = event.target.files[0]
+        // console.log(file);
+        // text/plain  text/css application/json  image/jpeg   MIME类型
+        if(!file.type.includes('image/')) {
+          return;
+        } 
+          const avatar = document.getElementById('avatar')
+
+          // 异步  代码的顺序不一定按照执行顺序
+          let fileReader = new FileReader();
+          fileReader.onload = function(e) {  
+            console.log(fileReader.result); // 代表那张图片
+            avatar.src  = fileReader.result;
+          }
+         
+          fileReader.readAsDataURL(file)
+        avatar.onload = function() {  // 加载图片需要时间，应该让图片加载完再再画布上画
+          ctx.drawImage(avatar,0, 0 ,290, 290);
+          ctx.drawImage(img, 0 ,0, 290, 290); 
+        }
+      })
+    }
+
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  color: #111;
+  background: #fff;
+}
+body, td, th{
+  padding-top: 30px;
+  font: 12px Helvetica,Arial,sans-serif;
+  line-height: 1.62;
+}
+#anony-nav {
+  width: 1080px;
+  margin: 0 auto 25px;
+}
+#anony-nav .anony-nav-links {
+  float: right;
+  margin-top: 6px;
+}
+#anony-nav .anony-nav-links ul {
+  list-style: none;
+  height: 20px;
+}
+#anony-nav .anony-nav-links li {
+  display: inline-block;
+  zoom: 1;
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  background: url('./img/nav_read.png') no-repeat;
+  background-size: 100% 100%;
+  margin: 0 14px 0 0px;
+  text-align: -webkit-match-parent;
+}
+#anony-nav .anony-nav-links li a {
+  display: inline-block;
+  width: 40px;
+  height: 0;
+  padding-top: 20px;
+  overflow: hidden;
+}
+#anony-nav h1 {
+  display: inline-block;
+  zoom: 1;
+  vertical-align: middle;
+  width: 160px;
+  height: 34px;
+  margin: 0 20px 0 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: normal;
+  background: url(./img/title_bgc.png) no-repeat 0 0;
+  background-image: -webkit-image-set(url(./img/title_bgc.png) 1x,url(./img/title_bgc.png) 2x);
+  background-size: cover;
+  overflow: hidden;
+}
+
+#anony-nav h1 a {
+  display: block;
+  height: 34px;  
+  line-height: 34px;
+}
+#anony-nav h1 a span {
+  display: none;
+}
+#anony-nav .anony-srh {
+  position: relative;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: middle;
+  width: 270px;
+  height: 30px;
+  border: 1px solid #c3c3c3; 
+}
+.anony-srh form {
+  margin: 0;
+  padding: 0;
+  border: 0px;
+  display: block;
+}
+#anony-nav .anony-srh .inp {
+  width: 270px;
+  font-size: 0px;
+  display: block;
+  height: 30px;
+  overflow: hidden;
+}
+#anony-nav .anony-srh .inp input {
+  width: 240px;
+  border: none;
+  font-size:   13px;
+  height: 20px;
+  padding: 5px;
+  outline: none;
+
+}
+#anony-nav .anony-srh .bn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  background: url(./img/search_btn.png) no-repeat;
+}
+#anony-nav .anony-srh .bn input {
+  border: none;
+  background: transparent;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  color: transparent;
+  cursor: pointer;
+  outline: none;
+}
