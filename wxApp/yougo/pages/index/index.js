@@ -19,18 +19,18 @@ Page({
   },
   // 获取 分类导航数据
   getCateList() {
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/catitems"})
+    request({url:"/home/catitems"})
     .then(res => {
       this.setData({
-        cateList: res.data.message
+        cateList: res
       })
     })
   },
   getfloorList() {
-    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/home/floordata"})
+    request({url:"/home/floordata"})
     .then(res => {
       this.setData({
-        floorList: res.data.message
+        floorList: res
       })
     })
   },
