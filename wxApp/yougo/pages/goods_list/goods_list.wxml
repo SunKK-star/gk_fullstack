@@ -1,2 +1,5 @@
-<!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+ <SearchInput></SearchInput>
+ <!--监听自定义事件-->
+ <tabs tabs="{{tabs}}"
+ bindtabsItemChange="handleItemChange"
+ ></tabs>
