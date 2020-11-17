@@ -1,4 +1,5 @@
-// pages/goods_list/goods_list.js
+import { request } from "../../resuest/index";
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
 
   /**
@@ -22,16 +23,33 @@ Page({
         isActive: false
       }
     ],
-    // currentIndex: 0
+    goodsList: []
   },
-
+  // 接口要的参数
+  QueryParams: {
+    query: '',
+    cid: '',
+    pagenum: 1,
+    pagesize: 10
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
+    this.QueryParams.cid = options.cid
+    this.getGoodsList()
   },
+
+  // 获取商品列表的数据
+  async getGoodsList() {
+    const res = await request({url:"/goods/search", data: this.QueryParams})
+    this.setData({
+      goodsList: res.goods
+    })
+  },
+
   handleItemChange(e) {
+    // console.log(e);
     let {index} = e.detail
     let {tabs} = this.data
     tabs.forEach((v, i) =>i === index?v.isActive=true:v.isActive=false)

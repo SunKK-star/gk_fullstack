@@ -25,6 +25,7 @@ Component({
    */
   methods: {
     handleItemTap(e) {
+      // console.log(e);
       let {index} = e.currentTarget.dataset
       // 触发父组件的自定义事件
       this.triggerEvent("tabsItemChange", {index})

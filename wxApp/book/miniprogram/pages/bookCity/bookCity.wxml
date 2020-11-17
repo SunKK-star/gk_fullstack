@@ -3,7 +3,7 @@
   <view class="more">点击搜索小说</view>
 </view>
 
-<view class="hotlist" wx:for="{{hotData}}" wx:key="index">
+<view class="hotlist" wx:for="{{hotData}}" wx:key="index" data-url="{{item.url}}" bindtap="toReading">
   <view class="itemleft">
     <image class="" src="{{item.imgUrl}}" mode="widthFix" lazy-load="false" binderror="" bindload="">
     </image>
@@ -16,3 +16,14 @@
     <view class="detail">{{item.detail}}</view>
   </view>
 </view>
+
+<!--推荐分类-->
+<view class="classify" wx:for="{{classifyData}}" wx:key="classifyList"  wx:for-index="index1" wx:for-item="item1">
+  <view class="classifyname">{{item1.classifyList}}</view>
+  <view class="classifyitem" wx:for="{{item1.data}}" wx:key="name" wx:for-index="index2" wx:for-item="item2" data-url="{{item2.url}}" bindtap="toReading">
+    <text class="sname">{{item2.name}}</text>
+    <text class="sautho">{{item2.author}}</text>
+  </view>
+</view>
+<!-- <camera device-position="back" style="width:100%;height:400px;" /> -->
+

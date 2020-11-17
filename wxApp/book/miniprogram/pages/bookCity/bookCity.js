@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hotData: []
+    hotData: [],
+    classifyData: []
   },
 
   /**
@@ -26,13 +27,21 @@ Page({
               data: {}
           })
           .then(res => {
-              console.log(res);
+              // console.log(res);
               wx.hideLoading()
               const result = res.result || {}
               this.setData({
-                hotData: result.hotData
+                hotData: result.hotData,
+                classifyData: result.classifyData
               })
+              console.log(res.result.classifyData);
           })
+  },
+
+  toReading(e) {
+    
+    let {url} = e.currentTarget.dataset
+    wx.navigateTo({ url: `../bookSection/bookSection?url=${url}` })
   }
 
 })

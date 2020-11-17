@@ -47,7 +47,7 @@
       },
       {
         "pagePath": "pages/user/user",
-        "text": "购物车",
+        "text": "我的",
         "iconPath": "/icons/my.png",
         "selectedIconPath": "icons/my-o.png"
       }

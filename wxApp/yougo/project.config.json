@@ -28,12 +28,12 @@
       "disablePlugins": [],
       "outputPath": ""
     },
+    "enableEngineNative": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "enableEngineNative": false,
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
@@ -70,6 +70,11 @@
           "name": "商品列表",
           "pathName": "pages/goods_list/goods_list",
           "query": "cid=5",
+          "scene": null
+        },
+        {
+          "name": "商品列表",
+          "pathName": "pages/goods_list/goods_list",
           "scene": null
         }
       ]
