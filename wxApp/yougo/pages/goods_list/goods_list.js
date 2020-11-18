@@ -32,6 +32,8 @@ Page({
     pagenum: 1,
     pagesize: 10
   },
+  // 总页数
+  totalPages: 1,
   /**
    * 生命周期函数--监听页面加载
    */
@@ -43,8 +45,13 @@ Page({
   // 获取商品列表的数据
   async getGoodsList() {
     const res = await request({url:"/goods/search", data: this.QueryParams})
+    // 获取总条数
+    console.log(res);
+    const total = res.total
+    this.totalPages = Math.ceil(total / this.QueryParams.pagesize)
+    // 拼接了数组
     this.setData({
-      goodsList: res.goods
+      goodsList: [...this.data.goodsList,...res.goods]
     })
   },
 
@@ -53,10 +60,12 @@ Page({
     let {index} = e.detail
     let {tabs} = this.data
     tabs.forEach((v, i) =>i === index?v.isActive=true:v.isActive=false)
+    
     this.setData({
       tabs
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -95,8 +104,18 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: function (e) {
+    if(this.QueryParams.pagenum >= this.totalPages) {
+      // 没有下一页数据
+      // console.log('没有下一页数据了');
+      wx.showToast({
+        title: '没有下一页数据了', //提示的内容,
+      });
+    }else {
+      this.QueryParams.pagenum++
+      this.getGoodsList()
+    }
+    
   },
 
   /**
