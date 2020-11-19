@@ -1,7 +1,7 @@
     // 云函数入口文件
     const cloud = require('wx-server-sdk')
     const rp = require('request-promise') //http模块
-    const cheerio = require('cheerio') //获取网页对应标签内容下
+    const cheerio = require('cheerio') //获取网页对应标签内容项
     let charset = require('superagent-charset') //解决乱码
     let surperagent = require('superagent') //发起请求
 

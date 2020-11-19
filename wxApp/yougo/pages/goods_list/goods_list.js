@@ -46,13 +46,16 @@ Page({
   async getGoodsList() {
     const res = await request({url:"/goods/search", data: this.QueryParams})
     // 获取总条数
-    console.log(res);
+    // console.log(res);
     const total = res.total
     this.totalPages = Math.ceil(total / this.QueryParams.pagesize)
     // 拼接了数组
     this.setData({
       goodsList: [...this.data.goodsList,...res.goods]
     })
+ 
+    // 关闭下拉关闭的窗口
+    wx.stopPullDownRefresh()
   },
 
   handleItemChange(e) {
@@ -97,8 +100,13 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh (e) {
+    //重置数组
+    this.setData({
+      goodsList: []
+    }),
+    // 重新请求接口
+    this.getGoodsList()
   },
 
   /**

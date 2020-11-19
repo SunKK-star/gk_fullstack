@@ -34,7 +34,7 @@ Page({
                 hotData: result.hotData,
                 classifyData: result.classifyData
               })
-              console.log(res.result.classifyData);
+              // console.log(res.result.classifyData);
           })
   },
 

@@ -62,6 +62,11 @@
           "pathName": "pages/bookCity/bookCity",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "书城",
+          "pathName": "pages/bookCity/bookCity",
+          "scene": null
         }
       ]
     }

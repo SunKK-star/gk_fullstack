@@ -8,10 +8,11 @@
       <navigator class="goods_item"
       wx:for="{{goodsList}}"
       wx:key="goods_id"
+      url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
       >
         <!--左侧图片容器-->
         <view class="goods_img_wrap">
-          <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://588ku.com/beijing/gufeng-0-pxnum-0-8-0-0-0-0-1/'}}" />
+          <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:''}}" />
         </view>
         <!--右侧商品容器-->
         <view class="goods_info_wrap">

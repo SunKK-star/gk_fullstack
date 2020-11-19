@@ -1,4 +1,5 @@
 // pages/bookSection/bookSection.js
+ 
 const db = wx.cloud.database()
 const app = getApp();
 
@@ -85,7 +86,7 @@ Page({
     let {url} =  e.currentTarget.dataset
     // 已经存入书架的书，记录阅读状态
 
-    wx.navigateTo({ url: `../bookContent/bookContent?url=${url}&name={{this.data.bookDetailData.name}}&img={{this.data.bookDetailData.imgUrl}}` });
+    wx.navigateTo({ url: `../bookContent/bookContent?url=${url}&name=${this.data.bookDetailData.name}&img=$${this.data.bookDetailData.imgUrl}` });
   },
   bindPickerChange(e) {
     console.log(e);
@@ -107,7 +108,6 @@ Page({
         url: url
       }
     }).then(res => {
-      console.log(res);
       wx.hideLoading();
       const {result} = res
       this.setData({
@@ -120,7 +120,7 @@ Page({
         preAble: result.pre === ''? true: false,
         nextAble: result.next === ''? true: false,
         // page: result.next.split('/')[2] - 1
-        page: result.next.charAt(result.next.length - 2) - 1
+        page: result.next.split('/')[2] - 1
       })
     })
       
@@ -132,6 +132,7 @@ Page({
    */
   onLoad: function (options) {
     const {url} = options
+    console.log(url);
     this.getSection(url)
   },
 

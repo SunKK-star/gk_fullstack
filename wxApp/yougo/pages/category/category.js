@@ -77,6 +77,7 @@ Page({
 
     // 使用es7 的async await来发送请求
     const res = await request({ url: "/categories" });
+    // console.log(res); 
     this.Cates = res;
 
     // 把接口的数据存入到本地存储中
