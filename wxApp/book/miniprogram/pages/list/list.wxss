@@ -33,3 +33,12 @@
   text-align: left;
   margin-left: 100rpx;
 }
+
+.mylike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300rpx;
+  height: 50rpx;
+  background-color: #2a779d;
+}

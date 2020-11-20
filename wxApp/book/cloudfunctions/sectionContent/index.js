@@ -9,10 +9,10 @@ cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  let serverUrl = `https://wap.biqiuge8.com/${event.url}`
+  let serverUrl = `https://wap.biqiuge8.com${event.url}`
   let result = await superagent.get(serverUrl).charset('gb2312')
   let data = result.text || ''
-  let $ = cheerio.load(data, {decode})
+  let $ = cheerio.load(data)
   let sectionWrap = $('.read')
 
   

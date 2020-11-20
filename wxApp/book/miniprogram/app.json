@@ -4,7 +4,9 @@
     "pages/bookCity/bookCity",  
     "pages/list/list",
     "pages/bookSection/bookSection",
-    "pages/bookContent/bookContent"
+    "pages/bookContent/bookContent",
+    "pages/myBookContent/myBookContent",
+    "pages/myBook/myBook"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

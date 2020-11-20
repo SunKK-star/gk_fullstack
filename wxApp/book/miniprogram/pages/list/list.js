@@ -8,6 +8,9 @@ Page({
 
   },
 
+  handlebook() {
+    wx.navigateTo({ url: '../myBook/myBook' });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

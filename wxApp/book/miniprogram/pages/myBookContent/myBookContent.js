@@ -24,7 +24,7 @@ Page({
       mask: true, //显示透明蒙层，防止触摸穿透,
     });
     wx.cloud.callFunction({
-      name: 'sectionContent',
+      name: 'mySectionContent',
       data: {
         url: url
       }
@@ -36,9 +36,8 @@ Page({
         preChapter: result.pre,
         nextChapter: result.next,
         catalog: result.catalog,
-        contentH: result.content,
-        preAble: result.pre?true:false,
-        nextAble: result.next?true:false
+        contentH: this.Change(result.content),
+        sectionName: result.name
       })
       wx.pageScrollTo({
         scrollTop: 0, //滚动到页面的目标位置（单位px）,
@@ -48,48 +47,66 @@ Page({
   },
 
   prePage() {
-    if(!this.data.preAble) return
     this.getSectionContent(this.data.preChapter)
     this.joinBook(this.data.preChapter)
   },
 
   nextPage() {
-    if(!this.data.nextAble) return
     this.getSectionContent(this.data.nextChapter)
   },
   catalog() {
-    this.getSectionContent(this.data.catalog)
+    wx.navigateTo({ url: '../myBook/myBook' });
   },
   // 更新最新章节
-  joinBook(url) {
-    db.collection('book').where({
-      _openid: app.globalData.openid
-    }).get().then(res => {
-      const data = res.data || []
-      if(data.length > 0) {
-        if(data[0].bookUrl !== url) {
-          const id = data[0]._id || ''
-          db.collection('book').doc(id).update({
-            data: {
-              bookUrl: url
-            }
-          }).then(res => {
-            console.log(res);
-          })
-        }
-      }
-    })
+  // joinBook(url) {
+  //   db.collection('book').where({
+  //     _openid: app.globalData.openid
+  //   }).get().then(res => {
+  //     const data = res.data || []
+  //     if(data.length > 0) {
+  //       if(data[0].bookUrl !== url) {
+  //         const id = data[0]._id || ''
+  //         db.collection('book').doc(id).update({
+  //           data: {
+  //             bookUrl: url
+  //           }
+  //         }).then(res => {
+  //           console.log(res);
+  //         })
+  //       }
+  //     }
+  //   })
+  // },
+
+  Change(a) {
+    // a 为富文本的字符串内容，为了测试，只写了img标签
+	let b = /<img [^>]*src=['"]([^'"]+)[^>]*>/g;// img 标签取src里面内容的正则
+	let s = a.match(b);// 取到所有img标签 放到数组 s里面
+	for (let i = 0; i < s.length; i++) {
+		let srcImg = s[i].replace(b, '$1');//取src面的内容
+		if (srcImg.slice(0, 4) == 'http' || srcImg.slice(0, 5) == 'https') {
+		//若src前4位置或者前5位是http、https则不做任何修改
+			console.log('不做任何修改');
+		} else {
+		//修改富文本字符串内容 img标签src 相对路径改为绝对路径
+			a = a.replace(new RegExp(srcImg, 'g'), 'http://yulinzhanye.in' + srcImg);
+		}
+	}
+	return a
+
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let {url, name, imgUrl} = options
-    this.setData({
-      sectionName: name
-
-    })
+    
+    let {url} = options
     this.getSectionContent(url)
+    let c = 
+    this.setData({
+      contentH: c
+    })
   },
 
   /**

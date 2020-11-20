@@ -7,5 +7,8 @@
  <view class="right">
 <text>{{item.bookName}}</text>
  </view>
+ 
 </view>
 </view>
+
+<view class="mylike" bindtap="handlebook">逍遥小散仙</view>

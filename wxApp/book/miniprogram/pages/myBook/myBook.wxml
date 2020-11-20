@@ -1,0 +1,60 @@
+<view class="introduce">
+  <view class="detailleft">
+    <image src="{{bookDetailData.imgurl}}" />
+  </view>
+  <view class="detailright">
+    <view>
+      <view class="name">{{bookDetailData.name}}</view>
+      <view>
+        <text>{{bookDetailData.autho}}</text>
+      </view>
+      <view>
+        <text>{{bookDetailData.status}}</text>
+      </view>
+      <view>
+        <text>{{bookDetailData.lastTime}}</text>
+      </view>
+      <view class="lastNew">
+        最新：
+        <text data-url="lastSectionUrl">{{bookDetailData.lastSection}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="joinBook">
+  <van-button type="warning" size="small" bindtap="joinBook" data-url="{{pageData[0].sectionUrl}}">
+    加入书架
+  </van-button>
+</view>
+<!-- 内容简介 -->
+<view class="brief">
+  <view class="introduceTitle">内容简介</view>
+  <view class="introduceContent">{{bookDetailData.bookDetail}}</view>
+</view>
+<!-- 最新章节 -->
+<view class="lastsection">
+  <view class="last">最新章节</view>
+  <view class="section" wx:for="{{lastData}}" wx:key="" data-url="{{item.sectionUrl}}" bindtap="navtoUrl">
+    {{item.sectionName}}
+  </view>
+</view>
+<view class="lastsection">
+  <view class="last">章节列表</view>
+  <view class="section" wx:for="{{pageData}}" wx:key="" data-url="{{item.sectionUrl}}" bindtap="navtoUrl">
+    {{item.sectionName}}
+  </view>
+</view>
+<view class="listPage">
+  <view class="index">
+    <button type="warn" size="mini" bindtap="indexPage">首页</button>
+  </view>
+  <view class="pre">
+    <button type="warn" size="mini" bindtap="prePage">上一页</button>
+  </view>
+  <view class="next">
+    <button type="warn" size="mini" bindtap="nextPage">下一页</button>
+  </view>
+  <view class="end">
+    <button type="warn" size="mini" bindtap="endPage">尾页</button>
+  </view>
+</view>
