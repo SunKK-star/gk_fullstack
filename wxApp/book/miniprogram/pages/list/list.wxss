@@ -42,3 +42,28 @@
   height: 50rpx;
   background-color: #2a779d;
 }
+.wrap {
+  margin-top: 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.mybookitem {
+  width: 330rpx;
+  height: 100rpx;
+  padding: 15rpx 20rpx;
+}
+.booknamecon {
+  background-color: #d4eaf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+  font-size: 32rpx;
+  color: #888;
+
+}

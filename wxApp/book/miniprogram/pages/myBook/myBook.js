@@ -8,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    urlParams: '/19/19374/',
-    bookDetailData: []
+    
+    // urlParams: '/19/19374/',
+    bookDetailData: [],
   },
   // 首页
   indexPage() {
@@ -67,7 +68,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMyBook(this.data.urlParams)
+    let {url} = options
+      this.getMyBook(url)
   },
 
   /**

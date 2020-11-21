@@ -11,4 +11,13 @@
 </view>
 </view>
 
-<view class="mylike" bindtap="handlebook">逍遥小散仙</view>
+<view class="wrap">
+  <view class="mybookitem" wx:for="{{mylikeList}}" data-url="{{item.url}}" wx:key="name" bindtap="handlebook">
+    <view class="booknamecon">
+      {{item.name}}
+    </view>
+  </view>
+
+</view>
+
+

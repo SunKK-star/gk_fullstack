@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.6.1"
+    "@vant/weapp": "^1.6.1",
+    "iconv-lite": "^0.6.2"
   },
   "description": ""
 }

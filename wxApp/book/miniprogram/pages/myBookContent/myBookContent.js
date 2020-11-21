@@ -15,29 +15,33 @@ Page({
     catalog: '',
     contentH: '',
     preAble: true,
-    nextAble: true
+    nextAble: true,
+    restChapter: [],
   },
 
   getSectionContent(url) {
     wx.showLoading({
       title: '正在加载', //提示的内容,
-      mask: true, //显示透明蒙层，防止触摸穿透,
     });
     wx.cloud.callFunction({
       name: 'mySectionContent',
       data: {
         url: url
-      }
+      },
+    //   header: {
+    //     'content-type': 'application/xhtml+xml'
+    // },
     }).then(res => {
-      wx.hideLoading();
       console.log(res);
+      wx.hideLoading();
       let {result} = res
       this.setData({
         preChapter: result.pre,
         nextChapter: result.next,
         catalog: result.catalog,
-        contentH: this.Change(result.content),
-        sectionName: result.name
+        contentH: this.Change(result.content).replace(/\<img/gi, '<img class="api-editor-pic" mode="widthFix"'),
+        sectionName: result.name,
+        restChapter: result.restchapter
       })
       wx.pageScrollTo({
         scrollTop: 0, //滚动到页面的目标位置（单位px）,
@@ -54,8 +58,8 @@ Page({
   nextPage() {
     this.getSectionContent(this.data.nextChapter)
   },
-  catalog() {
-    wx.navigateTo({ url: '../myBook/myBook' });
+  handleCatalog() {
+    wx.navigateTo({ url: `../myBook/myBook?url=${this.data.catalog}` });
   },
   // 更新最新章节
   // joinBook(url) {
@@ -77,24 +81,38 @@ Page({
   //     }
   //   })
   // },
+  // 去重
+  unique(arr) {
+    return [...new Set(arr)]
+},
+
 
   Change(a) {
     // a 为富文本的字符串内容，为了测试，只写了img标签
 	let b = /<img [^>]*src=['"]([^'"]+)[^>]*>/g;// img 标签取src里面内容的正则
-	let s = a.match(b);// 取到所有img标签 放到数组 s里面
+  let s = a.match(b);// 取到所有img标签 放到数组 s里面
+  let srcImgList = []
 	for (let i = 0; i < s.length; i++) {
 		let srcImg = s[i].replace(b, '$1');//取src面的内容
-		if (srcImg.slice(0, 4) == 'http' || srcImg.slice(0, 5) == 'https') {
-		//若src前4位置或者前5位是http、https则不做任何修改
-			console.log('不做任何修改');
-		} else {
-		//修改富文本字符串内容 img标签src 相对路径改为绝对路径
-			a = a.replace(new RegExp(srcImg, 'g'), 'http://yulinzhanye.in' + srcImg);
-		}
-	}
-	return a
-
-
+    //修改富文本字符串内容 img标签src 相对路径改为绝对路径
+		srcImgList.push(srcImg)
+  }
+  let newArray = this.unique(srcImgList)
+  for(let j = 0; j < newArray.length; j++){
+    let bc = newArray[j]
+    a = a.replace(new RegExp(bc, 'g'), 'http://yulinzhanye.in'+newArray[j]);
+  }
+    console.log(a);
+    return a
+  },
+  // 点击章节的分页
+  handleChapter(e) {
+    let {url, index} = e.currentTarget.dataset
+    console.log(index);
+    
+    this.data.restChapter.forEach((v, i) => i===index?v.isActive=true:v.isActive=false)
+    this.getSectionContent(this.data.catalog + url)
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -103,10 +121,7 @@ Page({
     
     let {url} = options
     this.getSectionContent(url)
-    let c = 
-    this.setData({
-      contentH: c
-    })
+    
   },
 
   /**

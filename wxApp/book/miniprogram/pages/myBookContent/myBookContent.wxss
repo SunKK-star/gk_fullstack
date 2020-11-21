@@ -18,7 +18,7 @@ page{
 }
 .content{
   padding: 0 12rpx;
-  font-size: 28rpx;
+  font-size: 32rpx;
   letter-spacing: 4rpx;
   line-height: 48rpx;
   color: #222;
@@ -32,4 +32,38 @@ page{
   padding: 12rpx;
   margin: 20rpx 12rpx 40rpx 12rpx;
   background: #d4eaf2;
+}
+.api-editor-pic {
+  width: 38rpx;
+  vertical-align: baseline;
+}
+
+.rest-wrap {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #000;
+  padding-top: 20rpx;
+  margin-top: 30rpx;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.rest-chapter{
+  width: 80rpx;
+  height: 80rpx;
+  padding: 10rpx;
+}
+.a {
+  background-color: #d4eaf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+  font-size: 32rpx;
+  color: #888;
+}
+.active{
+  color: red;
 }

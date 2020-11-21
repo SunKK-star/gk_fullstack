@@ -1,9 +1,18 @@
-<view class="sectionName">{{sectionName}}</view>{{contentH}}
+<view class="sectionName">{{sectionName}}</view>
 <view class="content">
-<rich-text nodes="{{contentH}}" space="true"></rich-text>
+  <rich-text nodes="{{contentH}}"></rich-text>
 </view>
+
+<view class="rest-wrap">
+  <view class="rest-chapter" wx:for="{{restChapter}}" wx:key="index">
+    <view class="a {{item.isActive?'active':''}}" data-url="{{item.url}}" data-index="{{index}}" bindtap="handleChapter">
+      {{index+1}}
+    </view>
+  </view>
+</view>
+
 <view class="header">
-<text class="pre" data-url="{{preChapter}}" bindtap="prePage">上一章</text>
-<text class="catalog" data-url="{{catalog}}" bindtap="catalog">目录</text>
-<text class="next" data-url="{{nextChapter}}" bindtap="nextPage">下一章</text>
+  <text class="pre" data-url="{{preChapter}}" bindtap="prePage">上一章</text>
+  <text class="catalog" data-url="{{catalog}}" bindtap="handleCatalog">目录</text>
+  <text class="next" data-url="{{nextChapter}}" bindtap="nextPage">下一章</text>
 </view>
