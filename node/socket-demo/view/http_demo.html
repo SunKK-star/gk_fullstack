@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/socket.io/socket.io.js"></script>
+  <style>
+    body{
+      background: #cccccc;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input{
+      margin-top: 5vh;
+      width: 200px;
+      height: 40px;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+      color: #000000;
+      padding-left: 10px;
+    }
+    button{
+      border: 0;
+      margin-top: 10vh;
+      background-color: #fff;
+      border-radius: 4px;
+      width: 90px;
+      height: 42px;
+      color: #000000;
+    }
+    #infos{
+      margin-left: 15vw;
+      width: 400px;
+      height: 500px;
+      overflow: hidden;
+      border: none;
+      background-color: #fff;
+      color: #000000;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <h1>Welcom to lm</h1>
+  <div id="infos">
+
+  </div>
+  <input type="text" id="send_info" value="" placeholder="请输入你想">
+  <button type="button" id="btn"></button>
+  <script>
+    var socket = io()
+    document.getElementById('btn').onclick = function() {
+      socket.emit('link_to_server', document.getElementById('send_info'))
+    }
+    // 接收到响应
+    socket.on('link_to_client', (msg) => {
+      document.getElementById('infos').append(`${msg}`)
+    })
+  </script>
+</body>
+</html>
