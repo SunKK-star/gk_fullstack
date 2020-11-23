@@ -1,1 +1,6 @@
-/* pages/cart/cart.wxss */
+.receive_adress_btn .address_btn {
+  padding: 20rpx;
+}
+.receive_adress_btn .address_btn button {
+  width: 60%;
+}

@@ -1,13 +1,20 @@
-// pages/cart/cart.js
+/** 
+ * 1.获取用户的收获地址
+ *  1. 绑定点击事件  authSetting  scope.address
+ *  2. 
+ */
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    adress: []
   },
 
+  onShow() {
+    const adress = wx.getStorageSync(key);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -15,52 +22,12 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleChooseAdress(e) {
+    wx.chooseAddress({
+      success: (result)=>{
+        console.log(result);
+      }
+    });
+    
   }
 })
