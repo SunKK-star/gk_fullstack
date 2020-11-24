@@ -1,23 +1,22 @@
 <view class="container">
-<view class="myBook">我的书架</view>
-<view class="item" wx:for="{{bookItem}}" wx:key="" data-name="{{item.bookName}}" dat-imgUrl="{{item.imgurl}}" data-url="{{item.bookUrl}}" bindtap="navTo" bindlongpress="delete">
- <view class="left">
- <image src="{{item.imgurl}}"></image>
- </view>
- <view class="right">
-<text>{{item.bookName}}</text>
- </view>
- 
-</view>
-</view>
-
-<view class="wrap">
-  <view class="mybookitem" wx:for="{{mylikeList}}" data-url="{{item.url}}" wx:key="name" bindtap="handlebook">
-    <view class="booknamecon">
-      {{item.name}}
+  <view class="myBook">我的书架</view>
+  <view class="item" wx:for="{{bookItem}}" wx:key="index" data-name="{{item.bookName}}" dat-imgUrl="{{item.imgurl}}" data-url="{{item.bookUrl}}" bindtap="navTo" bindlongpress="delete">
+    <view class="left">
+      <image src="{{item.imgUrl}}"></image>
+    </view>
+    <view class="right">
+      <view>{{item.bookName}}</view>
+      <view>{{item.author}}</view>
+      <view>最新：{{item.lastSection}}</view>
+      <view class="lastread">已读：{{item.lastRead}}</view>
+      <van-button type="warning" size="small" bindtap="outBook" data-name="{{item.bookName}}" data-url="{{pageData[0].sectionUrl}}">
+        移出书架
+      </van-button>
     </view>
   </view>
-
 </view>
-
-
+<view class="wrap">
+  <view class="mybookitem" wx:for="{{mylikeList}}" data-url="{{item.url}}" wx:key="name" bindtap="handlebook">
+    <view class="booknamecon">{{item.name}}</view>
+  </view>
+</view>

@@ -17,9 +17,10 @@ Page({
     preAble: true,
     nextAble: true,
     restChapter: [],
+    isActive: false
   },
 
-  getSectionContent(url) {
+  getSectionContent(url, index ) {
     wx.showLoading({
       title: '正在加载', //提示的内容,
     });
@@ -32,16 +33,32 @@ Page({
     //     'content-type': 'application/xhtml+xml'
     // },
     }).then(res => {
-      console.log(res);
+      console.log(res, index);
       wx.hideLoading();
       let {result} = res
+      let restcap = result.restchapter
+      restcap[0].isActive = true
+      restcap.forEach((v, i) => {
+        if(index !== undefined) {
+          i === index?v.isActive=true:v.isActive=false
+        }
+      })
+      // for(let i = 0; i < restcap.length;i++){
+      //   if(index === undefined) restcap[0].isActive = true
+      //   else {
+      //     if( i===index) {
+      //       restcap[i].isActive = true
+      //     }
+      //   }
+      // }
       this.setData({
         preChapter: result.pre,
         nextChapter: result.next,
         catalog: result.catalog,
         contentH: this.Change(result.content).replace(/\<img/gi, '<img class="api-editor-pic" mode="widthFix"'),
         sectionName: result.name,
-        restChapter: result.restchapter
+        restChapter: result.restchapter,
+        
       })
       wx.pageScrollTo({
         scrollTop: 0, //滚动到页面的目标位置（单位px）,
@@ -95,7 +112,8 @@ Page({
 	for (let i = 0; i < s.length; i++) {
 		let srcImg = s[i].replace(b, '$1');//取src面的内容
     //修改富文本字符串内容 img标签src 相对路径改为绝对路径
-		srcImgList.push(srcImg)
+    srcImgList.push(srcImg)
+    
   }
   let newArray = this.unique(srcImgList)
   for(let j = 0; j < newArray.length; j++){
@@ -110,8 +128,7 @@ Page({
     let {url, index} = e.currentTarget.dataset
     console.log(index);
     
-    this.data.restChapter.forEach((v, i) => i===index?v.isActive=true:v.isActive=false)
-    this.getSectionContent(this.data.catalog + url)
+    this.getSectionContent(this.data.catalog + url , index)
     
   },
   /**

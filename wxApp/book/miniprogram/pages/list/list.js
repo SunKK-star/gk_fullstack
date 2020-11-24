@@ -1,10 +1,14 @@
 // pages/list/list.js
+const db = wx.cloud.database()
+var app =  getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    bookItem: [],
     mylikeList: [
       {name: '花嫁(阴雷篇)', url: '/12/12369/'},
       {name: '花嫁(窃脂篇)', url: '/12/12639/'},
@@ -30,14 +34,50 @@ Page({
       {name: '山海图', url: '/14/14295/'},
       {name: '仙子蒙尘传', url: '/3/3820/'},
       {name: '仙绿妙语', url: '/9/9374/'},
-      {name: '淫途亦修仙', url: '/4/4225/'},
       {name: '烽火烟波楼', url: '/8/8553/'},
-      {name: '精绝女王', url: '/15/15967/'},
       {name: '利娴庄', url: '/2/2295/'},
-      {name: '神女赋', url: '/0/235/'},
-      {name: '神女赋番外', url: '/17/17159/'},
-      {name: '逆天销魂', url: '/6/6432/'},
+      {name: '欲望后宫传奇录', url: '/4/4830/'},
+      {name: '母上攻略', url: '/14/14102//'},
+      {name: '朱颜血（精装版）', url: '/10/10294/'},
     ]
+  },
+  getBookItem() {
+    // 获取数据库数据
+    db.collection('book').get()
+    .then((res) => {
+      console.log(res);
+      this.setData({
+        bookItem: res.data
+      })
+    })
+  },
+
+  outBook(e) {
+    const {name} = e.currentTarget.dataset
+    db.collection('book').where({
+      _openid: app.globalData.openid,
+      bookName: name
+    }).get().then((res) => {
+      console.log(res);
+      let data = res.data || []
+      if(data.length > 0) {
+        let id = data[0]._id || ''
+        db.collection('book').doc(id).remove({
+          success: res => {
+            wx.showToast({
+              title: '移出成功', //提示的内容,
+              icon: 'success', //图标,
+              duration: 2000, //延迟时间,
+              mask: true, //显示透明蒙层，防止触摸穿透,
+            });
+          },
+        })
+      }
+    })
+  },
+
+  navTo(e) {
+      
   },
 
   handlebook(e) {
@@ -48,7 +88,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getBookItem()
   },
 
   /**

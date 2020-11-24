@@ -60,7 +60,7 @@ Page({
   catalog() {
     this.getSectionContent(this.data.catalog)
   },
-  // 更新最新章节
+  // 更新最新看的章节
   joinBook(url) {
     db.collection('book').where({
       _openid: app.globalData.openid

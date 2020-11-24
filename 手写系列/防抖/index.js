@@ -8,5 +8,5 @@ function debounce(fn, delay) {
     timer = setTimeout(() => {
       fn(arg)
     }, delay)
-  }   
+  }  
 }

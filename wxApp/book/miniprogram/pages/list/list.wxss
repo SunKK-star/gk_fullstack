@@ -26,12 +26,15 @@
   height: 260rpx;
 }
 .item .right{
+  padding-top: 40rpx;
   flex: 1;
-  margin: 16rpx 0;
-  line-height: 260rpx;
   font-size: 28rpx;
   text-align: left;
   margin-left: 100rpx;
+}
+
+.lastread {
+  margin-bottom: 30rpx;
 }
 
 .mylike {

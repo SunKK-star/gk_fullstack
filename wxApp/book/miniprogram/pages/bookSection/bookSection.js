@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookDetailData: [],
+    bookDetailData: {},
     lastData: [],
     pageData: [],
     pageArray: [],
@@ -35,15 +35,19 @@ Page({
   joinBook(e) {
     let {url} =  e.currentTarget.dataset
     if(url) {
-      db.collection('book').where({
+      db.collection('book')
+      .where({
         userId: app.globalData.openid,
         bookName: this.data.bookDetailData.name
-      }).get().then(res => {
+      })
+      .get()
+      .then(res => {
+        console.log(res);
         let data = res.data || []
         if(data.length > 0) {
           if(data[0].bookUrl !== url ) {
             const id = data[0]._id || ''
-            db.collection('book').doc(id).updata({
+            db.collection('book').doc(id).update({
               data: {
                 bookUrl: url 
               }
@@ -57,6 +61,7 @@ Page({
       userId: app.globalData.openid,
       bookName: this.data.bookDetailData.name
     }).get().then(res => {
+      console.log(res);
       const data = res.data[0] || []
       if(data.length == 0) {
         db.collection('book').add({
@@ -64,10 +69,13 @@ Page({
             userId: app.globalData.openid,
             bookName: this.data.bookDetailData.name,
             bookUrl: url,
-            imgUrl: this.data.bookDetailData.imgUrl
+            imgUrl: this.data.bookDetailData.imgurl,
+            lastRead: this.data.pageData[0].sectionName,
+            author: this.data.bookDetailData.author,
+            lastSection: this.data.bookDetailData.lastSection
           }
         }).then(res => {
-          console.log(res);
+          // console.log(res);
           wx.showToast({
             title: '加入书架成功', //提示的内容,
             icon: 'success', //图标,
@@ -83,10 +91,33 @@ Page({
   },
   navtoUrl(e) {
     
-    let {url} =  e.currentTarget.dataset
+    let {url,name} =  e.currentTarget.dataset
     // 已经存入书架的书，记录阅读状态
+    db.collection('book')
+    .where({
+      _openid: app.globalData.openid,
+      bookName: this.data.bookDetailData.name
+    })
+    .get()
+    .then((res) => {
+      let data = res.data || []
+      if(data.length > 0) {
+        if(data[0].bookUrl !== url) {
+          const id = data[0]._id || ''
+          db.collection('book').doc(id)
+          .update({
+            data: {
+              bookUrl: url,
+              lastRead: name
+            }
+          }).then(res =>{
+            // console.log(res);
+          })
+        }
+      }
+    })
 
-    wx.navigateTo({ url: `../bookContent/bookContent?url=${url}&name=${this.data.bookDetailData.name}&img=$${this.data.bookDetailData.imgUrl}` });
+    wx.navigateTo({ url: `../bookContent/bookContent?url=${url}$sname=${name}&name=${this.data.bookDetailData.name}&img=$${this.data.bookDetailData.imgUrl}` });
   },
   bindPickerChange(e) {
     console.log(e);
@@ -108,6 +139,7 @@ Page({
         url: url
       }
     }).then(res => {
+      console.log(res);
       wx.hideLoading();
       const {result} = res
       this.setData({
