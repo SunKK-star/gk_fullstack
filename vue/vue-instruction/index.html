@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.common.dev.js"></script>
+  <style>
+    
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <div v-if="isLogin">
+      {{msg1}}
+    </div>
+    <div v-else>
+      {{msg2}}
+    </div> -->
+    <div v-show="isLogin">
+      {{msg2}}
+    </div>
+
+    <ul class="news" >
+      <li class="item" v-for="(item,index) in news" :key="index">{{item.title}}</li>
+    </ul>
+
+    <span>{{msg1}}</span> - <span v-text="msg2"></span> - <span v-html="msg3"></span>
+
+
+    <div class="count">
+      本次得分： {{count}}
+      <button @click="add">加分</button>
+      <button v-on:click="reduce">减分</button>
+    </div>
+
+
+    <div class="message">
+      <p>文本内容：{{message}}</p>
+      <p>
+        <input type="text" v-model="message">
+      </p>
+    </div>
+
+
+    <div :class="className">
+      <img v-bind:src="imgUrl" alt="">
+    </div>
+
+    <div v-pre>{{msg1}}</div>
+
+    <div class="aaaa" v-cloak>{{msg1}}</div>
+
+    <div>
+      <p v-once>第一次绑定的值：{{message}}</p>
+      <input type="text" v-model="message">
+    </div>
+
+  </div>
+
+  
+
+
+  <script>
+    // let dom = document.getElementById('app')
+    // dom.innerHTML = '你好'
+
+    let app = new Vue({
+      el: '#app',
+      data: {
+        msg1: 'hello world',
+        msg2: '你好',
+        msg3: '<h2>hi vue!</h2>',
+        isLogin: false,
+        news: [
+          { title: '"空降"不到一周 韩俊任吉林代省长 曾是刘鹤"副手"'},
+          { title: '上门女婿成村霸，敲诈勒索故意纵火还打伤司法人员'},
+          { title: 'X光显示肚子内有异物 港媒:黄之锋被关医院单人囚室'},
+          { title: '特朗普突然出手，举行了史上最短一次记者会！'}
+        ],
+        count: 0,
+        message: 'ssdsasafaff',
+        imgUrl: 'https://bkimg.cdn.bcebos.com/pic/e850352ac65c1038081203acbc119313b07e8974?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg',
+        className: 'img'
+      },
+
+      created() {
+        this.msg = 'hello vue!'
+      },
+      methods: {
+
+        add() {
+          this.count ++
+        },
+        reduce() {
+          this.count--
+        }
+      }
+    })
+  </script>
+</body>
+</html>
