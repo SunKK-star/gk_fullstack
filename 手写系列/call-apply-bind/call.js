@@ -31,3 +31,4 @@ function a() {
 }
 
 a.mycall(b)
+

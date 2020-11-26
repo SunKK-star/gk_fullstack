@@ -36,5 +36,6 @@ Function.prototype.mybind = function(thisArg) {
 
 
 let res = a.mybind(b, 4, 5)
-let newA = new res()
-console.log(newA);
+// let newA = new res()
+// console.log(newA);
+res()
