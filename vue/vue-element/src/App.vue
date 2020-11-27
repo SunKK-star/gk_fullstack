@@ -6,7 +6,9 @@
     </p>
 
     <!--路由入口-->
-    <router-view></router-view>
+    <transition>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 <script>
@@ -18,10 +20,19 @@ export default {
 };
 </script>
 <style>
-.p{
-  
+.fade-enter{
+
 }
-.page{
+.fade-leave{
+
+}
+.fade-enter-active{
+  transition: opacity 0.5s;
+}
+.fade-leave-active{
+  /* transition: opacity: 0.5s; */
+}
+.page {
   text-align: center;
 }
 </style>

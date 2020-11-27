@@ -40,12 +40,20 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      component: about
+      component: about,
+      beforeEnter: (to, from, next) => {
+        console.log(to);
+        console.log(from);
+        next()
+      }
     },
     {
       path: '/detail',
+      props: true,
       name: 'detail',
-      component: detail
+      component: detail,
+      // redirect: '/login'
+      alias: '/hello'   // 重改路径名
     }
   ]
 })

@@ -36,20 +36,41 @@
 //   foo: foo
 // }
 
-    obj1.foo(5)
-    console.log(obj1.a);
-    obj1 = {
-      a: 6,
-      fo: function foo(a) {
-        this.a = a
-      }
-    }
-    obj1.fo(3)
-    console.log(obj1.a);
+//     obj1.foo(5)
+//     console.log(obj1.a);
+//     obj1 = {
+//       a: 6,
+//       fo: function foo(a) {
+//         this.a = a
+//       }
+//     }
+//     obj1.fo(3)
+//     console.log(obj1.a);
 
-function foo(p1,p2) {
-  this.val = p1+p2
+// function foo(p1,p2) {
+//   this.val = p1+p2
+// }
+// var bar = foo.bind(null, 'p1')
+// var baz = new bar('p2')
+// console.log(baz.val);
+
+var name = 'window'
+var person1 = {
+  name: 'person1',
+  show1: function () {
+    console.log(this.name)
+  },
+  show2: () => console.log(this.name),
+  show3: function () {
+    return function () {
+      console.log(this.name)
+    }
+  },
+  show4: function () {
+    console.log(this.name)
+    return () => console.log(this.name)
+  }
 }
-var bar = foo.bind(null, 'p1')
-var baz = new bar('p2')
-console.log(baz.val);
+var person2 = { name: 'person2' }
+person1.show1()
+person1.show2()
