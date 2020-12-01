@@ -1,4 +1,4 @@
-# vue-elem
+# vue-elm
 
 ## Project setup
 ```
