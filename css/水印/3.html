@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">
+    666
+    <p>vacd</p>
+    <!-- vdasaa -->
+  </div>
+  <script>
+    console.log(1 .toString());
+    console.log('1'.toString());
+    // 装箱 '2' -> new String('2')
+    // 1 -> new Number(1)
+
+    // 拆箱
+    let str = new String('aaa')
+    console.log(String(str), str);
+    let arr = [1,2,3]
+    arr.toString() // 数组
+    Object.prototype.toString.call(str)  // 对象上的
+    console.log(document.getElementById('wrap').childNodes);
+    // const div = document.getElementById('div')
+    // const observer = new MutationObserver(() => {
+    //   console.log(2);
+    // })
+  </script>
+</body>
+</html>

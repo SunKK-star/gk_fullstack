@@ -1,0 +1,27 @@
+<script>
+    let root = {
+    val: 1,
+    left: {
+      val: 2,
+      left: { val: 3 },
+      right: { val: 4 }
+    },
+    right: {
+      val: 3,
+      left: { val: 5 },
+      right: { val: 6 }
+    }
+  }
+
+  var maxDepth = function(root) {
+    if(!root) return 0;
+    // 递
+    console.log('递',root.val);
+    let lh = maxDepth(root.left)
+    let rh = maxDepth(root.right)
+    // 归
+    console.log('归',root.val);
+    return Math.max(lh, rh) + 1
+  }
+  maxDepth(root)
+</script>
