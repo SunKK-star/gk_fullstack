@@ -1,12 +1,12 @@
 <script>
   // 完成树的遍历
-  // var invertTree = function(root) {
-  //   if (!root) return 
-  //   [root.left, root.right] = [root.right, root.left] // es6
+  
+  var invertTree = function(root) {
+    if (!root) return 
+    [root.left, root.right] = [root.right, root.left] // es6
 
-  //   invertTree(root.left)
-  //   invertTree(root.right)
-  // }
-  // invertTree(root)
-  console.log(null.a);
+    invertTree(root.left)
+    invertTree(root.right)
+  }
+  invertTree(root)
 </script>
