@@ -8,7 +8,7 @@
         <router-link class="wrapper-item" to="/seller">商家</router-link>
       </div>
       <div class="page">
-        <router-view></router-view>
+        <router-view :seller="seller"></router-view>
       </div>
     </div>
   </div>
@@ -39,6 +39,7 @@ export default {
     getSeller({
       id: this.seller.id
     }).then((seller) => {
+      console.log(seller);
       this.seller = Object.assign({}, this.seller, seller)
     })
   }
