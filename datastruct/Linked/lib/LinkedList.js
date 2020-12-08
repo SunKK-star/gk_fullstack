@@ -184,13 +184,14 @@ class LinkedList {
     }
 }
 module.exports = {
-
+    Node: Node,
+    LinkedList: LinkedList
 } 
 
 // let list = new LinkedList(new Node('a'))
 // list.append(new Node('b'))
 // list.append(new Node('d'))
 // list.append(new Node('e'))
-// list.insert(new Node('c'))
-// console.log(list.findAsIndex());
+// list.insert(new Node('c'),2)
+// console.log(list);
 // console.log(list.toString());

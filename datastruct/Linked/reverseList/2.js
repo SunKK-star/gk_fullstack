@@ -1,18 +1,15 @@
+// 递归法
 
-// 迭代法
-const {Node, LinkedList} = require('../lib/LinkedList')
-
+const {Node, LinkedList}  = require("../lib/LinkedList");
 let reverseLis = (head) => {
-  if (!head) return null
-  let cur = head
-  let pre = null
-  while (cur) {
+  let reserve = (pre, cur) => {
+    if (!cur) return pre
+    // 保留下一个节点的值
     let next = cur.next
     cur.next = pre
-    pre = cur
-    cur = next
+    return reserve(cur, next)
   }
-  return pre
+  return reserve(null, head)
 }
 
 let list = new LinkedList(new Node('a'))
@@ -25,5 +22,3 @@ list.insert(new Node('c'),2)
 let cur = list.head
 console.log(reverseLis(cur));
 console.log(list.toString());
-
-

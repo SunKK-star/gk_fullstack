@@ -29,4 +29,13 @@ axios
   3. postman 模拟请求
   4. 前端请求
   5. 不止是域名不一样，端口和协议不一样都算跨域
-  6. App.all 后端配置解决的
+  6. App.all 后端配置解决
+
+- 基于mongodb 数据流-> MVC  (express) -> Vue 界面
+  1. model 层的构建
+    这是一个精简版的model层 model目录有了，
+    index.js  所有的模型定义在这里
+    mongoose.Schema 根据数据库结构定义
+    生成类
+  2. 使用postman测试数据
+    - 路由

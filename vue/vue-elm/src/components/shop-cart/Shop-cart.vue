@@ -19,8 +19,8 @@
         </div>
       </div>
       <!-- 列表 -->
-      <transition name="fold" v-show="listShow">
-        <div class="shopcart-list">
+      <transition name="fold">
+        <div class="shopcart-list" v-show="listShow">
           <div class="list-header">
             <h1 class="title">购物车</h1>
             <span class="empty" @click="empty">清空</span>
@@ -58,12 +58,19 @@ export default {
     },
     toggleList () {
       if (this.selectFoods.length === 0) return
-      this.fold = !this.fold
+      this.listShow = !this.listShow
+      this.$nextTick(() => {
+        if (this.listShow) {
+          this.scroll = new BScroll(this.$refs.listContent, {
+            click: true
+          })
+        }
+      })
     }
   },
   data () {
     return {
-      fold: false
+      listShow: false
     }
   },
   props: {
@@ -117,25 +124,24 @@ export default {
         return 'enough'
       }
     },
-    listShow () {
-      if (!this.totalCount) {
-        this.fold = true
-        return false
-      }
-      let show = !this.fold
-      if (show) {
-        this.$nextTick(() => {
-        if (this.scroll) {
-        this.scroll = new BScroll(this.$refs.listContent, {
-        click: true
-      })
-      } else {
-        this.scroll.refresh()
-      }
-      })
-      }
-      return show
-    }
+    // listShow () {
+    //   if (!this.totalCount) {
+    //     return false
+    //   }
+    //   let show = !this.fold
+    //   if (show) {
+    //     this.$nextTick(() => {
+    //     if (this.scroll) {
+    //     this.scroll = new BScroll(this.$refs.listContent, {
+    //     click: true
+    //   })
+    //   } else {
+    //     this.scroll.refresh()
+    //   }
+    //   })
+    //   }
+    //   return show
+    // }
   }
 }
 </script>
@@ -153,7 +159,7 @@ export default {
   height: 48px;
   .content
     display flex
-    background $color-background
+    background $colorBackground
     color $color-light-grey
     &-left
       flex 1
@@ -182,7 +188,7 @@ export default {
             font-size $fontsize-large-xxx
             color #80858a
             &.highlight
-              color $color-white
+              color $fontColor
         .num
           position absolute
           top 0
@@ -194,7 +200,7 @@ export default {
           border-radius: 16px;
           font-size $fontsize-small-s
           font-weight bold
-          color $color-white
+          color $fontColor
           background $color-red
       .price
         display inline-block
@@ -204,7 +210,7 @@ export default {
         font-size $fontsize-large
         font-weight 700
         &.highlight
-          color $color-white
+          color $fontColor
       .desc
         display inline-block
         line-height: 48px;
@@ -222,7 +228,7 @@ export default {
           background #2b333b
         &.enough
           background $color-green
-          color $color-white
+          color $fontColor
   .shopcart-list
     position absolute
     left: 0;
@@ -241,8 +247,8 @@ export default {
       height: 40px;
       line-height: 40px;
       align-items center
-      border-bottom: 1px solid $color-background-sss;
-      background $color-background-ssss
+      border-bottom: 1px solid $colorBackground-sss;
+      background $colorBackground-ssss
       .title
         font-size $fontsize-medium
         color $color-background
