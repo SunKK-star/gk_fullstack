@@ -58,19 +58,12 @@ export default {
     },
     toggleList () {
       if (this.selectFoods.length === 0) return
-      this.listShow = !this.listShow
-      this.$nextTick(() => {
-        if (this.listShow) {
-          this.scroll = new BScroll(this.$refs.listContent, {
-            click: true
-          })
-        }
-      })
+      this.fold = !this.fold
     }
   },
   data () {
     return {
-      listShow: false
+      fold: false
     }
   },
   props: {
@@ -124,24 +117,25 @@ export default {
         return 'enough'
       }
     },
-    // listShow () {
-    //   if (!this.totalCount) {
-    //     return false
-    //   }
-    //   let show = !this.fold
-    //   if (show) {
-    //     this.$nextTick(() => {
-    //     if (this.scroll) {
-    //     this.scroll = new BScroll(this.$refs.listContent, {
-    //     click: true
-    //   })
-    //   } else {
-    //     this.scroll.refresh()
-    //   }
-    //   })
-    //   }
-    //   return show
-    // }
+    listShow() {
+      if (!this.totalCount) {
+        this.fold = false
+        return false
+      }
+      let show = this.fold 
+      if (show) {
+        this.$nextTick(() => {
+          if (!this.scroll) {
+            this.scroll = new BScroll(this.$refs.listContent, {
+              click: true
+          })
+          } else {
+            this.scroll.refresh()
+          }
+        })
+      }
+      return show
+    }
   }
 }
 </script>
@@ -270,7 +264,7 @@ export default {
           color rgb(7, 17, 27)
         .price
           position absolute
-          right 90px
+          right 100px
           bottom 12px
           line-height 24px
           font-size 14px
@@ -279,5 +273,5 @@ export default {
         .cartcontrol-wrapper
           position absolute
           right 0
-          bottom 6px
+          bottom 0
 </style>
