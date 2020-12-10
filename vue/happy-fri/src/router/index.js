@@ -5,7 +5,21 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('@/views/home')
+  },
+  {
+    path: '/item',
+    name: 'item',
+    component: () => import('@/views/item')
+  },
+  {
+    path: '/score',
+    name: 'score',
+    component: () => import('@/views/score')
+  }
 ]
 
 const router = new VueRouter({
