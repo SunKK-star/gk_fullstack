@@ -1,0 +1,34 @@
+<script>
+  let url = 'http://www.baidu.com/s?keyword=js&lang=java';
+  // url 由什么组成
+  // 
+  // {
+  //   keyword:'js',
+  //   lang: java
+  // }
+  // function password (url) {
+  //   let obj = {},
+  //   let isQuery = url.indexOf('?') >= 0;
+  //   if (isQuery) {
+  //     let queryString = url.slice(url.indexOf('?'))
+  //     let querys = queryString.split('&')
+  //   }
+  //   querys.forEach(kv =>{
+
+  //     let [k, v] = kv.split('=')
+  //     obj[k] = v
+  //   })
+  //   return obj
+  // }
+
+  class Url {
+    constructor (url) {
+      this.url = url
+    }
+    isproto () {
+      return url.split(':',1)
+    }
+  }
+  let url1 = new Url(url)
+  console.log(url1.isproto());
+</script>
