@@ -1,0 +1,16 @@
+{
+  "name": "vue-instruction",
+  "version": "1.0.0",
+  "description": "使用v-text当在加载数据时就不会显示其他的东西，{{}}会显示{{}}在页面上\r   - <li class=\"item\" v-for=\"(item,index) in news\" :key=\"index\">{{item.title}}</li>\r   - <span>{{msg1}}</span> - <span v-text=\"msg2\"></span> - <span v-html=\"msg3\"></span>\r   - <button @click=\"add\">加分</button>\r       <button v-on:click=\"reduce\">减分</button>\r   - <p>文本内容：{{message}}</p>\r       <p>\r         <input type=\"text\" v-model=\"message\">\r       </p>     双向绑定\r   - <div :class=\"className\">\r       <img v-bind:src=\"imgUrl\" alt=\"\">\r     </div>     修改属性\r   - <div v-pre>{{msg1}}</div>  跳过vue编译",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

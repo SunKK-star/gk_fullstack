@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.common.dev.js"></script>
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.common.dev.js"></script>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+  <!-- 引入组件库 -->
+  <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> --> -->
   <style>
-    
+
   </style>
   <title>Document</title>
 </head>
+
 <body>
   <div id="app">
+    <el-button @click="visible = true">Button</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+      <p>Try Element</p>
+    </el-dialog>
+    <el-rate v-model="value1"></el-rate>
+  </div>
+  <div class="block">
+    <span class="demonstration">区分颜色</span>
+    <el-rate v-model="value2" :colors="colors">
+    </el-rate>
     <!-- <div v-if="isLogin">
       {{msg1}}
     </div>
@@ -21,7 +36,7 @@
       {{msg2}}
     </div>
 
-    <ul class="news" >
+    <ul class="news">
       <li class="item" v-for="(item,index) in news" :key="index">{{item.title}}</li>
     </ul>
 
@@ -58,12 +73,17 @@
 
   </div>
 
-  
+
 
 
   <script>
-    // let dom = document.getElementById('app')
-    // dom.innerHTML = '你好'
+    import Vue from 'vue'
+    
+
+
+
+    let dom = document.getElementById('app')
+    dom.innerHTML = '你好'
 
     let app = new Vue({
       el: '#app',
@@ -73,10 +93,10 @@
         msg3: '<h2>hi vue!</h2>',
         isLogin: false,
         news: [
-          { title: '"空降"不到一周 韩俊任吉林代省长 曾是刘鹤"副手"'},
-          { title: '上门女婿成村霸，敲诈勒索故意纵火还打伤司法人员'},
-          { title: 'X光显示肚子内有异物 港媒:黄之锋被关医院单人囚室'},
-          { title: '特朗普突然出手，举行了史上最短一次记者会！'}
+          { title: '"空降"不到一周 韩俊任吉林代省长 曾是刘鹤"副手"' },
+          { title: '上门女婿成村霸，敲诈勒索故意纵火还打伤司法人员' },
+          { title: 'X光显示肚子内有异物 港媒:黄之锋被关医院单人囚室' },
+          { title: '特朗普突然出手，举行了史上最短一次记者会！' }
         ],
         count: 0,
         message: 'ssdsasafaff',
@@ -90,7 +110,7 @@
       methods: {
 
         add() {
-          this.count ++
+          this.count++
         },
         reduce() {
           this.count--
@@ -99,4 +119,5 @@
     })
   </script>
 </body>
+
 </html>
