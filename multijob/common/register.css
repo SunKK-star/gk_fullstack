@@ -1,0 +1,152 @@
+.register {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-sizing: border-box;
+  background: url(../img/bg.jpg) no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+.content_title {
+  text-align: center;
+}
+
+.register-wrapper {
+  padding: 50px 60px;
+  width: 520px;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-size: cover;
+  box-shadow: 5px 5px 10px #000000;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #000000;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.field input {
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  font-size: medium;
+}
+
+.radio_button label {
+  color: #000;
+}
+.gender_select {
+  margin-left: 25px;
+}
+
+.selectbutton {
+  width: 50%;
+  height: 38px;
+  margin: 20px auto;
+}
+
+.selectbutton button {
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+  font-size: large;
+}
+
+.selectmodel {
+  width: 50%;
+  height: 120px;
+  margin: 0 auto  ;
+}
+#showdiv2 {
+  display: none;
+}
+#showdiv1 {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modelA {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background: url(../images/data/model/mheadA.png) no-repeat center;
+  background-size: 80px 120px;
+  justify-content: center;
+}
+
+.modelB {
+  flex: 1;
+  height: 100%;
+  background: url(../images/data/model/mheadB.png) no-repeat center;
+  background-size: 80px 120px;
+}
+
+.model {
+  cursor: pointer;
+  position: relative;
+ 
+}
+
+.model:hover {
+  top: -5px;
+  border: 2px solid #292421;
+  box-shadow: 2px 2px 3px #000;
+  transition: all ease 0.4s;
+}
+
+.model:active {
+  transition: all ease 800ms;
+  background-color: #aaa;
+}
+.register-btn, .login-btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.register-btn button {
+  width: 60%;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ffc107;
+  font-size: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.login-btn button {
+  width: 60%;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ffc107;
+  font-size: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+
+
+.bd {
+  position: fixed;
+  top: -50px;
+  right: -150px;  
+  z-index: 20;
+}
+.bd img {
+  width: 100%;
+  height: 150%;
+  background-size: cover;
+} 
+

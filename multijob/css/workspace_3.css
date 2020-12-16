@@ -1,0 +1,231 @@
+@charset "UTF-8";
+#suit{
+	width:98%;
+	height:650px;
+	margin-left:2%;
+	margin-top:10px;
+	overflow-y:scroll;
+}
+#searchBar{
+	float:left;
+	width:350px;
+	background:url(../images/ui/cellGlass.png);
+	background-size:350px 50px;
+	border-radius:10px;
+	height:50px;
+}
+#searchBar a{
+	font-size:15px;
+	line-height:35px;
+	float:left;
+	display:block;
+	amrgin-left:5px;
+	margin-right:5px;
+}
+.dropBox1{
+	width:50px;
+	height:35px;
+	background-color:#898889;
+	float:left;
+	margin-left:5px;
+	margin-right:5px;
+}
+.dropBox2{
+	width:155px;
+	height:35px;
+	background-color:#898889;
+	margin-left:5px;
+	margin-right:5px;
+}
+.button3{
+	color: #FFEBE0;
+	background:url(../images/ui/cellRedGlass.png) no-repeat;
+	background-size:60px 35px;
+	width: 60px;
+	height:35px;
+	border-radius: 10px;
+ 	outline: none;
+	cursor: pointer;
+	float:left;
+}
+.auto1{
+	margin-left:10px;
+	margin-top:7px;
+	width:350px;
+	height:35px;
+}
+.topTitle{
+	color: white;
+	display:block;
+	width: 210px;
+	height: 30px;
+	margin: auto;
+	text-align: center;
+	line-height: 30px;
+	background: url(../images/ui/suitTitle.png) no-repeat;
+	background-size: 210px 30px;
+}
+.topTitle1{
+	color: white;
+	display:block;
+	width: 420px;
+	height: 30px;
+	margin: auto;
+	text-align: center;
+	line-height: 30px;
+	background: url(../images/ui/suitTitle.png) no-repeat;
+	background-size: 420px 30px;
+}
+.form1{
+	width: 210px;
+	height: 40px;
+	display: block;
+	line-height: 40px;
+	border-radius: 5px;
+	font-size: 15px;
+	text-align: center;
+	margin-left:10px;
+	float:left;
+}
+#clothes{
+	width: 230px;
+	height: 300px;
+	float:left;
+	margin-left:100px;
+	margin-top:10px;
+	background: url(../images/ui/glass.png) no-repeat;
+}
+#clothes2{
+	width: 430px;
+	height: 300px;
+	margin-left:20px;
+	float:left;
+	margin-top:10px;
+	margin-left:20px;
+	background: url(../images/ui/glass.png) no-repeat;
+}
+.divstyle1{
+	background: url(../images/ui/glass.png) no-repeat;
+	box-shadow: 1px 1px 2px #666, 3px 3px 10px rgba(39, 30, 40, 0.5), 5px 5px 2px rgba(39, 30, 40, 0.1);
+	background-color:#EEEEEE;
+}
+.clothesMod{
+	background: url(../images/ui/glass.png) no-repeat;
+	box-shadow: 1px 1px 2px #666, 3px 3px 10px rgba(39, 30, 40, 0.5), 5px 5px 2px rgba(39, 30, 40, 0.1);
+	background-color:#EEEEEE;
+	width: 430px;
+	height: 300px;
+	margin-left:20px;
+	float:left;
+	margin-top:10px;
+	margin-left:20px;
+	background: url(../images/ui/glass.png) no-repeat;
+	display:none;
+}
+.clothesMod input{
+	width: 160px;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0px 1px #A7A7A7;
+    border: white;
+}
+.divstyle1 input{
+	width: 160px;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0px 1px #A7A7A7;
+    border: white;
+}
+#addClothes{
+	margin-top:15px;
+	margin-right:10px;
+}
+.saveClothes{
+	margin-top:15px;
+	margin-right:10px;
+	color: #FFEBE0;
+	background-color: #3D7BC0;
+	display: block;
+	width: 50px;
+	height:30px;
+	margin: auto;
+	border-radius: 10px;
+	cursor: pointer;
+	float: right;
+}
+.deleteClothes{
+	margin-top:100px;
+	margin-right:10px;
+	background-color:red;
+	color: #FFEBE0;
+	background-color: #3D7BC0;
+	display: block;
+	width: 50px;
+	height:30px;
+	margin: auto;
+	border-radius: 10px;
+	cursor: pointer;
+	float: right;
+}
+.buttom_3{
+	color: #FFEBE0;
+	background-color: #3D7BC0;
+	display: block;
+	width: 50px;
+	height:30px;
+	margin: auto;
+	border-radius: 10px;
+	cursor: pointer;
+	float: right;
+}
+.line1{
+	width: 203px;
+    height: 1px;
+    background-color: #DFDFDF;
+    margin-top:10px;
+    margin-left:11px;
+    display:inline-block;
+}
+.line2{
+	width: 410px;
+    height: 1px;
+    background-color: #DFDFDF;
+    margin-top:10px;
+    margin-left:11px;
+    display:inline-block;
+}
+.clothImg{
+	width:200px;
+	height:200px;
+	
+	margin-left:220px;
+}
+.imgStyle1{
+	width:150px;
+	height:150px;
+	background-size:150px 150px;
+	margin:auto;
+}
+.addClothImg{
+	margin:auto;
+	display:block;
+	width:180px;
+	height:40px;
+	line-height:40px;
+}
+.addClothImg buttom{
+	margin:auto;
+	display:block;
+	width:180px;
+	height:40px;
+	line-height:40px;
+}
+.suitImage{
+	width:180px;
+	height:180px;
+	background-color:black;
+}
