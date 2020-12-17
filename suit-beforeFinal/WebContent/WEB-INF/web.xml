@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://"
+	version="3.0">
+	<display-name>restful</display-name>
+	<context-param>
+		<param-name>resteasy.resources</param-name>
+		<param-value>restful.api.LogoAPI,restful.api.ManagerAPI,
+		restful.api.ClothesAPI,restful.api.TypeAPI,restful.api.SuitAPI</param-value>
+	</context-param>
+	<context-param>
+		<param-name>resteasy.providers</param-name>
+		<param-value>restful.interceptor.AuthorityPreProcessInterceptor</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+		</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>Resteasy</servlet-name>
+		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+		</servlet-class>
+	</servlet>
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/</param-value>
+	</context-param>
+	<servlet-mapping>
+		<servlet-name>Resteasy</servlet-name>
+		<url-pattern>/logo/*</url-pattern>
+		<url-pattern>/manager/*</url-pattern>
+		<url-pattern>/clothes/*</url-pattern>
+		<url-pattern>/type/*</url-pattern>
+		<url-pattern>/suitRoom/*</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<filter-class>zea.web.filter.SetCharacterEncodingFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>admin</filter-name>
+		<filter-class>restful.filter.AdminFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetCharacterEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>admin</filter-name>
+		<url-pattern>/manager/*</url-pattern>
+		<url-pattern>/clothes/*</url-pattern>
+		<url-pattern>/type/*</url-pattern>
+		<url-pattern>/jsp/workspace.jsp</url-pattern>
+	</filter-mapping>
+</web-app>

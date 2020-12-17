@@ -1,0 +1,387 @@
+@charset "UTF-8";
+* {
+			padding: 0px;
+			margin: 0px;
+		}
+		
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+		#logoOut{
+			width:100%;
+			height:100%;
+			position:absolute;
+			bottom:0px;
+		}
+		#head {
+			width: 100%;
+			height: 5%;
+			background-color: green;
+		}
+		
+		#main {
+			width: 100%;
+			height: 95%;
+		}
+		
+		#left_main {
+			width: 8%;
+			height: 100%;
+			background-color: #BFDEF6;
+			float: left;
+		}
+		
+		#left_main ul {
+			width: 100%;
+			height: 100%;
+		}
+		
+		#left_main ul li {
+			width: 100%;
+			height: 16.6%;
+			display: block;
+			list-style: none;
+		}
+		
+		#left_main ul li:nth-child(1) {
+			background: url(../images/ui/self.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#left_main ul li:nth-child(2) {
+			background: url(../images/ui/userList.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#left_main ul li:nth-child(3) {
+			background: url(../images/ui/catalog.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#left_main ul li:nth-child(4) {
+			background: url(../images/ui/suits.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#left_main ul li:nth-child(5) {
+			background: url(../images/ui/mySuits.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#left_main ul li:nth-child(6) {
+			background: url(../images/ui/exit.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#right_main {
+			width: 92%;
+			height: 100%;
+			background-color: darkmagenta;
+			float: left;
+			background: url(../images/ui/2000833.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#right_main ul li {
+			list-style: none;
+		}
+		
+		#regi {
+			width: 330px;
+			height: 400px;
+			background: url(../images/ui/glass.png) no-repeat;
+			box-shadow: 1px 1px 2px #666, 3px 3px 10px rgba(39, 30, 40, 0.5), 5px 5px 2px rgba(39, 30, 40, 0.1);
+			position: absolute;
+			left: 45%;
+			top: 25%;
+		}
+		#top {
+			color: white;
+			background-color: black;
+			display: block;
+			width: 325px;
+			height: 30px;
+			margin: auto;
+			text-align: center;
+			line-height: 30px;
+		}
+		
+		#message {
+			width: 330px;
+			height: 50px;
+			display: block;
+			margin-top: 1%;
+			line-height: 50px;
+			border-radius: 5px;
+			font-size: 15px;
+			text-align: center;
+		}
+		
+		#message input {
+			width: 225px;
+			height: 20px;
+			margin-top: 10px;
+			border-radius: 5px;
+			background: rgba(255, 255, 255, 0);
+			box-shadow: 0px 1px #A7A7A7;
+			border: white;
+		}
+		
+		#m_or_wm {
+			font-size: 15px;
+			margin-left: 16px;
+			width: 330px;
+			height: 50px;
+			display: block;
+			margin-top: 1%;
+			line-height: 50px;
+			border-radius: 5px;
+			font-size: 15px;
+		}
+		
+		#model_selection {
+			background-color: green;
+			display: block;
+			width: 320px;
+			height: 30px;
+			margin-left: 4px;
+			text-align: center;
+			line-height: 30px;
+			background: url(../images/ui/subTitle.png) no-repeat;
+			background-size: 345px 30px;
+			box-shadow: 1px 1px 1px #666, 3px 3px 1px rgba(39, 30, 40, 0.5), 4px 4px 1px rgba(39, 30, 40, 0.1);
+			cursor: pointer;
+		}
+		
+		#login_botton {
+			width: 330px;
+			height: 40px;
+			display: block;
+			margin-top: 15px;
+		}
+		
+		#line {
+			width: 325px;
+			height: 1px;
+			background-color: white;
+			margin-top: 10px;
+		}
+		
+		#save_info {
+			color: #FFEBE0;
+			width: 100px;
+			height: 40px;
+			background-color: #3D7BC0;
+			display: block;
+			padding: 5px 10px;
+			margin: auto;
+			border-radius: 10px;
+			outline: none;
+			cursor: pointer;
+		}
+		#save_info:hover{
+		background:blue;
+		}
+		#button{
+			color: #FFEBE0;
+			background-color: #3D7BC0;
+			display: block;
+			width: 75px;
+			padding: 5px 10px;
+			margin: auto;
+			border-radius: 10px;
+			outline: none;
+			cursor: pointer;
+			float: left;
+		}
+		#button:hover{
+		background-color:blue;
+		}
+		#return_login {
+			color: #FFEBE0;
+			width: 100px;
+			height: 40px;
+			background-color: #E6555F;
+			display: block;
+			padding: 5px 10px;
+			border-radius: 10px;
+			outline: none;
+			float: left;
+			margin-left: 40px;
+			cursor: pointer;
+		}
+		
+		#man_model1 {
+			width: 54px;
+			height: 81px;
+			background-color: red;
+			float: left;
+			margin: 0px 100px;
+			background: url(../images/data/model/mheadA.png) no-repeat;
+			background-size: 54px 81px;
+			cursor: pointer;
+		}
+		
+		#man_model1:hover {
+			box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+		}
+		
+		#man_model2:hover {
+			box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+		}
+		
+		#man_model2 {
+			width: 54px;
+			height: 81px;
+			background-color: blue;
+			margin: 20px 170px;
+			background: url(../images/data/model/mheadB.png) no-repeat;
+			background-size: 54px 81px;
+			cursor: pointer;
+		}
+		
+		#woman_model1 {
+			width: 54px;
+			height: 81px;
+			background-color: red;
+			float: left;
+			margin: 0px 100px;
+			background: url(../images/data/model/wheadA.png) no-repeat;
+			background-size: 54px 81px;
+			cursor: pointer;
+		}
+		
+		#woman_model1:hover {
+			box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+		}
+		
+		#woman_model2:hover {
+			box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+		}
+		
+		#woman_model2 {
+			width: 54px;
+			height: 81px;
+			background-color: blue;
+			margin: 20px 170px;
+			background: url(../images/data/model/wheadB.png) no-repeat;
+			background-size: 54px 81px;
+			cursor: pointer;
+		}
+		
+		#regi a {
+			position: relative;
+			top: -30px;
+			font-size: 10px;
+			left: -10px;
+		}
+		
+		#head {
+			background-color: #DBECF9;
+		}
+		
+		#nid {
+			width: 10%;
+			height: 100%;
+			margin-left: 2%;
+			display: block;
+		}
+
+		#dream {
+			width: 20%;
+			height: 100%;
+			background: url(../images/ui//themeBanner.png) no-repeat;
+			background-size: 100% 100%;
+			position: relative;
+			left: 80%;
+			top: -100%;
+		}
+		#clothMod{
+			width: 280px;
+			height: 160px;
+			display:none;
+			background: url(../images/ui/glass.png) no-repeat;
+			box-shadow: 1px 1px 2px #666, 3px 3px 10px rgba(39, 30, 40, 0.5), 5px 5px 2px rgba(39, 30, 40, 0.1);
+			float:left;
+			margin-left:20px;
+			margin-top:20px;
+		}
+		#cloth{
+			width:955px;
+			height:550px;
+			margin:auto;
+			margin-top:3%;
+		}
+		#cloth ul{
+			float:left;
+			list-style:none;
+		}
+		#cloth ul p{
+			width:1060px;
+			height:550px;
+			float:left;
+			position:absolute;
+		}
+		
+		#Clothing_category {
+			background-color: green;
+			display: block;
+			width: 270px;
+			height: 30px;
+			margin-left: 4px;
+			text-align: center;
+			line-height: 30px;
+			background: url(../images/ui/suitTitle.png) no-repeat;
+			background-size: 273px 32px;
+			box-shadow: 1px 1px 1px #666, 3px 3px 1px rgba(39, 30, 40, 0.5), 4px 4px 1px rgba(39, 30, 40, 0.1);
+			cursor: pointer;
+			border-radius:10px;
+		}
+		#pageNumber{
+			height:50px;
+			width:200px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:30px;
+		}
+		#addType{
+			margin-top:-10px;
+			margin-right:10px;
+			float:right;
+			width:60px;
+		}
+		#deleteType{
+			margin-top:-10px;
+			margin-right:10px;
+			float:right;
+			width:60px;
+			background-color:#E85761;
+		}
+		#deleteType:hover{
+		background-color:red;
+		}
+		#saveType{
+		   	margin-top:-10px;
+			margin-right:10px;
+			float:right;
+			width:60px;
+		}
+		#prev{
+			float:left;
+			margin-left:20px;
+			
+		}
+		#next{
+			float:left;
+			margin-left:20px;
+		}
+		#twoButtom{
+			width:200px;
+			height:50px;
+			margin:auto;
+			margin-top:30px;
+		}
+		
+		

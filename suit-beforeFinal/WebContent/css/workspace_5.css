@@ -1,0 +1,232 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+
+
+#closethDressed{
+	width:500px;
+	margin-top:20px;
+	margin-left:100px;
+	z-index:1;
+}
+
+#closethDressedModle{
+	height:150px;
+	width:230px;
+	position:relative;
+	margin-left:20px;
+	margin-top:20px;
+	float:left;
+	display:none;
+	box-shadow: 0 0 8px grey;
+}
+#closethDressedModle #describeWord{
+	top:10px;
+	left:10px;
+}
+
+#closethDressedButton{
+	height:40px;
+	width:230px;
+	position:absolute;
+	bottom:0px;
+	float:left;
+}
+
+#closethDressedButton li{
+	width:40px;
+	height:40px;
+	float:right;
+	z-index:3;
+}
+
+#closethDressedButton li:nth-child(1){
+	background:url(../images/ui/remove.png) no-repeat;
+	background-size:100% 100%;
+	background-position:center center;
+}
+#closethDressedButton li:nth-child(2){
+	background:url(../images/ui/down.png) no-repeat;
+	background-size:100% 100%;
+	background-position:center center;
+}
+#closethDressedButton li:nth-child(3){
+	background:url(../images/ui/up.png) no-repeat;
+	background-size:100% 100%;
+	background-position:center center;
+}
+#closethDressedButton li:nth-child(4){
+	line-height:40px;
+	text-align:center;
+}
+#closethDressedButton li:nth-child(5){
+	background:url(../images/ui/zIndex.png) no-repeat;
+	background-size:100% 100%;
+	background-position:center center;
+}
+
+
+.buttom_5{
+	color: white;
+	padding: 5px 10px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#describeWord{
+	width: 180px;
+	height:100px;
+	z-index:5;
+	position:absolute;
+	bottom:0px;
+}
+#describeWord div{
+	width: 180px;
+	height: 30px;
+}
+#word_1 input{
+	background-color: red;
+}
+#word_2 input{
+	background-color: #3D7BC0
+}
+#word_3 input{
+	background-color: black;
+}
+
+
+
+
+
+
+#show{
+	height:700px;
+	width:500px;
+	top:20px;
+	margin-left:40%;
+	position:absolute;
+	z-index:0;
+}
+
+.model_imgs{
+	height:600px;
+	width:400px;
+	left:100px;	
+	top:0px;
+	position:absolute;
+	z-index:1;
+	background-size:100% 100%;
+	background-position:center center;
+}
+
+#ground{
+	width:500px;
+	height:500px;
+	margin-top:100px;
+	bottom:0px;
+	position:absolute;
+	background-color:blue;
+	background:url(../images/ui/ground.png) no-repeat;
+	z-index:0;
+}
+
+
+
+
+
+
+#price{
+	width:100px;
+	height:60px;
+	position:absolute;
+	bottom:20px;
+	right:0px;
+	text-align:center;
+	z-index:5;
+}
+
+#describePrice{
+	background-color:gray;
+	width:100px;
+	height:30px;
+	line-height:30px;
+}
+
+#totalPrice{
+	width:100px;
+	height:30px;
+	color:white;
+	background-color:black;
+}
+	
+
+
+#select{
+	position:absolute;
+	top:40px;
+	right:0px;
+	height:30px;
+	width:18%;
+	line-height:30px;
+	box-shadow:0 2px 3px -1px grey;
+}
+
+#closethSelect{
+	width:30%;
+	height:30px;
+	background-color:grey;
+}
+
+
+
+
+#selectCloseth{
+	height:650px;
+	width:200px;
+	position:absolute;
+	top:90px;
+	margin-left:75%;
+	z-index:2;
+	overflow-y:scroll;
+	overflow-x:hidden; 
+}
+
+
+
+#selectClosethModle{
+	height:300px;
+	width:170px;
+	z-index:3;
+	display:none;
+	left:10px;
+	margin-bottom:30px;
+	position:relative;
+	box-shadow: 0 0 8px grey;
+}
+
+#selectClosethModle_div{
+	width:170px;
+	height:210px;
+}
+
+#selectClosethModle_img{
+	width:170px;
+	height:210px;
+	z-index:3;
+	position:absolute;
+}
+
+
+#selectClosethModle_addClothes{
+	width:60px;
+	height:60px;
+	margin-left:110px;
+	z-index:4;
+	position:absolute;
+}
+
+#selectClosethModle_addClothes:hover{
+	cursor: pointer;
+}
+

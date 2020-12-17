@@ -1,0 +1,177 @@
+@charset "UTF-8";
+* {
+				padding: 0px;
+				margin: auto;
+			}
+			
+			#main {
+				width: 1920px;
+				height: 980px;
+				background: url(../images/ui/loginWindowBg1920.png) no-repeat;
+			}
+			
+			#regi {
+				width: 330px;
+				height: 400px;
+				position: relative;
+				top: 20%;
+				background-color: burlywood;
+				background: url(../images/ui/glass.png) no-repeat;
+				box-shadow: 1px 1px 2px #666, 3px 3px 10px rgba(39, 30, 40, 0.5), 5px 5px 2px rgba(39, 30, 40, 0.1);
+			}
+			
+			#top {
+				color: white;
+				background-color: black;
+				display: block;
+				width: 325px;
+				height: 30px;
+				margin: auto;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			#message {
+				width: 330px;
+				height: 50px;
+				display: block;
+				margin-top: 1%;
+				line-height: 50px;
+				border-radius: 5px;
+				font-size: 15px;
+				text-align: center;
+			}
+			
+			#message input {
+				width: 225px;
+				height: 20px;
+				margin-top: 10px;
+				border-radius: 5px;
+				background: rgba(255, 255, 255, 0);
+				box-shadow: 0px 1px #A7A7A7;
+				border: white;
+			}
+			
+			#m_or_wm {
+				font-size: 15px;
+				margin-left: 16px;
+				width: 330px;
+				height: 50px;
+				display: block;
+				margin-top: 1%;
+				line-height: 50px;
+				border-radius: 5px;
+				font-size: 15px;
+			}
+			
+			#model_selection {
+				background-color: green;
+				display: block;
+				width: 320px;
+				height: 30px;
+				margin-left: 4px;
+				text-align: center;
+				line-height: 30px;
+				background: url(../images/ui/subTitle.png) no-repeat;
+				background-size: 345px 30px;
+				box-shadow: 1px 1px 1px #666, 3px 3px 1px rgba(39, 30, 40, 0.5), 4px 4px 1px rgba(39, 30, 40, 0.1);
+				cursor:pointer;
+			}
+			
+			#login_botton {
+				width: 240px;
+				height: 40px;
+				display: block;
+				margin-top: 20px;
+			}
+			
+			#line {
+				width: 325px;
+				height: 1px;
+				background-color: white;
+				margin-top: 10px;
+			}
+			
+			#zhuce {
+				color: #FFEBE0;
+				width: 100px;
+				height: 40px;
+				background-color: #3D7BC0;
+				display: block;
+				padding: 5px 10px;
+				border-radius: 10px;
+				outline: none;
+				float: left;
+				cursor:pointer;
+			}
+			
+			#return_login {
+				color: #FFEBE0;
+				width: 100px;
+				height: 40px;
+				background-color: #E6555F;
+				display: block;
+				padding: 5px 10px;
+				border-radius: 10px;
+				outline: none;
+				float: left;
+				margin-left: 40px;
+				cursor:pointer;
+			}
+			
+			#man_model1 {
+				width: 54px;
+				height: 81px;
+				background-color: red;
+				float: left;
+				margin: 0px 100px;
+				background: url(../images/data/model/mheadA.png) no-repeat;
+				background-size: 54px 81px;
+				cursor:pointer;
+			}
+			
+			#man_model1:hover {
+				box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+			}
+			
+			#man_model2:hover {
+				box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+			}
+			
+			#man_model2 {
+				width: 54px;
+				height: 81px;
+				background-color: blue;
+				margin: 20px 170px;
+				background: url(../images/data/model/mheadB.png) no-repeat;
+				background-size: 54px 81px;
+				cursor:pointer;
+			}
+			#woman_model1 {
+				width: 54px;
+				height: 81px;
+				background-color: red;
+				float: left;
+				margin: 0px 100px;
+				background: url(../images/data/model/wheadA.png) no-repeat;
+				background-size: 54px 81px;
+				cursor:pointer;
+			}
+			
+			#woman_model1:hover {
+				box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+			}
+			
+			#woman_model2:hover {
+				box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+			}
+			
+			#woman_model2 {
+				width: 54px;
+				height: 81px;
+				background-color: blue;
+				margin: 20px 170px;
+				background: url(../images/data/model/wheadB.png) no-repeat;
+				background-size: 54px 81px;
+				cursor:pointer;
+			}

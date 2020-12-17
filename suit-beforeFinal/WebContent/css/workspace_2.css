@@ -1,0 +1,236 @@
+#personInfo{
+	width: 1000px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:200px;
+}
+#personInfo tr th{
+	text-align: center;
+}
+
+#personInfo tr th:hover{
+	background-color: mediumslateblue;
+}
+
+#personInfo tr td{
+	text-align: center;
+}
+
+
+#personInfo tr td:hover{
+	background-color:#989899;
+}
+#tableTop{
+	height: 30px;
+	background-color:#9CBFE7;
+	margin:auto;
+}
+
+.hidden_div{
+	display: none;
+}
+
+.foot{
+	height:50px;
+	width:560px;
+	margin:auto;
+}
+
+.foot button{
+	margin-right:20px;
+}
+
+.foot span{
+	margin-right:10px;
+}
+
+.foot_word{
+	float:left;
+}
+
+#page{
+	width:80px;
+}
+#saveUser{
+	background-color:#3D7BC0;
+}
+#saveUser:hover{
+	background-color:blue;
+}
+.buttom_2{
+	color: #FFEBE0;
+	background-color: #3D7BC0;
+	display: block;
+	width: 75px;
+	padding: 5px 10px;
+	margin: auto;
+	border-radius: 10px;
+	outline: none;
+	cursor: pointer;
+	float: left;
+}
+.buttom_2:hover{
+	background-color:blue;
+	translate:all 1s;
+}
+.buttom_1{
+	color: #FFEBE0;
+	background-color: red;
+	display: block;
+	width: 75px;
+	padding: 5px 10px;
+	margin: auto;
+	border-radius: 10px;
+	outline: none;
+	cursor: pointer;
+	float: left;
+}
+#updateUser{
+	width: 330px;
+	height: 570px;
+	background: url(../images/ui/glass.png) no-repeat;
+	box-shadow: 1px 1px 2px #666, 3px 3px 10px rgba(39, 30, 40, 0.5), 5px 5px 2px rgba(39, 30, 40, 0.1);
+	position: absolute;
+	left: 45%;
+	top: 10%;
+	background-color:#EEEEEE;
+	display:none;
+}
+#updateUser a {
+	position: relative;
+	top: -30px;
+	font-size: 10px;
+	left: -10px;
+}
+#message1 {
+	width: 330px;
+	height: 50px;
+	display: block;
+	margin-top: 1%;
+	line-height: 50px;
+	border-radius: 5px;
+	font-size: 15px;
+	text-align: center;
+}
+		
+#message1 input {
+	width: 225px;
+	height: 20px;
+	margin-top: 10px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0);
+	box-shadow: 0px 1px #A7A7A7;
+	border: white;
+}
+#saveUser{
+	color: #FFEBE0;
+	width: 100px;
+	height: 40px;
+	background-color: #3D7BC0;
+	display: block;
+	padding: 5px 10px;
+	float:left;
+	margin-left:10px;
+	border-radius: 10px;
+	outline: none;
+	cursor: pointer;
+}
+#closeWindow{
+	color: #FFEBE0;
+	width: 100px;
+	height: 40px;
+	background-color: rgb(232, 87, 97);
+	display: block;
+	padding: 5px 10px;
+	float:left;
+	border-radius: 10px;
+	outline: none;
+	cursor: pointer;
+	margin-left:10px;
+}
+#closeWindow:hover{
+	background-color:red;
+}
+#twoButt{
+	width:230px;
+	height:40px;
+	margin:auto;
+}
+#m_or_wm1 {
+	font-size: 15px;
+	margin-left: 16px;
+	width: 330px;
+	height: 50px;
+	display: block;
+	margin-top: 1%;
+	line-height: 50px;
+	border-radius: 5px;
+	font-size: 15px;
+}
+#isAdm {
+	font-size: 15px;
+	margin-left: 16px;
+	width: 330px;
+	height: 50px;
+	display: block;
+	margin-top: 1%;
+	line-height: 50px;
+	border-radius: 5px;
+	font-size: 15px;
+}
+#man_model3 {
+	width: 54px;
+	height: 81px;
+	background-color: red;
+	float: left;
+	margin: 0px 100px;
+	background: url(../images/data/model/mheadA.png) no-repeat;
+	background-size: 54px 81px;
+	cursor: pointer;
+}
+#man_model3:hover {
+	box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+}
+		
+#man_model4:hover {
+	box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+}
+		
+#man_model4 {
+	width: 54px;
+	height: 81px;
+	background-color: blue;
+	margin: 20px 170px;
+	background: url(../images/data/model/mheadB.png) no-repeat;
+	background-size: 54px 81px;
+	cursor: pointer;
+}
+		
+#woman_model3 {
+	width: 54px;
+	height: 81px;
+	background-color: red;
+	float: left;
+	margin: 0px 100px;
+	background: url(../images/data/model/wheadA.png) no-repeat;
+	background-size: 54px 81px;
+	cursor: pointer;
+	}
+		
+#woman_model3:hover {
+	box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+	}
+		
+#woman_model4:hover {
+	box-shadow: 5px 5px 5px #666, -2px -2px 2px white;
+}
+		
+#woman_model4 {
+	width: 54px;
+	height: 81px;
+	background-color: blue;
+	margin: 20px 170px;
+	background: url(../images/data/model/wheadB.png) no-repeat;
+	background-size: 54px 81px;
+	cursor: pointer;
+}
