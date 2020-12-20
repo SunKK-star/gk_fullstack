@@ -1,0 +1,230 @@
+@charset "UTF-8";
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0.8;
+}
+.content_title {
+  text-align: center;
+}
+
+.user-wrapper {
+  padding: 50px 60px;
+  width: 480px;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-size: cover;
+  box-shadow: 5px 5px 10px #000000;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #000000;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.field input {
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  font-size: medium;
+}
+
+.radio_button label {
+  color: #000;
+}
+.radio_button label:nth-child(3) {
+  margin-left: 25px;
+}
+.gender_select {
+  margin-left: 25px;
+}
+
+.selectbutton {
+  width: 50%;
+  height: 38px;
+  margin: 20px auto;
+}
+
+.selectbutton button {
+  width: 100%;
+  height: 38px;
+  background-color: tomato;
+  font-size: large;
+}
+
+.selectmodel {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0 7px;
+}
+#womanModel {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+#manModel {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.manModelA {
+  flex: 1;
+  height: 100%;
+  width: 80px;
+  background-image: url(../images/data/model/mheadA.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+}
+
+.manModelB {
+  flex: 1;
+  height: 100%;
+  width: 80px;
+  background-image: url(../images/data/model/mheadB.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+}
+
+.womanModelA {
+  flex: 1;
+  height: 100%;
+  width: 80px;
+  background-image: url(../images/data/model/wheadA.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+}
+
+.womanModelB {
+  flex: 1;
+  height: 100%;
+  width: 80px;
+  background-image: url(../images/data/model/wheadB.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+}
+
+
+
+.model {
+  cursor: pointer;
+  position: relative;
+ 
+}
+
+.model:hover {
+  top: -5px;
+  border: 2px solid #292421;
+  box-shadow: 2px 2px 3px #000;
+  transition: all ease 0.4s;
+}
+
+.model:active {
+  transition: all ease 800ms;
+  color: red;
+}
+
+
+.clicked {
+  width: 80px;
+  height: 120px;
+  position: relative;
+  top: -5px;
+  border: 2px solid #292421;
+  box-shadow: 2px 2px 3px #000;
+  transition: all ease 0.4s;
+}
+
+
+
+
+
+
+.button {
+            height: 40px;
+            width:100px;
+            padding: 0 2em;
+            background-color: #dedede;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            transition: all ease 800ms;
+            -webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+        }
+
+        .button:hover {
+            background-color: #fff;
+            color: red;
+        }
+
+        .button:before, button:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: green;
+            transition: all ease 400ms;
+        }
+
+        .button:after {
+            top: inherit;
+            right: inherit;
+            left: 0;
+            bottom: 0;
+        }
+
+        .button:hover:after, button:hover:before {
+            width: 100%;
+            transition: all ease 800ms;
+        }
+        .divspan {
+			background-image: url(../images/ui/subTitle.png);
+			text-align: center;
+		}
+		
+		
+		.main{
+        position:relative;
+        top:100px;
+        left:-40px;
+		}
+		
+		.saveMessage {
+		  width: 55%;
+	  	  height: 40px;
+		  border-radius: 10px;
+		  background-color: #ffc107;
+		  font-size: 20px;
+		  color: #fff;
+		  font-size: 20px;
+		  margin: 20px 0 0 80px;
+		  border: none;
+            outline: none;
+            cursor: pointer;
+		  
+		}
+		.saveMessage:hover {
+            background-color: #808080;
+            color: #fff;
+            
+        }

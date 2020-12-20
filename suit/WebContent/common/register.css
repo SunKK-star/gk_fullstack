@@ -1,0 +1,240 @@
+.register {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-sizing: border-box;
+  background: url(../images/ui/bg.jpg) no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+.content_title {
+  text-align: center;
+}
+
+.register-wrapper {
+  padding: 50px 60px;
+  width: 520px;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-size: cover;
+  box-shadow: 5px 5px 10px #000000;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #000000;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.field input {
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  font-size: medium;
+}
+
+.radio_button label {
+  color: #000;
+}
+.gender_select {
+  margin-left: 25px;
+}
+
+.selectbutton {
+  width: 50%;
+  height: 38px;
+  margin: 20px auto;
+}
+
+.selectbutton button {
+  width: 100%;
+  height: 38px;
+  background-color: tomato;
+  font-size: large;
+}
+
+.selectmodel {
+  width: 50%;
+  margin: 0 auto  ;
+}
+#showdiv2 {
+  display: none;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+#showdiv1 {
+  display: none;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.manModelA {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  background-image: url(../images/data/model/mheadA.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+  justify-content: center;
+}
+
+.manModelB {
+  flex: 1;
+  height: 100%;
+  background-image: url(../images/data/model/mheadB.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+  justify-content: center;
+}
+
+.womanModelA {
+  flex: 1;
+  height: 100%;
+  background-image: url(../images/data/model/wheadA.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+  justify-content: center;
+}
+
+.womanModelB {
+  flex: 1;
+  height: 100%;
+  background-image: url(../images/data/model/wheadB.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 120px;
+  justify-content: center;
+}
+
+
+
+.model {
+  cursor: pointer;
+  position: relative;
+ 
+}
+
+.model:hover {
+  top: -5px;
+  border: 2px solid #292421;
+  box-shadow: 2px 2px 3px #000;
+  transition: all ease 0.4s;
+}
+
+.model:active {
+  transition: all ease 800ms;
+  background-color: red;
+}
+
+
+.clicked {
+  position: relative;
+  top: -5px;
+  border: 2px solid #292421;
+  box-shadow: 2px 2px 3px #000;
+  transition: all ease 0.4s;
+}
+
+
+
+
+.register-btn, .login-btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.register-btn button {
+  width: 60%;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ffc107;
+  font-size: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.login-btn button {
+  width: 60%;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ffc107;
+  font-size: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+
+
+.bd {
+  position: fixed;
+  top: -50px;
+  right: -150px;  
+  z-index: 20;
+}
+.bd img {
+  width: 100%;
+  height: 150%;
+  background-size: cover;
+} 
+
+
+
+
+.button {
+            height: 40px;
+            width:100px;
+            padding: 0 2em;
+            background-color: #dedede;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            transition: all ease 800ms;
+            -webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+        }
+
+        .button:hover {
+            background-color: #fff;
+            color: #ffc107;
+        }
+
+        .button:before, button:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffc107;
+            transition: all ease 400ms;
+        }
+
+        .button:after {
+            top: inherit;
+            right: inherit;
+            left: 0;
+            bottom: 0;
+        }
+
+        .button:hover:after, button:hover:before {
+            width: 100%;
+            transition: all ease 800ms;
+        }
+        
