@@ -1,0 +1,275 @@
+/*总容器*/
+.Container{
+	background-image: url(../images/ui/workspace.png);
+	width: 100%;
+	height: 100%;
+	background-color: #a3aab2;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*选择框*/
+#categoryChooseContainer{
+	width: 300px;
+	height: 30px;
+	position: fixed;
+	right: 0px;
+}
+.selectLabel{
+	font-size: 20px;
+	line-height: 30px;
+	width: 100px;
+	height: 100%;
+	font-family: "微软雅黑";
+}
+.selectForCategory{
+	width: 150px;
+	height: 30px;
+	background-color: #798089;
+	text-align: center;
+	font-size: 16px;
+	color: white;
+}
+
+/*添加衣服容器*/
+#suitAddContainer{
+	width: 200px;
+	/*position: fixed;
+	right: 40px;
+	top: 40px;*/
+	float: right;
+	margin-right: 40px;
+	margin-top: 40px;
+}
+/*显示衣服的盒子*/
+.addDivClass{
+	margin-top: 10px;
+	width: 100%;
+	height: 300px;
+	background-image: url(../images/ui/glass.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: none;
+}
+/*添加的衣服按钮*/
+#addBtn{
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/ui/add.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	float: right;
+}
+/*衣服图片*/
+#suitImg{
+	width: 150px;
+	height: 150px;
+	margin-left: 20px;
+	float: left;
+	background-image: url(../images/data/suits/mTShirt01.png);
+	background-repeat: no-repeat;
+	background-size:100% 100%;
+}
+/*衣服信息Div*/
+#suitInfo{
+	width:200px;
+	height: 99px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#infoRow{
+	width: 100%;
+	height: 33px;
+	line-height: 33px;
+}
+/*文本标题*/
+.infoTitle{
+	font-family:"黑体";
+	font-size: 20px;
+	width: 60px;
+}
+/*文本域*/
+.infoText1{
+	font-family: "微软雅黑";
+	color: orange;
+	font-size: 18px;
+	background-color: red;
+	border-radius: 5px;
+}
+.infoText2{
+	font-family: "微软雅黑";
+	color: cornsilk;
+	font-size: 18px;
+	background-color: blue;
+	border-radius: 5px;
+}
+.infoText3{
+	font-family: "微软雅黑";
+	color: white;
+	font-size: 18px;
+	background-color: black;
+	border-radius: 5px;
+}
+
+/*模特容器*/
+#modelContainer{
+	width:500px;
+	height: 700px;
+	position: fixed;
+	right: 300px;
+	
+}
+#ground{
+	width: 500px;
+	height: 500px;
+	background-image: url(../images/ui/ground.png);
+	position: absolute;
+	top: 200px;
+	
+}
+#shadow{
+	width: 354px;
+	height: 600px;
+	background-image: url(../images/data/model/modelShadow.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	
+	left: 73px;
+	top: 50px;
+}
+#model{
+	width: 354px;
+	height: 600px;
+	background-image: url(../images/data/model/mheadAModel.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	left: 73px;
+	top: 50px;
+}
+#money{
+	width:80px;
+	height: 40px;
+	position: absolute;
+	bottom: 45px;
+	right: 30px;
+	text-align: center;
+	border-radius: 10px;
+	border: 2px solid brown;
+}
+#moneyTitle{
+	width: 100%;
+	height: 20px;
+	font-family: arial;
+	line-height: 20px;
+	font-size: 15px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color: #FFA500;
+}
+#moneyCount{
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	width: 100%;
+	height: 20px;
+	font-family: "微软雅黑" ;
+	font-size: 13px;
+	line-height: 20px;
+	background-color: black;
+	color: white;
+}
+.suitClass{
+	width: 354px;
+	height: 600px;
+	/*background-image: url(../images/data/suits/mOutWear01.png);*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	display: none;
+	z-index: 1;
+	left: 73px;
+	top: 50px;
+}
+
+/*已穿的衣服容器*/
+#suitContainer{
+	width: 540px;
+	/*position: fixed;
+	left: 30px;
+	top: 30px;*/
+	margin-left: 10px;
+	margin-top: 30px;
+	float: left;
+}
+.suitDivClass{
+	width: 260px;
+	height: 180px;
+	float: left;
+	background-image: url(../images/ui/glass.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 5px;
+	display: none;
+}
+#suitInfoDiv{
+	float: left;
+	width: 240px;
+	height: 100px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+#Btns{
+	float: right;
+	width: 180px;
+	height: 40px;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+#Btn1{
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/ui/zIndex.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	float: left;
+	border: 0px;
+}
+#Zindex{
+	width: 20px;
+	height: 40px;
+	line-height: 40px;
+	font-family: arial;
+	font-size: 20px;
+	text-align: center;
+	float: left;
+	
+}
+#Btn2{
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/ui/up.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	float: left;
+	border: 0px;
+}
+#Btn3{
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/ui/down.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	float: left;
+	border: 0px;
+}
+#Btn4{
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/ui/remove.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	float: left;
+	border: 0px;
+}

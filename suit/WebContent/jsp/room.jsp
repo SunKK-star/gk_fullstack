@@ -80,32 +80,23 @@
 		}
 		
 		.main-formuser {
-			background-image: url(<%=basePath%>/images/ui/glass.png);
-			background-color: #b1b6bf;
-			border-bottom-left-radius: 5px;
-			border-top-left-radius: 5px;
-			border-bottom-right-radius: 5px;
-			border-top-right-radius: 5px;
-			background-position: center top;
-			background-repeat: no-repeat;
-			background-attachment: scroll;
-			background-size: 100% 100%;
+			
+			background-color: #000;
+			opacity: 0.5;
+			border-radius: 5px;
+  			box-shadow: 5px 5px 10px #000;
 		}
 		
 		.main-form1 {
 			width: 80%;
-			padding: 25px;
+			padding: 25px 40px;
 			paddong-top:20px;
-			-webkit-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-			-moz-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-			-o-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-			box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
 		}
 		
 		.divline {
 			width: 100%;
 			height: 24px;
-			position: relative;
+			display: flex;
 		}
 		
 		.suitinput {
@@ -126,18 +117,13 @@
 		}
 		
 		.suitp {
-			image-orientation: ;
 			display: block;
-			width: 35%;
+			width: 60px;
 			font-size: 18px;
 			line-height: 1.4;
-			color: #000000;
+			color: #fff;
 			background-color: transparent;
-			float: left;
-			text-align: right;
-			display: table-cell;
-			position: absolute;
-			bottom: 0px;
+			text-align: left;
 		}
 		
 		.divN {
@@ -205,33 +191,34 @@
 	color: white;
 }
 		.infoText1 {
-		    margin-left: 35%;
-		
+		padding-left: 10px;
+		    width: 150px;
 			font-family: "微软雅黑";
 			color:cornsilk;
+			opacity: 1;
 			font-size: 18px;
-			background-color: #394a6d;
-			border-radius: 5px;
+			background-color: #fc7978;
+			border-radius: 2px;
 		}
 		
 		.infoText2 {
-		    margin-left: 35%;
-		
+			padding-left: 10px;
+		    width: 150px;
 			font-family: "微软雅黑";
 			color: cornsilk;
 			font-size: 18px;
 			background-color: #6886c5;
-			border-radius: 5px;
+			border-radius: 2px;
 		}
 		
 		.infoText3 {
-		    margin-left: 35%;
-		
+		padding-left: 10px;
+		    width: 150px;
 			font-family: "微软雅黑";
 			color: white;
 			font-size: 18px;
-			background-color: #FAACA8;
-			border-radius: 5px;
+			background-color: aqua;
+			border-radius: 2px;
 		}
 		#categoryChooseContainer{
 		border: 1px solid #798089;
@@ -337,12 +324,12 @@
 				</div>
 				<div class="divmain1" style="float: left;width: 100%;height:800px;overflow:auto;">
 					<div id="suitProto" class="divN" style="width:90%;padding: 5%;display:none;">
-						<form action="#" class="main-form1 main-formuser" style="float: left;padding: 0;width: 100%; background-color:rgba(255,255,255,0.2);">
+						<form action="#" class="main-form1 main-formuser" style="float: left;padding: 0;width: 100%; background-color:rgba(0,0,0,0.8);">
 
 							<div id="addBtn"><img id="addSuit" src="<%=basePath%>/images/data/suits/add.png" width="100%"></div>
 				            <div id="suitImg"><img src="<%=basePath%>/images/data/suits/mJean01.png" width="50%"></div>
 
-							<div style="width: 100%; float: left;">
+							<div style="width: 100%; float: left; margin-left: 20px;">
 								<div class="divline"><p class="suitp">编号： </p><span id="suitcode" class="infoText1">1</span></div><br>
 							    <div class="divline"><p class="suitp">名称： </p><span id="suitname" class="infoText2">1</span></div><br>
 						        <div class="divline"><p class="suitp">价格： </p><span id="price" class="infoText3">1</span></div><br>

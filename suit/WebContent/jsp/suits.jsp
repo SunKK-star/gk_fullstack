@@ -16,6 +16,10 @@
 
 <link href="<%=basePath%>/css/main.css" rel="stylesheet" type="text/css">
 
+<link href="<%=basePath%>/css/main.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/common/suits.css" />
+
 <link href="<%=basePath%>/css/jquery.fileupload.css" rel="stylesheet" type="text/css">
 
 <link href="<%=basePath%>/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css">
@@ -67,6 +71,8 @@ a.button:active {
 	top: 6px;
 }
 
+
+
 .bodysuits {
 	width: 100%;
 	height: 100%;
@@ -97,16 +103,22 @@ a.button:active {
 }
 
 .suitTilte {
-	background-image: url(<%=basePath%>/images/ui/suitTitle.png);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-size: 100% 100%;
+	
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  background-color: #6886c5;
+  border-radius: 5px;
 	text-align: center;
+	
 	
 }
 
 .divline {
+display: flex;
+margin: 20px 0;
+margin: 20px 0;
+  align-items: center;
 	width: 100%;
 	height: 34px;
 	position: relative;
@@ -114,28 +126,26 @@ a.button:active {
 }
 
 .divline p{
-color:#6886c5;}
+color:#6886c5;
+}
 .suitinput {
 	display: block;
-	width: 70%;
-	height: 34px;
 	font-size: 18px;
 	line-height: 1.4;
-	color: #fc7978;
-	background-color: transparent;
-	border: 1px solid #000000;
-	border-left: none;
-	border-right: none;
-	border-top: none;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	margin-left: 25%;
+	color: #fff;
+	width: 250px;
+  height: 30px;
+  background-color: #000;
+  border: none;
+  outline: none;
+	margin: 10px 0  0 22%;
 	text-align: center;
+	border-radius: 5px;
 }
 
 .suitp {
 	display: block;
-	width: 25%;
+	width: 20%;
 	font-size: 18px;
 	line-height: 1.4;
 	color: #000000;
@@ -148,8 +158,8 @@ color:#6886c5;}
 }
 
 .main-formuser {
-	background-image: url(<%=basePath%>/images/ui/glass.png);
-	background-color: #b1b6bf;
+	background-color: rgba(0, 0, 0, 0.55);
+	box-shadow: 5px 5px 10px #000000;
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -159,10 +169,6 @@ color:#6886c5;}
 .main-form1 {
 	width: 80%;
 	padding: 20px;
-	-webkit-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-	-o-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-	box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
 }
 
 .selectLabel {
@@ -183,6 +189,7 @@ color:#6886c5;}
 	text-align: center;
 	font-size: 16px;
 	border: none;
+	color: #fc7978;
 }
 
 .sex_select {
@@ -192,18 +199,25 @@ color:#6886c5;}
 	text-align: center;
 	font-size: 16px;
 	border: none;
+	color: #fc7978;
 }
 
 .button {
 	height: 35px;
 	padding: 0 2em;
-	background-color: #dedede;
+	background-color: #6886c5;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	position: relative;
 	transition: all ease 800ms;
+	border-radius: 5px;
 }
+
+#del {
+	
+}
+
 
 .button:hover {
 	background-color: #fff;
@@ -232,6 +246,11 @@ color:#6886c5;}
 	transition: all ease 800ms;
 }
 
+#touch {
+	color: #000;
+}
+
+
 #touch:hover{
 	cursor:pointer;
 	color:red;
@@ -251,7 +270,7 @@ color:#6886c5;}
 			<span class="selectLabel">服饰类别：</span>
 			<select style="float: left; width: 120px;" class="type_select"></select>
 		</div>
-		<div style="float: left;margin-left:5px">
+		<div style="float: left;margin-left:15px">
 			<button class="button" onclick="doSearch()">查询</button>
 		</div>
 	</div>
@@ -260,36 +279,36 @@ color:#6886c5;}
 
 			<form class="main-form1 main-formuser" style="float: left;">
 				<div class="suitTilte">服饰细目</div>
-				<div style="width: 100%; float: left; border-bottom: 1px solid #FFFFFF;">
+				<div style="width: 100%; float: left; border-bottom: 1px solid #FFFFFF; margin-top: 10px">
 					<div id="divl" style="width: 100%; float: left;">
 
 						<div class="divline">
 							<p class="suitp">编号：</p>
 							<input id="code" class="suitinput" autocomplete="off" />
 						</div>
-						<br>
+						
 						<div class="divline">
 							<p class="suitp">名称：</p>
 							<input id="suitname" class="suitinput" type="text" autocomplete="off" />
 						</div>
-						<br>
+						
 						<div class="divline">
 							<p class="suitp">价格：</p>
 							<input id="price" class="suitinput" type="text" autocomplete="off" />
 						</div>
-						<br>
+						
 						<div class="divline">
 							<p class="suitp">性别：</p>
 							<select class="suitinput sex_select">
 							</select>
 						</div>
-						<br>
+						
 						<div class="divline">
 							<p class="suitp">分类：</p>
 							<select class="suitinput type_select">
 							</select>
 						</div>
-						<br>
+						
 
 					</div>
 					<div id="divr" style="width: 50%; float: left; display: none">

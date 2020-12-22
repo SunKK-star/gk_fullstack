@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 <script src="<%=basePath%>/js/jquery.min.js" type="text/javascript"></script>
 <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
 
@@ -23,89 +24,12 @@
 <link href="<%=basePath%>/css/jquery.fileupload.css" rel="stylesheet" type="text/css">
 
 <link href="<%=basePath%>/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/common/suittype.css" />
+
 <title></title>
 </head>
-<style>
-* {
-	padding: 0;
-	margin: 0;
-}
 
-.body3 {
-	width: 100%;
-}
-
-.divN {
-	width: 20%;
-	float: left;
-	text-align: center;
-	padding: 40px;
-}
-
-.suitTilte {
-	background-image: url(<%=basePath%>/images/ui/suitTitle.png);
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-size: 100% 100%;
-	text-align: center;
-}
-
-.divline {
-	width: 100%;
-	height: 34px;
-	position: relative;
-}
-
-.suitinput {
-	display: block;
-	width: 70%;
-	height: 34px;
-	font-size: 14px;
-	line-height: 1.4;
-	color: #fc7978;
-	background-color: transparent;
-	border: 1px solid #000000;
-	border-left: none;
-	border-right: none;
-	border-top: none;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	margin-left: 25%;
-}
-
-.suitp {
-	display: block;
-	width: 25%;
-	font-size: 14px;
-	line-height: 1.4;
-	color: #6886c5;
-	background-color: transparent;
-	float: left;
-	text-align: right;
-	display: table-cell;
-	position: absolute;
-	bottom: 0px;
-}
-
-.main-formuser {
-	background-image: url(<%=basePath%>/images/ui/glass.png);
-	background-color: #b1b6bf;
-	border-bottom-left-radius: 5px;
-	border-top-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-top-right-radius: 5px;
-}
-
-.main-form1 {
-	width: 70%;
-	padding: 30px;
-	-webkit-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-	-o-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-	box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
-}
-</style>
 
 <body onLoad="doInit()" style="display:none" id="body">
 	<div class="divN" id="div1">
@@ -115,20 +39,17 @@
 				<p class="suitp">编号：</p>
 				<input id="code" class="suitinput" type="text" autocomplete="off" />
 			</div>
-			<br>
 			<div class="divline">
 				<p class="suitp">名称：</p>
 				<input id="typename" class="suitinput" type="text" autocomplete="off" />
 			</div>
-			<br>
-
-			<div style="float: right;">
-				<center>
-					<input type="hidden" id="update" value="保存" />
-					<input type="button" id="add" value="添加"/>
-					<input type="hidden" id="del" value="删除 "/>
-					<input id="idvalue" type="hidden" autocomplete="off" />
-				</center>
+		
+			<div class="changebtn">
+			
+					<input type="hidden" class="btner" id="update" value="保存" />
+					<input type="button" class="btner" id="add" value="添加"/>
+					<input type="hidden" class="btner" id="del" value="删除 "/>
+					<input id="idvalue" class="btner" type="hidden" autocomplete="off" />
 			</div>
 		</form>
 	</div>

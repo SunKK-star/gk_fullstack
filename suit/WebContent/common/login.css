@@ -1,5 +1,5 @@
 .login {
-  background: url(../images/ui/bg3.jpg) no-repeat;
+  background: url(../images/ui/BD1.png) no-repeat;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -23,7 +23,7 @@
   padding: 50px 60px;
   width: 420px;
   height: 60%;
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.8);
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 5px 5px 10px #000000;

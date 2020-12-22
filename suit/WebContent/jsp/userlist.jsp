@@ -9,9 +9,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script type="text/javascript" src="<%=basePath%>/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/main.css" />  
+<script type="text/javascript" src="<%=basePath%>/js/jquery.min.js"></script>  
 <script type="text/javascript" src="<%=basePath%>/js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/common/base.css" />
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/common/icon.css" />
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/common/userlist.css" />
+
 
 <title></title>
 </head>
@@ -41,7 +44,7 @@
 		
 		.main-formuser {
 			background-image: url(../images/ui/glass.png);
-			background-color: #b1b6bf;
+			
 		}
 		
 		table.hovertable {
@@ -95,43 +98,34 @@
 		.divline {
 			width: 100%;
 			height: 34px;
-			position: relative;
+			margin: 20px 0;
+			padding: 0 20px;
 		}
 		
 		.suitinput {
-			display: block;
-			width: 70%;
-			height: 34px;
-			font-size: 14px;
-			line-height: 1.4;
-			color: #555;
-			background-color: transparent;
-			border: 1px solid #000000;
-			border-left: none;
-			border-right: none;
-			border-top: none;
-			border-bottom-left-radius: 5px;
-			border-bottom-right-radius: 5px;
-			margin-left: 25%;
+		width: 100%;
+			 
+			display: inline-block;
+  height: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  position: relative;
+  top: -3px;
 		}
 		
 		.suitp {
-			display: block;
+			display: inline-block;
 			width: 25%;
 			font-size: 14px;
 			line-height: 1.4;
 			color: #000000;
 			background-color: transparent;
-			float: left;
-			text-align: right;
-			display: table-cell;
-			position: absolute;
-			bottom: 0px;
 		}
 		
 		.main-formuser {
-			background-image: url(<%=basePath%>/images/ui/glass.png);
-			background-color: #b1b6bf;
+			
+			background-color: #dedede;
 			border-bottom-left-radius: 5px;
 			border-top-left-radius: 5px;
 			border-bottom-right-radius: 5px;
@@ -163,16 +157,7 @@
             color: #af8baf;
         }
 
-        button:before, button:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background-color: #af8baf;
-            transition: all ease 400ms;
-        }
+        
 
         button:after {
             top: inherit;
@@ -206,73 +191,77 @@
 			</center>
 		</div>
 
-		<div id="editDialog" style=" width:400px;position: absolute; display:none;float: left;">
-			<form action="#" class="main-form1 main-formuser" style="float: left;">
-				<div style="width: 100%; float: left;">
-					<center>
-						<h2>用户信息</h2>
-					</center>
-					<div class="divline">
-						<p class="suitp">用户名称：</p>
-						<input id="username" class="suitinput" type="text" autocomplete="off" disabled="disabled"/>
-					</div>
-					<div class="divline">
-						<p class="suitp">用户实名：</p>
-						<input id="realname" class="suitinput" type="text" autocomplete="off" />
-					</div>
-					<div class="divline">
-						<p class="suitp">密码：</p>
-						<input id="password" class="suitinput" type="password" placeholder="密码（若不修改置为空）" autocomplete="off" />
-					</div>
-					<div class="divline">
-						<p class="suitp">密码确认：</p>
-						<input id="password2" class="suitinput" type="password" placeholder="密码确认（若不修改置为空）" autocomplete="off" />
-						<br></div>
-					<div class="divline">
+		<div id="editDialog" style=" width:400px;position: absolute; display:none;float: left">
+			<form action="#" class="main-formuser" style="float: left;">
+			
+			
+			<div class="user-wrapper">
+			<div class="content_title">
+				<h1>用户信息</h1>
+			</div>
 
-						<p class="suitp">性别：</p>
+			<div class="field">
+			<input id="username" class="suitinput" type="text" autocomplete="off" disabled="disabled"/>
+				<i class="iconfont icon-zhanghao"></i>
+			</div>
 
-						<div class="suitinput" style="border-bottom: none;position: relative;">
-							<div style="position:absolute;bottom: 0px;">
-								<label><input name="sex" id="man" type="radio" value="1" autocomplete="off" />男</label>
-								<label><input name="sex" id="woman" type="radio" value="0" autocomplete="off" />女</label>
-							</div>
-						</div>
+			<div class="field">
+			<input id="realname" class="suitinput" type="text" placeholder="用户实名" autocomplete="off" />
+				<i class="iconfont icon-gerenzhanghu"></i>
+			</div>
+
+			<div class="field">
+				<input id="password" class="suitinput" type="password" placeholder="密码（若不修改置为空）" autocomplete="off" />
+				<i class="iconfont icon-mima"></i>
+			</div>
+
+			<div class="field">
+				<input id="password2" class="suitinput" type="password" placeholder="密码确认（若不修改置为空）" autocomplete="off" />
+				<i class="iconfont icon-querenmima"></i>
+			</div>
+
+			<div class="radio_button">
+				<label>性别：</label>
+				<label><input name="sex" id="man" type="radio" value="1" autocomplete="off" />男</label>
+				<label><input name="sex" id="woman" type="radio" value="0" autocomplete="off" />女</label>
+			</div>
+			<input id="sex" type="hidden" autocomplete="off" />
+			<div class="selectbutton">
+				<button>模型选择</button>
+			</div>
+			<input id="model" type="hidden" autocomplete="off" />
+			<div class="selectmodel" >
+					<div id="manModel" style="display: none;">
+						<input id="manModelA" class="click model manModelA" type="button" value="" />
+						<input id="manModelB" class="click model manModelB" type="button" value="" />
 					</div>
-					<input id="sex" type="hidden" value=" " autocomplete="off" />
-					<div class="suitTilte">模型选择</div>
-					<center>
-						<div style="width: 180px;">
-							<div id="manModel" style="display: none;">
-								<input id="manModelA" class="click button-background" type="button" value="" style="background-image: url(<%=basePath%>/images/data/model/mheadA.png);" />
-								<input id="manModelB" class="click button-background" type="button" value="" style="background-image: url(<%=basePath%>/images/data/model/mheadB.png);" />
-
-							</div>
-							<div id="womanModel" style="display: none;">
-								<input id="womanModelA" class="click button-background" type="button" value="" style="background-image: url(<%=basePath%>/images/data/model/wheadA.png);" />
-								<input id="womanModelB" class="click button-background" type="button" value="" style="background-image: url(<%=basePath%>/images/data/model/wheadB.png);" />
-
-							</div>
-						</div>
-					</center>
-					<input name="mx" id="model" type="hidden" value=" " autocomplete="off" />
-					<div class="divline">
-						<p class="suitp">是否管理员：</p>
-						<div class="suitinput" style="border-bottom: none;position: relative;">
-							<div style="position:absolute;bottom: 0px;">
+					<div id="womanModel" style="display: none;">
+						<input id="womanModelA" class="click model womanModelA" type="button" value=""/>
+						<input id="womanModelB" class="click model womanModelB" type="button" value="" />
+					</div>
+			</div>
+			
+			<input name="mx" id="model" type="hidden" value=" " autocomplete="off" />
+					<div class="Admin">
+						<p class="isadmin1">是否管理员：</p>
+						
+							<div class="isadmin2">
 								<label><input name="isadmin" type="radio" value="1" autocomplete="off" />是</label>
 								<label><input name="isadmin" type="radio" value="0" autocomplete="off" />否</label>
 							</div>
-						</div>
+					
 					</div>
 					<input name="admin" id="isadmin" type="hidden" value=" " autocomplete="off" />
-				</div>
-				<div style="width: 100%; float:left;"><br/>
-					<center>
-						<input type="button" value="保存信息" onclick="doUpdate()" />
-						<input type="button" value="关闭窗口" onclick="editDialog.hide();" />
-					</center>
-				</div>
+			
+			<input class="saveMessage" type="button" value="保存信息" onclick="doUpdate()" />
+			<input class="saveMessage" type="button" value="关闭窗口" onclick="editDialog.hide();" />
+		</div>
+			
+			
+			
+			
+			
+				
 			</form>
 		</div>
 	</body>

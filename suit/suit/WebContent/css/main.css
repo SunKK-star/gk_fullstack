@@ -1,0 +1,167 @@
+.clicked {
+	border-top: 1px solid #2B2B2B;
+	border-left: 1px solid #2B2B2B;
+	border-bottom: 1px solid #FFF5EE;
+	border-right: 1px solid #FFF5EE;
+	width: 75px;
+	height: 115px;
+	background-position: 100% 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: 100% auto;
+}
+
+.clicked:hover {
+	-webkit-transform: translateY(-4px);
+	-ms-transform: translateY(-4px);
+	transform: translateY(-4px);
+	-webkit-box-shadow: 0 0 6px #999;
+	box-shadow: 0 0 6px #999;
+	-webkit-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+	width: 75px;
+	height: 115px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: 100% auto;
+}
+
+.click {
+	width: 75px;
+	height: 115px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: 100% auto;
+	border: none
+}
+
+.click:hover {
+	-webkit-transform: translateY(-4px);
+	-ms-transform: translateY(-4px);
+	transform: translateY(-4px);
+	-webkit-box-shadow: 0 0 6px #999;
+	box-shadow: 0 0 6px #999;
+	-webkit-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+	width: 75px;
+	height: 115px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: 100% auto;
+}
+
+.body {
+	background-image: url(../images/data/suits/bg.jpg);
+	background-position: center 60px;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: 100% auto;
+	height: 100%;
+	width: 100%;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #333;
+	background-color: #fff;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto
+}
+
+.container h1 {
+	position: relative;
+	top:-20px;
+	left: 490px;
+	font-weight:bold;
+	color: #a6b1e1;
+					text-shadow: -1px -1px #ccc ,1px 1px #666;
+				    padding-left:20px;
+				    font-size: 40px;
+				    font-family:"微软雅黑";
+				    word-spacing: 10px;
+}
+
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.main {
+	position: relative;
+	left: 320px;
+	top: 300px;
+}
+
+.main-form {
+	position: absolute;
+	width: 23.3%;
+	right: 56.6%;
+	padding: 30px;
+	margin-top: 4em;
+	-webkit-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: -4px 7px 46px 2px rgba(0, 0, 0, 0.1);
+	background: #def4f0;
+}
+
+.form-label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0
+}
+
+.main-form h2 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 20px;
+	margin: 0 0 30px 0;
+	color: #000000;
+	
+}
+
+.main-form label {
+	font-weight: 300;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.form-input {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 6px;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+}
+
+.form-div a {
+	background-color: red;
+}
+
+.form-div {
+	margin-bottom: 15px
+}
+
+
