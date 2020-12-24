@@ -1,0 +1,79 @@
+.community {
+  width: 100%;
+  height: 100vh;
+}
+.community .community__top {
+  background-color: #fff;
+  width: 100%;
+  height: 180rpx;
+}
+.community .community__top .title text {
+  margin-right: 30rpx;
+}
+.community .lastView {
+  width: 85%;
+  height: 300rpx;
+  margin: 20rpx auto;
+  background-color: #fff;
+  padding: 30rpx;
+  border-radius: 20px;
+}
+.community .lastView .lastView__title .title_name {
+  font-weight: 700;
+}
+.community .concerned {
+  width: 85%;
+  height: 300rpx;
+  background-color: #fff;
+  padding: 30rpx;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+.community .concerned .concerned__title {
+  font-weight: 700;
+}
+.community .concerned .concerned__content {
+  margin-top: 40rpx;
+  display: flex;
+}
+.community .concerned .concerned__content .conIcon .conicon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.community .concerned .concerned__content .con_wrapper {
+  margin-left: 20rpx;
+}
+.community .concerned .concerned__content .con_wrapper .con_h1 {
+  font-weight: 400;
+  font-size: 32rpx;
+  color: #141414;
+}
+.community .concerned .concerned__content .con_wrapper .con_h2 {
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #a3a3a8;
+}
+.community .concerned .create_community {
+  width: 420rpx;
+  margin-top: 40rpx;
+  display: flex;
+}
+.community .concerned .create_community .addIcon .addicon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.community .concerned .create_community .create_wrapper {
+  margin-left: 20rpx;
+}
+.community .concerned .create_community .create_wrapper .create_h1 {
+  font-weight: 400;
+  font-size: 32rpx;
+  color: #141414;
+}
+.community .concerned .create_community .create_wrapper .create_h2 {
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #a3a3a8;
+}

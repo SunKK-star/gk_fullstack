@@ -1,0 +1,62 @@
+<view class="community">
+  <view class="community__top">
+    <view class="search">
+      <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+    </view>
+
+    <view class="title">
+      <text class="v1">我的圈子</text>
+      <text >圈子广场</text>
+    </view>
+  </view>
+
+  <view class="lastView">
+    <view class="lastView__title">
+      <text class="title_name">最近逛的圈子</text>
+      <view class="iconfont icon-xx"></view>
+    </view>
+
+    <view class="lastView__content">
+      <view class="content-wrapper">
+        <view class="content_img"></view>
+        <view class="content_name"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="concerned">
+    <view class="concerned__title">
+      <text >我关注的圈子</text>
+    </view>
+    <view class="concerned__content">
+      <view class="conIcon">
+        <image class="conicon" src="/icons/long.png" mode="scaleToFill" >
+          
+        </image>
+      </view>
+      <view class="con_wrapper">
+        <view class="con_h1">
+          <text >地下城</text>
+        </view>
+        <view class="con_h2">
+          <text >热度 7</text>
+        </view>
+      </view>
+    </view>
+    <view class="create_community" bind:tap="toCreateCommunity">
+      <view class="addIcon">
+        <image class="addicon" src="/icons/add.png" mode="scaleToFill" >
+          
+        </image>
+      </view>
+      <view class="create_wrapper">
+        <view class="create_h1">
+          <text >创建圈子</text>
+        </view>
+        <view class="create_h2">
+          <text >新建圈子，来做圈主吧！</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
