@@ -60,6 +60,12 @@
         {
           "name": "社区",
           "pathName": "pages/community/community",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "创建社区",
+          "pathName": "pages/createCommunity/createCommunity",
           "scene": null
         }
       ]

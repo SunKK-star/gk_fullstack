@@ -1,2 +1,17 @@
-<!--pages/createCommunity/createCommunity.wxml-->
-<text>pages/createCommunity/createCommunity.wxml</text>
+<view class="createCommunity">
+  <view class="communityName">
+    <van-cell-group>
+      <van-field label="社区名称" value="{{ value }}" placeholder="请输入用户名" border="{{ true }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <view class="itemSelect">
+    <view class="mune_title">社区目录</view>
+      <van-dropdown-menu>
+        <van-dropdown-item bind:change="changeValue" title="{{ itemTitle }}" value="{{ value1 }}" options="{{ option }}" />
+      </van-dropdown-menu>
+  </view>
+  
+  <view class="createBtn">
+    <van-button size="small" type="primary" bind:click="confirmCreate">创建</van-button>
+  </view>
+</view>

@@ -1,1 +1,21 @@
-/* pages/createCommunity/createCommunity.wxss */
+.itemSelect {
+  display: flex;
+  background-color: #fff;
+}
+.itemSelect .mune_title {
+  width: 165rpx;
+  color: #646566;
+  font-size: small;
+  line-height: 80rpx;
+  text-align: center;
+}
+.itemSelect .van-dropdown-menu {
+  width: 245rpx;
+  height: 80rpx;
+  box-shadow: none;
+}
+.createBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50rpx;
+}
