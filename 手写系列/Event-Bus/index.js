@@ -12,13 +12,11 @@ class EventEmitter {
     }
   }
 
-
   // 触发事件
   emit (type) {
     let handle = this.events.get(type)   // .get() 自动提取type值
     handle.apply(this, [...arguments].slice(1))
   }
-
 }
 
 let emitter = new EventEmitter()

@@ -66,6 +66,12 @@
         {
           "name": "创建社区",
           "pathName": "pages/createCommunity/createCommunity",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/my",
           "scene": null
         }
       ]

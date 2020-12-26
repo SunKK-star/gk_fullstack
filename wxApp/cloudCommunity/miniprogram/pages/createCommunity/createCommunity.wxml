@@ -1,7 +1,7 @@
 <view class="createCommunity">
   <view class="communityName">
     <van-cell-group>
-      <van-field label="社区名称" value="{{ value }}" placeholder="请输入用户名" border="{{ true }}" bind:change="onChange" />
+      <van-field label="社区名称" value="{{ value }}" placeholder="请输入社区名称" border="{{ true }}" bind:change="onChange" />
     </van-cell-group>
   </view>
   <view class="itemSelect">

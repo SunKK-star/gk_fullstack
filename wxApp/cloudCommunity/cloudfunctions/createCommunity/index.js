@@ -27,7 +27,6 @@ exports.main = async (event, context) => {
         data: {
           communityName: event.communityName,
           selectedItem: event.selectedItem
-          
         }
       })
       .then(res => {
