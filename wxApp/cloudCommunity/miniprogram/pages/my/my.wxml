@@ -1,68 +1,41 @@
-<!--miniprogram/pages/my/my.wxml-->
-<text>miniprogram/pages/my/my.wxml</text>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<view class="my">
+  <view class="my_top" wx:if="{{nickName}}">
+    <view class="avatar">
+      <image class="wrapper" src="{{avatarUrl}}"></image>
+    </view>
+    <view class="top-content">
+      <view class="name">{{nickName}}</view>
+      <view class="attention">
+        <text >关注：13</text>
+      </view>
+      <view class="fans">
+        <text >粉丝：1</text>
+      </view>
+    </view>
+  </view>
+  <view class="getUserInfoBtn" wx:elif="{{!nickName}}">
+    <image class="unknowimg" src="/icons/头像.png"></image>
+    <button open-type="getUserInfo" type="primary" bindgetuserinfo="getUserInfo">获取我的信息</button>
+  </view>
+  <view class="my-middle">  
+    <view class="middle_content" >
+      <view class="counts">11</view>
+      <view class="another">我的帖子</view>
+    </view>
+
+    <view class="middle_content" bind:tap="handleAttention">
+      <view class="counts">3 </view>
+      <view class="another">关注的圈子</view>
+    </view>
+
+    <view class="middle_content">
+      <view class="counts">10</view>
+      <view class="another">收藏</view>
+    </view>
+
+    <view class="middle_content">
+      <view class="counts">300</view>
+      <view class="another">浏览历史</view>
+    </view>
+  </view>
+</view>

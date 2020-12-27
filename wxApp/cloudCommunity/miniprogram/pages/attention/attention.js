@@ -1,36 +1,27 @@
-// miniprogram/pages/my/my.js
-
+// pages/attention/attention.js
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    avatarUrl: '/icons/头像.png',
-    nickName: ''
+    dataArr: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  getUserInfo (e) {
-    let {avatarUrl, nickName} = e.detail.userInfo
-    this.setData({
-      avatarUrl,
-      nickName
+  onLoad: function (options) {
+    db.collection('community').get()
+    .then(res =>{
+      console.log(res);
+      let dataArr = res.data
+      this.setData({
+        dataArr
+      })
     })
   },
-  // 进入关注的圈子界面
-  handleAttention () {
-    wx.navigateTo({ url: '/pages/attention/attention' });
-  },
-  onLoad: function (options) {
-    
-    // console.log(app.globalData);
-    
-  },
-
-  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

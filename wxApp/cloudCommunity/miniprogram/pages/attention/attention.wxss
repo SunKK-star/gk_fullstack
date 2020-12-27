@@ -1,0 +1,26 @@
+.attention .item-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.attention .item-wrapper .avatar {
+  margin-top: 10rpx;
+}
+.attention .item-wrapper .avatar image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.attention .item-wrapper .content {
+  height: 100rpx;
+  padding: 10rpx 20rpx;
+}
+.attention .item-wrapper .content .name {
+  font-weight: 500;
+}
+.attention .item-wrapper .content .detail {
+  color: #515152;
+  font-size: 25rpx;
+  margin-top: 6rpx;
+}

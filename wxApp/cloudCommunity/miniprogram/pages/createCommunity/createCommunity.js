@@ -63,7 +63,6 @@ Page({
         }
       })
       .then(res => {
-        console.log(res);
         wx.showToast({
           title: '创建成功！', //提示的内容,
           icon: 'success', //图标,

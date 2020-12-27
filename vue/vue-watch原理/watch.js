@@ -40,9 +40,7 @@ let vm = new Watcher({
   },
   watch: {
     a: function (newVal, oldVal) { // 与键值对相同
-    
         console.log(newVal, oldVal);
-      
     }
   }
 })
@@ -50,3 +48,6 @@ let vm = new Watcher({
 setTimeout(() => {
   vm.a = 1
 }, 1000)
+
+
+

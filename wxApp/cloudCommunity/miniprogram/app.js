@@ -1,6 +1,17 @@
 //app.js
 App({
   onLaunch: function () {
+    
+    wx.getUserInfo({
+      withCredentials: false,
+      success: res => {
+        let {avatarUrl, nickName} = res.userInfo;
+        this.globalData.avatarUrl = avatarUrl;
+        this.globalData.nickName = nickName
+      }
+      
+      
+    });
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -14,6 +25,9 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      avatarUrl: null,
+      nickName:null
+    }
   }
 })
