@@ -70,6 +70,12 @@
         {
           "name": "关注的圈子",
           "pathName": "pages/attention/attention",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社区详情",
+          "pathName": "pages/communityDetail/communityDetail",
           "scene": null
         }
       ]

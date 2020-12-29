@@ -11,7 +11,7 @@ let inorderTraversal = (root) => {
     }
     let cur = stack.pop();
     res.push(cur.val); // push值
-    p = p.right  // 考虑右子树情况
+    p = cur.right  // 考虑右子树情况
   }
   return res;
 }

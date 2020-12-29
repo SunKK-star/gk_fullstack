@@ -1,0 +1,143 @@
+.communttyDetail {
+  
+  .namedetail {
+    display: flex;
+    align-items: center;
+    padding: 15rpx 40rpx;
+    height: 150rpx;
+    background-color: #3f9fd9;
+   
+    .avatar {
+      margin-right: 30rpx;
+      margin-top: 5rpx;
+      image {
+        width: 100rpx;
+        height: 100rpx;
+        border-radius: 50%;
+      }
+    }
+    .content {
+      .title {
+        color: #fff;
+        font-weight: 650;
+        font-size: larger;
+        margin-bottom: 10rpx;
+      }
+      .attend_detail {
+        color: #fff;
+        font-size: smaller;
+        margin-top: 10rpx;
+        text:nth-child(1) {
+          margin-right: 40rpx;
+        }
+      }
+    }
+    .attendBtn {
+      position: relative;
+      right: -150rpx;
+      .van-button__text {
+        color: #323A3A;
+      }
+    }
+  }
+
+  .subjoin {
+    width: 100%;
+    height: 60rpx;
+    background-color: #3f9fd9;
+    margin-bottom: 90rpx;
+    position: relative;
+    .bulletin {
+      position: absolute;
+      width: 90%;
+      height: 120rpx;
+      border-radius: 10rpx;
+      background-color: #fff; 
+      top: 0rpx;
+      left: 35rpx;
+      display: flex;
+      flex-direction: column;
+      padding: 20rpx 50rpx;
+      .bulletindetail {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        font-size: small;
+        .h1 {
+          flex: 0 0 100rpx;
+          color: #3f9fd9;
+        } 
+        .h2 {
+          flex: 1;
+          color: #333333;
+        }
+      }
+      .bulletindetail:nth-child(1) {
+        border-bottom: 1px #f5f5ff solid;
+      }
+    }
+  }
+
+  .showtab {
+    width: 100%;
+    height: 80rpx;
+    background-color: #fff; 
+    border-bottom: 1px #f5f5ff solid;
+    display: flex;
+    align-items: center;
+    padding-left: 30rpx;
+    .all {
+      font-size: large;
+      font-weight: 600;
+      margin-right: 50rpx;
+    }
+
+    .jinghua {
+      font-size: small;
+    }
+  }
+
+  .filtrite {
+    height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    font-size: smaller;
+    color: #555555;
+    background-color: #fff;
+    .filtriteType {
+
+    }
+    .filtritecon {
+
+    }
+  }
+
+  .container {
+    padding: 30rpx;
+    background-color: #fff;
+    margin-bottom: 10rpx;
+    .userinfo {
+      display: flex;
+      .userinfo_avatar {
+        image {
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 50%;
+        }
+      }
+      .userinfoDetail {
+        .userinfoDetail_name {
+          font-weight: 550;
+          font-size: medium;
+        }
+        .userinfoDetail_minute {
+          font-size: smaller;
+          color: #9a9a9a;
+        }
+      }
+    }
+  }
+  
+}

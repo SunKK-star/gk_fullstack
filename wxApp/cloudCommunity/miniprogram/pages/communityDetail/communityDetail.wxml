@@ -1,0 +1,68 @@
+<view class="communttyDetail">
+  <view class="namedetail">
+    <view class="avatar">
+      <image src="/icons/long.png" />
+    </view>
+    <view class="content">
+      <view class="title">DNF龙神吧</view>
+      <view class="attend_detail">
+        <text>关注 21</text>
+        <text>帖子 332</text>
+      </view>
+    </view>
+    <view class="attendBtn">
+      <van-button size="small" color="#fff" type="info">关注</van-button>
+    </view>
+  </view>
+  <view class="subjoin">
+    <view class="bulletin">
+      <view class="bulletindetail">
+        <text class="h1">置顶</text>
+        <text class="h2">龙神技能加点分享</text>
+      </view>
+      <view class="bulletindetail">
+        <text class="h1">置顶</text>
+        <text class="h2">龙神常见/非常常见问题汇总</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="showtab">
+    <view class="all">全部</view>
+    <view class="jinghua">精华</view>
+  </view>
+  <view class="filtrite">
+    <view class="filtriteType">筛选条件</view>
+    <view class="filtritecon">
+      <view class="type">发贴时间排序</view>
+      <view class="iconfont icon-202-copy-copy-copy"></view>
+    </view>
+  </view>
+
+  <view class="container">
+    <view class="userinfo">
+      <view class="userinfo_avatar">
+        <image src="/icons/头像.png"  />
+      </view>
+      <view class="userinfoDetail">
+        <view class="userinfoDetail_name">用户xxx</view>
+        <view class="userinfoDetail_minute">47分钟前</view>
+      </view>
+    </view>
+    <view class="container_content">为什么我只能打两千亿。 </view>
+  </view>
+
+  <view class="container">
+    <view class="userinfo">
+      <view class="userinfo_avatar">
+        <image src="/icons/头像.png"  />
+      </view>
+      <view class="userinfoDetail">
+        <view class="userinfoDetail_name">用户xxx</view>
+        <view class="userinfoDetail_minute">47分钟前</view>
+      </view>
+    </view>
+    <view class="container_content">按照我面板参考守门人毕业居然能上万亿惊了 次元神话还没</view>
+  </view>
+  
+</view>

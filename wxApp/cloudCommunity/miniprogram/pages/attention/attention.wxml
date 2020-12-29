@@ -3,7 +3,7 @@
     <view class="avatar">
       <image src="/icons/头像.png" />
     </view>
-    <view class="content">
+    <view class="content" bind:tap="topages">
       <view class="name">{{item.communityName}}</view>
       <view class="detail">经验：13/20</view>
     </view>

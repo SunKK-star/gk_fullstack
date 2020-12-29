@@ -1,28 +1,18 @@
-// pages/attention/attention.js
-const db = wx.cloud.database()
+// pages/communityDetail/communityDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dataArr: []
+
   },
-  topages() {
-    wx.navigateTo({ url: '/pages/communityDetail/communityDetail' });
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    db.collection('community').get()
-    .then(res =>{
-      console.log(res);
-      let dataArr = res.data
-      this.setData({
-        dataArr
-      })
-    })
+
   },
 
   /**
