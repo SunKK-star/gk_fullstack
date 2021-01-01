@@ -32,6 +32,4 @@ class BST {
       this.insertNode(this.root, newNode)
     }
   };
-
-  
 }

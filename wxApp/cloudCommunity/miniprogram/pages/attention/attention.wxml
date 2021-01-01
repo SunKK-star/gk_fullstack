@@ -1,7 +1,7 @@
 <view class="attention">
   <view class="item-wrapper" wx:for="{{dataArr}}" wx:key="_id">
     <view class="avatar">
-      <image src="/icons/头像.png" />
+      <image src="{{item.picUrl}}" />
     </view>
     <view class="content" bind:tap="topages">
       <view class="name">{{item.communityName}}</view>

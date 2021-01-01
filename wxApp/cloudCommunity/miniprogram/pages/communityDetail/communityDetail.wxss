@@ -52,7 +52,7 @@
   left: 35rpx;
   display: flex;
   flex-direction: column;
-  padding: 20rpx 50rpx;
+  padding: 0 50rpx;
 }
 .communttyDetail .subjoin .bulletin .bulletindetail {
   flex: 1;
@@ -118,4 +118,19 @@
 .communttyDetail .container .userinfo .userinfoDetail .userinfoDetail_minute {
   font-size: smaller;
   color: #9a9a9a;
+}
+.communttyDetail .postBtn {
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: cornflowerblue;
+}
+.communttyDetail .postBtn .add {
+  font-size: 100rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
 }

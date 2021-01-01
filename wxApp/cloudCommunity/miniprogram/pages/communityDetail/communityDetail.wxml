@@ -1,4 +1,4 @@
-<view class="communttyDetail">
+<view class="communttyDetail" wx:if="{{showdetail}}">
   <view class="namedetail">
     <view class="avatar">
       <image src="/icons/long.png" />
@@ -65,4 +65,11 @@
     <view class="container_content">按照我面板参考守门人毕业居然能上万亿惊了 次元神话还没</view>
   </view>
   
+  <view class="postBtn" bind:tap="showpost">
+    <view class="add">+</view>
+  </view>
+
+  
 </view>
+
+<postMessage bind:backTo="backtoshow" wx:elif="{{!showdetail}}"></postMessage>

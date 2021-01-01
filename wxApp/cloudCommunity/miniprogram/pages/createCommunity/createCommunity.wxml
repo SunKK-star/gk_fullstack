@@ -10,6 +10,9 @@
         <van-dropdown-item bind:change="changeValue" title="{{ itemTitle }}" value="{{ value1 }}" options="{{ option }}" />
       </van-dropdown-menu>
   </view>
+  <view class="uploadpic">
+    <button bind:tap="chooseImg">选择图片</button>
+  </view>
   
   <view class="createBtn">
     <van-button size="small" type="primary" bind:click="confirmCreate">创建</van-button>

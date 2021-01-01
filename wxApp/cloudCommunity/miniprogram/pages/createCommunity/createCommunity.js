@@ -12,6 +12,7 @@ Page({
       value: '',
       communityName: '',
       selectedItem: '',
+      picUrl: '',
       option: [
         { text: '全部目录', value: 0 },
         { text: '动漫', value: 1 },
@@ -41,12 +42,39 @@ Page({
       })
       // console.log(this.data.communityName);
     },
+    chooseImg () {
+      const self = this;
+      wx.chooseImage({
+        count: 1,
+        sizeType: ['original','compressed'],
+        sourceType: ['album','camera'],
+        
+        success(res) {
+          self.setData({
+            picUrl: res.tempFilePaths[0]
+          })
+          wx.showToast({
+            title: '图片上传成功', //提示的内容,
+            icon: 'success', //图标,
+            duration: 1000, //延迟时间,
+            mask: true, //显示透明蒙层，防止触摸穿透,
+          });
+        },
+        fail(err) {
+          wx.showToast({
+            title: '图片上传失败', //提示的内容,
+            icon: 'success', //图标,
+            duration: 1000, //延迟时间,
+            mask: true, //显示透明蒙层，防止触摸穿透,
+          });
+        }
+      })
+    },
     confirmCreate (e) {
       // 判断是否存在相同的社区名字
   db.collection('community').where({
     communityName: this.data.communityName
   }).get().then(res => {
-    console.log(res.data);
     let nameData = res.data || []
     if (nameData.length > 0) {
       wx.showToast({
@@ -59,7 +87,8 @@ Page({
       db.collection('community').add({
         data: {
           communityName: this.data.communityName,
-          selectedItem: this.data.selectedItem
+          selectedItem: this.data.selectedItem,
+          picUrl: this.data.picUrl
         }
       })
       .then(res => {

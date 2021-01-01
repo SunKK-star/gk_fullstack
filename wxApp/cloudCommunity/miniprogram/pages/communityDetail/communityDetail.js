@@ -5,7 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showdetail: true
 
+  },
+  showpost() {
+    this.setData({
+      showdetail: !this.data.showdetail
+    })
+  },
+  backtoshow() {
+    this.setData({
+      showdetail: !this.data.showdetail
+    })
   },
 
   /**

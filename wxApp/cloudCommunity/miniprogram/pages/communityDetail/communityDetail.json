@@ -6,6 +6,7 @@
   "navigationBarTextStyle": "white",
   "usingComponents": {
     "van-search": "@vant/weapp/search/index",
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "postMessage": "/components/postMessage/postMessage"
   }
 }
