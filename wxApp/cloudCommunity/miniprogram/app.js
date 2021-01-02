@@ -26,8 +26,7 @@ App({
     }
 
     this.globalData = {
-      avatarUrl: null,
-      nickName:null
+      
     }
   }
 })

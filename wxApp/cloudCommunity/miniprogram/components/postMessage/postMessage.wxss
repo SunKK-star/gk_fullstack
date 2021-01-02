@@ -9,9 +9,9 @@
   font-size: medium;
 }
 .postmessage .title .back {
-  font-size: 60rpx;
+  font-size: 50rpx;
   position: relative;
-  top: -20rpx;
+  top: -15rpx;
   left: -20rpx;
   font-weight: 100;
 }
@@ -21,14 +21,33 @@
 .postmessage .title .sendmessage {
   color: darkorange;
 }
+.postmessage textarea {
+  height: 300rpx;
+}
 .postmessage .wrapper .picwrapper {
   padding: 10rpx;
   float: left;
+  position: relative;
 }
 .postmessage .wrapper .picwrapper image {
   width: 200rpx;
   height: 200rpx;
   border-radius: 10rpx;
+}
+.postmessage .wrapper .picwrapper .deleteBtm {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #000;
+  opacity: 0.55;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35rpx;
+  position: absolute;
+  font-weight: 100;
+  top: 15rpx;
+  right: 15rpx;
+  font-size: larger;
 }
 .postmessage .wrapper .picwrapper .picselect {
   padding: 10rpx;

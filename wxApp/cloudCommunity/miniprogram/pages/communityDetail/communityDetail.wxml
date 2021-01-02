@@ -1,10 +1,10 @@
 <view class="communttyDetail" wx:if="{{showdetail}}">
   <view class="namedetail">
     <view class="avatar">
-      <image src="/icons/long.png" />
+      <image src="{{communityDetail.picUrl}}" />
     </view>
     <view class="content">
-      <view class="title">DNF龙神吧</view>
+      <view class="title">{{communityDetail.communityName}}</view>
       <view class="attend_detail">
         <text>关注 21</text>
         <text>帖子 332</text>
@@ -18,11 +18,11 @@
     <view class="bulletin">
       <view class="bulletindetail">
         <text class="h1">置顶</text>
-        <text class="h2">龙神技能加点分享</text>
+        <text class="h2">yyyyyyyy</text>
       </view>
       <view class="bulletindetail">
         <text class="h1">置顶</text>
-        <text class="h2">龙神常见/非常常见问题汇总</text>
+        <text class="h2">xxxxxxxxx</text>
       </view>
     </view>
   </view>
@@ -38,6 +38,20 @@
       <view class="iconfont icon-202-copy-copy-copy"></view>
     </view>
   </view>
+
+  <view class="container" wx:for="{{msgArr}}" wx:key="_id">
+    <view class="userinfo">
+      <view class="userinfo_avatar">
+        <image src="{{item.userInfo.avatarUrl}}"  />
+      </view>
+      <view class="userinfoDetail">
+        <view class="userinfoDetail_name">{{item.userInfo.nickName}}</view>
+        <view class="userinfoDetail_minute">47分钟前</view>
+      </view>
+    </view>
+    <view class="container_content">{{item.titleVal}}</view>
+  </view>
+
 
   <view class="container">
     <view class="userinfo">
@@ -72,4 +86,4 @@
   
 </view>
 
-<postMessage bind:backTo="backtoshow" wx:elif="{{!showdetail}}"></postMessage>
+<postMessage communityId="{{communityDetail._id}}" bind:backTo="backtoshow" wx:elif="{{!showdetail}}"></postMessage>

@@ -1,29 +1,24 @@
 <view class="postmessage">
   <view class="title">
-    <view class="back" data-backshow bind:tap="backTo">x</view>
+    <view class="back" bind:tap="backTo">×</view>
     <view class="content">发布到DNF龙骑士吧</view>
-    <view class="sendmessage">发布</view>
+    <view class="sendmessage" bind:tap="postMsg">发布</view>
   </view>
-  <van-field placeholder-style="font-size: medium;font-weight: 600;" value="{{ value }}" placeholder="起个标题吧" border="{{ false }}" bind:change="onChange" custom-style="border-bottom: 1px dashed #d3c7ff; padding-left: 0;" />
-  <van-field type="textarea" value="{{ value }}" placeholder="尽情发挥吧" border="{{ false }}" bind:change="onChange" custom-style="height: 200rpx;padding-left: 0;" />
+  <van-cell-group bind:change="onChange">
+    <van-field bind:input="inputTitle" clearable="true" placeholder-style="font-size: medium;font-weight: 600;" value="{{ value }}" placeholder="起个标题吧" border="{{ false }}" bind:change="onChange" custom-style="border-bottom: 1px dashed #d3c7ff; padding-left: 0;" />
+  </van-cell-group>
+  <van-cell-group>
+    <van-field bind:input="inputcontent" show-confirm-bar="true" type="textarea" value="{{ value }}" placeholder="尽情发挥吧" border="{{ false }}" bind:change="onChange" custom-style="height: 300rpx;padding-left: 0;" />
+  </van-cell-group >
   <view class="wrapper">
-    <view class="picwrapper" wx:for="{{selectedpic}}" wx:key="index">
+    <view class="picwrapper" wx:for="{{selectpic}}" wx:key="index" wx:if="{{selectpic}}">
       <image src="{{item}}"></image>
+      <view class="deleteBtm" data-index="{{index}}" bind:tap="deletePic">×</view>
     </view>
     <view class="picwrapper">
-      <image src="/icons/long.png"></image>
+      <view class="picselect" bind:tap="addpic">
+        <view class="addd">+</view>
+      </view>
     </view>
-    <view class="picwrapper">
-      <image src="/icons/long.png"></image>
-    </view>
-    <view class="picwrapper">
-      <image src="/icons/long.png"></image>
-    </view>
-    <view class="picwrapper">
-     <view class="picselect" bind:tap="addpic">
-      <view class="addd">+</view>
-    </view>
-    </view>
-    
   </view>
 </view>

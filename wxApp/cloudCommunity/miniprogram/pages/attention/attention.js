@@ -8,21 +8,25 @@ Page({
   data: {
     dataArr: []
   },
-  topages() {
-    wx.navigateTo({ url: '/pages/communityDetail/communityDetail' });
+  topages(e) {
+    
+    let {_id, _openid, selectedItem, picUrl, communityName} = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: `/pages/communityDetail/communityDetail?selectedItem=${selectedItem}&picUrl=${picUrl}&communityName=${communityName}&_id=${_id}&_openid=${_openid}`,
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     db.collection('community').get()
-    .then(res =>{
-      console.log(res);
-      let dataArr = res.data
-      this.setData({
-        dataArr
+      .then(res => {
+        console.log(res.data);
+        let dataArr = res.data
+        this.setData({
+          dataArr
+        })
       })
-    })
   },
 
   /**

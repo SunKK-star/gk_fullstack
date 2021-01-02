@@ -50,15 +50,26 @@ Page({
         sourceType: ['album','camera'],
         
         success(res) {
-          self.setData({
-            picUrl: res.tempFilePaths[0]
+          let filePath = res.tempFilePaths[0];
+          wx.showLoading({
+            title: '正在上传',
           })
-          wx.showToast({
-            title: '图片上传成功', //提示的内容,
-            icon: 'success', //图标,
-            duration: 1000, //延迟时间,
-            mask: true, //显示透明蒙层，防止触摸穿透,
-          });
+          wx.cloud.uploadFile({
+            cloudPath: new Date().getTime() + /\.\w+$/.exec(filePath)[0],
+            filePath
+          }).then((res) => {
+            self.setData({
+              picUrl: res.fileID
+            })
+            wx.hideLoading({
+              success: (res) => {
+                wx.showToast({
+                  title: '上传成功!',
+                })
+              },
+            })
+          })
+          
         },
         fail(err) {
           wx.showToast({

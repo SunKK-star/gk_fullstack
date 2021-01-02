@@ -1,11 +1,14 @@
 // pages/communityDetail/communityDetail.js
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showdetail: true
+    communityDetail: {},
+    showdetail: true,
+    msgArr: []
 
   },
   showpost() {
@@ -17,13 +20,55 @@ Page({
     this.setData({
       showdetail: !this.data.showdetail
     })
+    const self = this;
+    wx.showLoading({
+      title: '正在加载...',
+    })
+    wx.cloud.callFunction({
+      name: 'getMsg',
+      data: {
+        communityId: this.data.communityDetail._id
+      },
+    }).then(res => {
+      let msgArr = res.result.data;
+      self.setData({
+        msgArr
+      })
+      wx.hideLoading({
+        complete: (res) => { },
+      })
+      console.log(self.data.msgArr);
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let communityDetail = { ...options }
+    console.log(communityDetail);
+    this.setData({
+      communityDetail
+    })
+    const self = this;
+    wx.showLoading({
+      title: '正在加载...',
+    })
+    wx.cloud.callFunction({
+      name: 'getMsg',
+      data: {
+        communityId: communityDetail._id
+      },
+    }).then(res => {
+      let msgArr = res.result.data;
+      self.setData({
+        msgArr
+      })
+      wx.hideLoading({
+        complete: (res) => { },
+      })
+      console.log(self.data.msgArr);
+    })
   },
 
   /**

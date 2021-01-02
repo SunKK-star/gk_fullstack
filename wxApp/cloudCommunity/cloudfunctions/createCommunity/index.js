@@ -1,5 +1,7 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
+let app = getApp();
+
 cloud.init({
   env: 'lian-8glg18vb9345a675'
 })
