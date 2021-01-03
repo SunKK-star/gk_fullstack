@@ -1,0 +1,9 @@
+<view class="userinfo">
+    <view class="userinfo_avatar">
+      <image src="{{userInfo.avatarUrl}}" />
+    </view>
+    <view class="userinfoDetail">
+      <view class="userinfoDetail_name">{{userInfo.nickName}}</view>
+      <view class="userinfoDetail_minute">47分钟前</view>
+    </view>
+  </view>

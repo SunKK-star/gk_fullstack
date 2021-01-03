@@ -115,7 +115,9 @@
   }
 
   .container {
+    overflow: hidden; 
     padding: 30rpx;
+    padding-bottom: 20rpx;
     background-color: #fff;
     margin-bottom: 10rpx;
     .userinfo {
@@ -128,8 +130,9 @@
         }
       }
       .userinfoDetail {
+        margin-left: 20rpx;
         .userinfoDetail_name {
-          font-weight: 550;
+          font-weight: 750;
           font-size: medium;
         }
         .userinfoDetail_minute {
@@ -138,6 +141,31 @@
         }
       }
     }
+    .container_title {
+      margin-top: 5rpx;
+    }
+    .container_content {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    .picture {
+      padding: 10rpx 15rpx 0 0;
+      float: left;
+      image {
+        width: 300rpx;
+        border-radius: 10rpx;
+      }
+      .morethenOne {
+        width: 200rpx;
+        height: 200rpx;
+      }
+    }
+
+    
+
   }
 
   .postBtn {

@@ -8,6 +8,10 @@ Component({
     communityId: {
       type: String,
       value: ''
+    },
+    communityName: {
+      type: String,
+      value: ''
     }
   },
 
@@ -157,6 +161,7 @@ Component({
 
     // 发布
     postMsg() {
+      console.log(this.properties.communityName);    
       const self = this;
       wx.showLoading({
         title: '正在发布..',
@@ -187,6 +192,7 @@ Component({
                 if (!resul.result) {
                   wx.showToast({
                     title: '输入框不能为空哦！',
+                    icon: 'error',
                     duration: 1000,
                     mask: true,
                   })
@@ -194,7 +200,8 @@ Component({
                   return new Promise((resolve, reject) => {
                     wx.showToast({
                       title: '发布成功！',
-                      duration: 500,
+                      duration: 1000,
+                      icon: 'success',
                       mask: true,
                       success: (res) => {
                       },

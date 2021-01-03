@@ -99,7 +99,9 @@
   background-color: #fff;
 }
 .communttyDetail .container {
+  overflow: hidden;
   padding: 30rpx;
+  padding-bottom: 20rpx;
   background-color: #fff;
   margin-bottom: 10rpx;
 }
@@ -111,13 +113,38 @@
   height: 80rpx;
   border-radius: 50%;
 }
+.communttyDetail .container .userinfo .userinfoDetail {
+  margin-left: 20rpx;
+}
 .communttyDetail .container .userinfo .userinfoDetail .userinfoDetail_name {
-  font-weight: 550;
+  font-weight: 750;
   font-size: medium;
 }
 .communttyDetail .container .userinfo .userinfoDetail .userinfoDetail_minute {
   font-size: smaller;
   color: #9a9a9a;
+}
+.communttyDetail .container .container_title {
+  margin-top: 5rpx;
+}
+.communttyDetail .container .container_content {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.communttyDetail .container .picture {
+  padding: 10rpx 15rpx 0 0;
+  float: left;
+}
+.communttyDetail .container .picture image {
+  width: 300rpx;
+  border-radius: 10rpx;
+}
+.communttyDetail .container .picture .morethenOne {
+  width: 200rpx;
+  height: 200rpx;
 }
 .communttyDetail .postBtn {
   position: fixed;

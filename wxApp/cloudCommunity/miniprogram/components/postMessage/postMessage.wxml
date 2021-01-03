@@ -1,7 +1,7 @@
 <view class="postmessage">
   <view class="title">
     <view class="back" bind:tap="backTo">×</view>
-    <view class="content">发布到DNF龙骑士吧</view>
+    <view class="content">发布到{{communityName}}</view>
     <view class="sendmessage" bind:tap="postMsg">发布</view>
   </view>
   <van-cell-group bind:change="onChange">

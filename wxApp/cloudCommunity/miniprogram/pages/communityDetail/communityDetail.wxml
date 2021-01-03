@@ -26,7 +26,6 @@
       </view>
     </view>
   </view>
-
   <view class="showtab">
     <view class="all">全部</view>
     <view class="jinghua">精华</view>
@@ -38,52 +37,68 @@
       <view class="iconfont icon-202-copy-copy-copy"></view>
     </view>
   </view>
-
   <view class="container" wx:for="{{msgArr}}" wx:key="_id">
-    <view class="userinfo">
-      <view class="userinfo_avatar">
-        <image src="{{item.userInfo.avatarUrl}}"  />
+    <view class="containerWrapper" data-msgArr="{{item}}" bind:tap="toMsgDetail">
+      <view class="userinfo">
+        <view class="userinfo_avatar">
+          <image src="{{item.userInfo.avatarUrl}}" />
+        </view>
+        <view class="userinfoDetail">
+          <view class="userinfoDetail_name">{{item.userInfo.nickName}}</view>
+          <view class="userinfoDetail_minute">47分钟前</view>
+        </view>
       </view>
-      <view class="userinfoDetail">
-        <view class="userinfoDetail_name">{{item.userInfo.nickName}}</view>
-        <view class="userinfoDetail_minute">47分钟前</view>
-      </view>
+      <view class="container_title">{{item.titleVal}}</view>
+      <view class="container_content">{{item.contentVal}}</view>
     </view>
-    <view class="container_content">{{item.titleVal}}</view>
+    <view class="picture" wx:for="{{item.selectedpic}}" wx:for-item="i" wx:for-index="index" wx:key="index">
+      <image class="{{item.selectedpic.length > 1?'morethenOne':''}} " mode="{{item.selectedpic.length > 1?'scaleToFill':'widthFix'}}" src="{{i}}" />
+    </view>
+    <bottomstyl></bottomstyl>
   </view>
-
-
   <view class="container">
     <view class="userinfo">
       <view class="userinfo_avatar">
-        <image src="/icons/头像.png"  />
+        <image src="/icons/头像.png" />
       </view>
       <view class="userinfoDetail">
         <view class="userinfoDetail_name">用户xxx</view>
         <view class="userinfoDetail_minute">47分钟前</view>
       </view>
     </view>
-    <view class="container_content">为什么我只能打两千亿。 </view>
+    <view class="container_title">为什么我只能打两千亿。</view>
+    <view class="container_content">为什么我只能打两千亿。</view>
+    <view class="picture">
+      <image class="morethenOne" mode="widthFix" src="/icons/long.png" />
+    </view>
+    <view class="picture">
+      <image class="morethenOne" mode="widthFix" src="/icons/long.png" />
+    </view>
+    <view class="picture">
+      <image class="morethenOne" mode="widthFix" src="/icons/long.png" />
+    </view>
+    <view class="picture">
+      <image class="morethenOne" mode="widthFix" src="/icons/long.png" />
+    </view>
   </view>
-
   <view class="container">
     <view class="userinfo">
       <view class="userinfo_avatar">
-        <image src="/icons/头像.png"  />
+        <image src="/icons/头像.png" />
       </view>
       <view class="userinfoDetail">
         <view class="userinfoDetail_name">用户xxx</view>
         <view class="userinfoDetail_minute">47分钟前</view>
       </view>
     </view>
-    <view class="container_content">按照我面板参考守门人毕业居然能上万亿惊了 次元神话还没</view>
+    <view class="container_title">按照我面板参考守门人毕业居然能上万亿惊了 次元神话还没</view>
+    <view class="container_content">为什么我只能打两千亿。csiabscaibuaxuasnaicbabsakjasbjak</view>
+    <view class="picture">
+      <image mode="widthFix" src="/icons/long.png" />
+    </view>
   </view>
-  
   <view class="postBtn" bind:tap="showpost">
     <view class="add">+</view>
   </view>
-
-  
 </view>
-
-<postMessage communityId="{{communityDetail._id}}" bind:backTo="backtoshow" wx:elif="{{!showdetail}}"></postMessage>
+<postMessage communityId="{{communityDetail._id}}" communityName="{{communityDetail.communityName}}" bind:backTo="backtoshow" wx:elif="{{!showdetail}}"></postMessage>

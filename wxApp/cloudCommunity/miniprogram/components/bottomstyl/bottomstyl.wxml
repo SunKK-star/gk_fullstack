@@ -1,0 +1,14 @@
+<view class="bottomstyl">
+  <button open-type="share" class="share commonsty">
+    <image src="/icons/fenxiang.png" />
+    <text>分享</text>
+  </button>
+  <view class="comment commonsty">
+    <image src="/icons/huifu.png" />
+    <text>14</text>
+  </view>
+  <view class="zan commonsty">
+    <image src="/icons/zan.png" />
+    <text>1</text>
+  </view>
+</view>

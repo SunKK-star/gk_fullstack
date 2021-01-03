@@ -1,0 +1,36 @@
+.bottomstyl {
+  padding-top: 20rpx;
+  padding-right: 15rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottomstyl .share {
+  background: none;
+  border: #fff;
+  margin: 0;
+  padding: 0;
+}
+.bottomstyl .share::after {
+  border: none;
+}
+.bottomstyl .comment {
+  position: relative;
+  right: 150rpx;
+}
+.bottomstyl .commonsty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.bottomstyl .commonsty image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 20rpx;
+}
+.bottomstyl .commonsty text {
+  font-size: smaller;
+  color: #333333;
+}

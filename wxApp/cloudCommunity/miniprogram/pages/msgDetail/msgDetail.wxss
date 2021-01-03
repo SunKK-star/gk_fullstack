@@ -1,0 +1,205 @@
+.msgDetail {
+  padding: 40rpx 30rpx;
+  font-size: medium;
+}
+.msgDetail .userinfo {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+.msgDetail .userinfo .userinfo_avatar image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.msgDetail .userinfo .userinfoDetail {
+  margin-left: 20rpx;
+}
+.msgDetail .userinfo .userinfoDetail .userinfoDetail_name {
+  font-weight: 700;
+  font-size: medium;
+}
+.msgDetail .userinfo .userinfoDetail .userinfoDetail_minute {
+  font-size: smaller;
+  color: #9a9a9a;
+}
+.msgDetail .msgTitle {
+  margin-bottom: 20rpx;
+  font-weight: 700;
+}
+.msgDetail .msgContent {
+  margin-bottom: 20rpx;
+}
+.msgDetail .picWrapper {
+  margin: 15rpx 0;
+}
+.msgDetail .picWrapper image {
+  border-radius: 6rpx;
+  width: 690rpx;
+}
+.msgDetail .container .container_top {
+  display: flex;
+  padding: 20rpx 0 50rpx 0 ;
+  justify-content: space-between;
+}
+.msgDetail .container .container_top .text1 {
+  font-size: medium;
+  font-weight: 700;
+}
+.msgDetail .container .container_top .text2 {
+  font-size: medium;
+  position: relative;
+  right: 70rpx;
+}
+.msgDetail .container .container_top .tiemtypeselect text {
+  font-size: smaller;
+}
+.msgDetail .container .container_top .tiemtypeselect image {
+  width: 25rpx;
+  height: 25rpx;
+}
+.msgDetail .container .msgComment {
+  margin-bottom: 50rpx;
+}
+.msgDetail .container .msgComment .usermessage {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0 0 0;
+}
+.msgDetail .container .msgComment .usermessage .zan {
+  display: flex;
+  position: relative;
+  top: 20rpx;
+}
+.msgDetail .container .msgComment .usermessage .zan .zenicon {
+  margin-right: 20rpx;
+}
+.msgDetail .container .msgComment .usermessage .zan text {
+  color: #9a9a9a;
+  font-size: smaller;
+  vertical-align: middle;
+}
+.msgDetail .container .msgComment .commentwrapper {
+  padding: 0 0 20rpx 90rpx;
+}
+.msgDetail .container .msgComment .commentwrapper .commentCtx {
+  position: relative;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.msgDetail .container .msgComment .commentwrapper .commentCtx .replyCommentWrapper {
+  position: fixed;
+  bottom: 580rpx;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.msgDetail .container .msgComment .commentwrapper .commentCtx .replyCommentWrapper .replyComment {
+  width: 520rpx;
+  height: 70rpx;
+  background-color: #9a9a9a;
+  border-radius: 50rpx;
+  padding-left: 35rpx;
+}
+.msgDetail .container .msgComment .commentwrapper .commentCtx .replyCommentWrapper .replyBtn {
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #3f9fd9;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.msgDetail .container .msgComment .commentwrapper .commentCtx .normol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.msgDetail .container .msgComment .commentwrapper .reply {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+}
+.msgDetail .container .msgComment .commentwrapper .reply .comment {
+  padding: 5rpx 0;
+  font-size: medium;
+}
+.msgDetail .container .msgComment .commentwrapper .reply .comment .commentername {
+  color: #5682ba;
+}
+.msgDetail .container .msgComment .commentwrapper .reply .packup text {
+  color: #999999;
+  vertical-align: middle;
+}
+.msgDetail .container .msgComment .commentwrapper .reply .packup image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.inputCommentwrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  padding: 30rpx 30rpx 30rpx 40rpx;
+  justify-content: space-between;
+}
+.inputCommentwrapper .inputComment1 {
+  background-color: #f6f6f6;
+  flex: 4;
+  border-radius: 50rpx;
+  padding-left: 20rpx;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputCommentwrapper .iconwrapper {
+  flex: 3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.inputCommentwrapper .notdisplay {
+  display: none;
+}
+.inputCommentwrapper .inputComment2 {
+  background-color: #f6f6f6;
+  border-radius: 50rpx;
+  padding-left: 40rpx;
+  height: 70rpx;
+  width: 550rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputCommentwrapper .inputComment2 input {
+  width: 100%;
+  height: 70rpx;
+}
+.inputCommentwrapper .confireSend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputCommentwrapper .confireSend button {
+  display: flex;
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #3f9fd9;
+  opacity: 0.55;
+  color: #fff;
+  font-size: smaller;
+  line-height: 60rpx;
+}

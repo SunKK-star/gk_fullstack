@@ -1,0 +1,12 @@
+{
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#3f9fd9",
+  "navigationBarTitleText": "DNF龙神",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "bottomstyl": "/components/bottomstyl/bottomstyl",
+    "userInfo": "/components/userInfo/userInfo",
+    "van-icon": "@vant/weapp/icon/index"
+  }
+}

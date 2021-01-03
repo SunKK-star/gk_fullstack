@@ -8,30 +8,26 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  if (!event.contentVal || !event.titleVal) return
+  if (!event.commentCtx) return
   const wxContext = cloud.getWXContext()
   
   try {
-    return await db.collection('msg').add({
+    return await db.collection('comment').add({
       data: {
+        commentCtx: event.commentCtx,
         postTime: Date.now(),
-        titleVal: event.titleVal,
-        contentVal: event.contentVal,
-        selectedpic: event.selectedpic,
+        communityId: event.communityId,
+        msgId: event.msgId,
+        msgPostBy: event.msgPostBy,
         postBy: wxContext.OPENID,
-        userInfo: event.userInfo,
-        communityId: event.communityId
+        userInfo: event.userInfo
       }
     })
   } catch (err) {
     console.log(err);
   }
-  db.collection('msg').get().then((res) => {
-    msg = res
-  })
 
   return {
-    msg,
     event,
     openid: wxContext.OPENID,
     appid: wxContext.APPID,

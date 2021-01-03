@@ -8,14 +8,15 @@ Page({
   data: {
     communityDetail: {},
     showdetail: true,
-    msgArr: []
-
+    msgArr: [],
+    isMoreThenOne: false
   },
   showpost() {
     this.setData({
-      showdetail: !this.data.showdetail
+      showdetail: !this.data.showdetail 
     })
   },
+  // 取到帖子详情页面
   backtoshow() {
     this.setData({
       showdetail: !this.data.showdetail
@@ -40,13 +41,18 @@ Page({
       console.log(self.data.msgArr);
     })
   },
+  toMsgDetail(e) {
+    let {_id, communityId, contentVal, postBy, postTime, selectedpic, titleVal, userInfo} = e.currentTarget.dataset.msgarr;
+    let {avatarUrl, nickName} = userInfo
+    wx.navigateTo({ url: `/pages/msgDetail/msgDetail?msgId=${_id}&communityId=${communityId}&contentVal=${contentVal}&postBy=${postBy}&postTime=${postTime}&selectedpic=${selectedpic}&titleVal=${titleVal}&avatarUrl=${avatarUrl}&nickName=${nickName}`});
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let communityDetail = { ...options }
-    console.log(communityDetail);
+    // console.log(communityDetail);
     this.setData({
       communityDetail
     })
@@ -64,10 +70,12 @@ Page({
       self.setData({
         msgArr
       })
+      
+      // console.log(self.data.msgArr);
       wx.hideLoading({
         complete: (res) => { },
       })
-      console.log(self.data.msgArr);
+      // console.log(self.data.msgArr);
     })
   },
 

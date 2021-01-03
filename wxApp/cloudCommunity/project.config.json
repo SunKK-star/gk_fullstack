@@ -85,6 +85,13 @@
         {
           "name": "社区详情",
           "pathName": "pages/communityDetail/communityDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "帖子详情",
+          "pathName": "pages/msgDetail/msgDetail",
+          "query": "",
           "scene": null
         }
       ]
