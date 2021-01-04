@@ -18,7 +18,7 @@
     <button open-type="getUserInfo" type="primary" bindgetuserinfo="getUserInfo">获取我的信息</button>
   </view>
   <view class="my-middle">  
-    <view class="middle_content" >
+    <view class="middle_content" bindtap="change">
       <view class="counts">11</view>
       <view class="another">我的帖子</view>
     </view>

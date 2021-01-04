@@ -1,4 +1,5 @@
 // pages/msgDetail/msgDetail.js
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -12,11 +13,15 @@ Page({
     commentArr: [],
     isReply: false,
     send: '',
-    replay: ''
+    reply: '',
+    replyObj: '',
+    commentDetail: {},
+    isZan: false
   },
 
   // 点击输入框时触发
   sendComment(e) {
+
     this.setData({
       isSend: true
     })
@@ -36,7 +41,14 @@ Page({
   },
 
   // 点击输入框时触发
-  inputReply() {
+  inputReply(e) {
+    console.log(e);
+    let { communityId, msgId, _id, postBy, msgPostBy } = e.currentTarget.dataset.commentdetail;
+    let commentDetail = { communityId, msgId, _id, postBy, msgPostBy, }
+
+    this.setData({
+      commentDetail
+    })
     this.setData({
       isReply: true,
       send: '发送'
@@ -52,7 +64,7 @@ Page({
   },
   // 输入回复内容
   inputReplayCtx(e) {
-    console.log(e.detail.value);
+    // console.log(e.detail.value);
     this.setData({
       replay: e.detail.value
     })
@@ -61,15 +73,122 @@ Page({
   },
 
   // 点击发送回复
-  sendReply() {
+  sendReply(e) {
+
+    wx.showLoading({
+      title: '发送中...',
+      mask: true,
+    })
+
+    let replayCtx = this.data.replay
+    let commentDetail = this.data.commentDetail
+    let { postBy, _id, msgPostBy, communityId, msgId } = commentDetail
+    wx.getUserInfo({
+      success: res => {
+        // console.log(res);
+
+        let { avatarUrl, nickName } = res.userInfo;
+        let userInfo = { avatarUrl, nickName };
+        let replyerInfo = { avatarUrl, nickName };
+        db.collection('comment')
+          .doc(_id).get().then(res => {
+            let { replyArr } = res.data
+            let count = replyArr.length;
+            count++
+            let newArr = replyArr.concat([{ replyerInfo, replayCtx, replyTime: new Date() }])
+            db.collection('comment')
+              .doc(_id).update({
+                // data 传入需要局部更新的数据
+                data: {
+                  // 表示将 done 字段置为 true
+                  replyArr: newArr,
+                  replyNum: count
+                }
+              })
+              .then(res => {
+                // console.log(res);
+              })
+              .catch(console.error)
+          })
+
+        wx.cloud.callFunction({
+          name: 'saveReplay',
+          data: {
+            commentPostBy: postBy,
+            commentId: _id,
+            replayCtx,
+            msgPostBy,
+            userInfo,
+            communityId,
+            msgId,
+          }
+        }).then((res) => {
+          wx.hideLoading({
+            success: () => {
+              if (!res.result) {
+
+                wx.showToast({
+                  title: '输入不能为空哦！',
+                  duration: 1000,
+                  icon: 'error',
+                  mask: true,
+                })
+              } else {
+                // console.log(res);
+                wx.cloud.callFunction({
+                  name: 'getComment',
+                  data: {
+                    communityId,
+                    msgId
+                  }
+                }).then(res => {
+                  let { data } = res.result
+                  // console.log(data);
+                  this.setData({
+                    commentArr: data
+                  })
+                  wx.showToast({
+                    title: '回复成功！',
+
+                    duration: 1000,
+
+                    icon: 'success',
+
+                    mask: true,
+                    success: (res) => { },
+                  })
+                }).catch(err => {
+                  console.log(err);
+                  wx.showToast({
+                    title: '出了点问题!',
+
+                    duration: 1000,
+
+                    icon: 'error',
+
+                    mask: true,
+                    success: (res) => { },
+                  })
+                })
+
+              }
+            },
+          })
+
+        }).catch((err) => {
+          console.log(err);
+        })
+      },
+    });
+
     this.setData({
-      replay: ''
+      reply: ''
     })
   },
 
   // 发送评论
   confireSend(e) {
-    let {postBy, communityId, msgId} = this.data.msgDeati
+    let { postBy, communityId, msgId } = this.data.msgDeati
     wx.showLoading({
       title: '发送中...',
       mask: true,
@@ -78,8 +197,8 @@ Page({
     wx.getUserInfo({
       success: res => {
         // console.log(res);
-        let {avatarUrl, nickName} = res.userInfo;
-        let userInfo = {avatarUrl, nickName};
+        let { avatarUrl, nickName } = res.userInfo;
+        let userInfo = { avatarUrl, nickName };
         wx.cloud.callFunction({
           name: 'saveComment',
           data: {
@@ -88,11 +207,12 @@ Page({
             userInfo,
             communityId,
             msgId,
+            replyArr: []
           }
         }).then((res) => {
           wx.hideLoading({
             success: () => {
-              if (!res.result){
+              if (!res.result) {
                 console.log(res);
                 wx.showToast({
                   title: '输入不能为空哦！',
@@ -100,16 +220,16 @@ Page({
                   icon: 'error',
                   mask: true,
                 })
-              }else {
+              } else {
                 wx.cloud.callFunction({
                   name: 'getComment',
                   data: {
                     communityId,
                     msgId
                   }
-                }).then(res => {   
-                  let {data} = res.result
-                
+                }).then(res => {
+                  let { data } = res.result
+
                   this.setData({
                     commentArr: data,
                     comment: ''
@@ -117,36 +237,87 @@ Page({
                   wx.showToast({
                     title: '评论成功！',
                     duration: 1000,
-                    icon: 'success',                  
+                    icon: 'success',
                     mask: true,
                   })
                 }).catch(err => {
                   console.log(err);
                 })
-                
+
               }
             },
           })
-          
+
         }).catch((err) => {
           console.log(err);
         })
       },
     });
-    
-    
-    
+
+
+
+  },
+
+  // 点赞
+  giveZan(e) {
+    console.log(e);
+    let { _id, communityId, msgId } = e.currentTarget.dataset.commentdetail
+    // console.log(res)
+    db.collection('comment')
+      .doc(_id).get().then(res => {
+        let { zanDetail } = res.data
+        let num = zanDetail.num;
+        if (!zanDetail.isActive) {
+          num++
+          db.collection('comment')
+            .doc(_id).update({
+              data: {
+                zanDetail: {
+                  num,
+                  isActive: true
+                }
+              }
+            }).then(res => {
+              console.log(res);
+            })
+        } else {
+          num--;
+          db.collection('comment')
+            .doc(_id).update({
+              data: {
+                zanDetail: {
+                  num,
+                  isActive: false
+                }
+              }
+            }).then(res => { })
+        }
+        db.collection('comment').where({
+          communityId,
+          msgId
+        }).get().then(res => {
+          console.log(res);
+          // this.setData({
+          //   commentArr: data
+          // })
+        })
+
+      }).catch((err) => {
+        console.log(err);
+      })
+
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-    let {selectedpic, communityId, msgId} = options
+    // console.log(options);
+    let { selectedpic, communityId, msgId } = options
     let picarr = selectedpic.split(',')
     this.setData({
-      msgDeati: {...options},
+      msgDeati: { ...options },
       picarr
     });
 
@@ -158,16 +329,15 @@ Page({
         msgId
       }
     }).then(res => {
-       
-      let {data} = res.result
-      console.log(data); 
+      let { data } = res.result
+      console.log(data);
       this.setData({
         commentArr: data
       })
     }).catch(err => {
       console.log(err);
     })
-    
+
   },
 
   /**

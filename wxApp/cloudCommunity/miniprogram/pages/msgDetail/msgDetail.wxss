@@ -1,5 +1,5 @@
 .msgDetail {
-  padding: 40rpx 30rpx;
+  padding: 40rpx 30rpx 100rpx 30rpx;
   font-size: medium;
 }
 .msgDetail .userinfo {

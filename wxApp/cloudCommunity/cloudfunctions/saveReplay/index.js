@@ -8,22 +8,22 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  if (!event.commentCtx) return
+  if (!event.replayCtx) return
   const wxContext = cloud.getWXContext()
   
   try {
-    return await db.collection('comment').add({
+    return await db.collection('replay').add({
       data: {
-        commentCtx: event.commentCtx,
+        replayCtx: event.replayCtx,
         postTime: Date.now(),
         communityId: event.communityId,
         msgId: event.msgId,
         msgPostBy: event.msgPostBy,
+        commentId: event.commentId,
+        commentPostBy: event.commentPostBy,
+        postBy: wxContext.OPENID,
         _openid: wxContext.OPENID,
-        userInfo: event.userInfo,
-        replyArr: event.replyArr,
-        replyNum: 0,
-        zanNum: 0
+        userInfo: event.userInfo
       }
     })
   } catch (err) {

@@ -23,12 +23,12 @@
         <image mode="widthFix" src="/icons/arrow.png" />
       </view>
     </view>
-    <view class="msgComment" wx:for="{{commentArr}}" wx:key="_id">
+    <view class="msgComment" wx:for="{{commentArr}}" wx:key="index">
       <view class="usermessage">
         <userInfo userInfo="{{item.userInfo}}"></userInfo>
         <view class="zan">
-          <view class="zenicon">
-            <van-icon name="good-job-o" />
+          <view class="zenicon" data-commentDetail="{{item}}" bind:tap="giveZan">
+            <van-icon color="{{isZan?'red':''}}" name="good-job-o" />
           </view>
           <text>3</text>
         </view>
@@ -37,100 +37,18 @@
         <view class="commentCtx">
           {{item.commentCtx}}
           <view cursor-spacing="40" class="{{isReply?'replyCommentWrapper':'noreply'}}">
-            <input placeholder-style="{{isReply || !replay?'':'font-size: 0'}}" placeholder="回复：" value="{{replay}}" bindinput="inputReplayCtx" bindfocus="inputReply"  bindblur="disinputReply" cursor-spacing="0" class="{{isReply?'replyComment':'normol'}}" type="text"></input>
-            <view class="{{isReply?'replyBtn':''}}" data-replay="{{}}" bind:tap="sendReply">{{send}}</view>
+            <input data-commentDetail="{{item}}" placeholder-style="{{isReply || !reply?'':'font-size: 0'}}" placeholder="回复：" value="{{reply}}" bindinput="inputReplayCtx" bindfocus="inputReply" bindblur="disinputReply" cursor-spacing="0" class="{{isReply?'replyComment':'normol'}}" type="text"></input>
+            <view class="{{isReply?'replyBtn':''}}" bind:tap="sendReply">{{send}}</view>
           </view>
         </view>
-        <view class="reply">
-          <view class="comment">
-            <text class="commentername">用户xxx:</text>
-            <text class="commentcon">在力智没达到一定要求的情况下，不要想着去打野团希洛克，要打就打单人。</text>
-          </view>
-          <view class="comment">
-            <text class="commentername">吟诗作赋：</text>
-            <text class="commentcon">力智，上衣下装都50独立+20力量的卡</text>
+        <view class="reply" style="{{!item.replyNum?'display:none':''}}">
+          <view class="comment" wx:for="{{item.replyArr}}" wx:key="replyTime" wx:for-item="i" wx:for-index="replyTime">
+            <text class="commentername">{{i.replyerInfo.nickName}}：</text>
+            <text class="commentcon">{{i.replayCtx}}</text>
           </view>
           <view class="packup">
-            <text>查看全部6条评论</text>
-            <image src="/icons/rarrow.png" />
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="msgComment">
-      <view class="usermessage">
-        <userInfo></userInfo>
-        <view class="zan">
-          <image src="/icons/zan.png" />
-          <text>3</text>
-        </view>
-      </view>
-      <view class="commentwrapper">
-        <view class="commentCtx">武器12属强，首饰25属强，特殊装备附魔三攻</view>
-        <view class="reply">
-          <view class="comment">
-            <text class="commentername">用户xxx:</text>
-            <text class="commentcon">在力智没达到一定要求的情况下，不要想着去打野团希洛克，要打就打单人。</text>
-          </view>
-          <view class="comment">
-            <text class="commentername">吟诗作赋：</text>
-            <text class="commentcon">力智，上衣下装都50独立+20力量的卡</text>
-          </view>
-          <view class="packup">
-            <text>查看全部6条评论</text>
-            <image src="/icons/rarrow.png" />
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="msgComment">
-      <view class="usermessage">
-        <userInfo></userInfo>
-        <view class="zan">
-          <image src="/icons/zan.png" />
-          <text>3</text>
-        </view>
-      </view>
-      <view class="commentwrapper">
-        <view class="commentCtx">武器12属强，首饰25属强，特殊装备附魔三攻</view>
-        <view class="reply">
-          <view class="comment">
-            <text class="commentername">用户xxx:</text>
-            <text class="commentcon">在力智没达到一定要求的情况下，不要想着去打野团希洛克，要打就打单人。</text>
-          </view>
-          <view class="comment">
-            <text class="commentername">吟诗作赋：</text>
-            <text class="commentcon">力智，上衣下装都50独立+20力量的卡</text>
-          </view>
-          <view class="packup">
-            <text>查看全部6条评论</text>
-            <image src="/icons/rarrow.png" />
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="msgComment">
-      <view class="usermessage">
-        <userInfo></userInfo>
-        <view class="zan">
-          <image src="/icons/zan.png" />
-          <text>3</text>
-        </view>
-      </view>
-      <view class="commentwrapper">
-        <view class="commentCtx">武器12属强，首饰25属强，特殊装备附魔三攻</view>
-        <view class="reply">
-          <view class="comment">
-            <text class="commentername">用户xxx:</text>
-            <text class="commentcon">在力智没达到一定要求的情况下，不要想着去打野团希洛克，要打就打单人。</text>
-          </view>
-          <view class="comment">
-            <text class="commentername">吟诗作赋：</text>
-            <text class="commentcon">力智，上衣下装都50独立+20力量的卡</text>
-          </view>
-          <view class="packup">
-            <text>查看全部6条评论</text>
-            <image src="/icons/rarrow.png" />
+            <text style="{{item.replyNum>2?'':'display:none'}}">查看全部{{item.replyNum}}条评论</text>
+            <image style="{{item.replyNum>2?'':'display:none'}}" src="/icons/rarrow.png" />
           </view>
         </view>
       </view>
