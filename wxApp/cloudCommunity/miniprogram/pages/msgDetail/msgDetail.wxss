@@ -101,7 +101,7 @@
 .msgDetail .container .msgComment .commentwrapper .commentCtx .replyCommentWrapper .replyComment {
   width: 520rpx;
   height: 70rpx;
-  background-color: #9a9a9a;
+  background-color: #f6f6f6;
   border-radius: 50rpx;
   padding-left: 35rpx;
 }

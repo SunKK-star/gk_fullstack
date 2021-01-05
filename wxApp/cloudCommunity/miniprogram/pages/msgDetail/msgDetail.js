@@ -16,7 +16,8 @@ Page({
     reply: '',
     replyObj: '',
     commentDetail: {},
-    isZan: false
+    isZan: false,
+    maohao: '：'
   },
 
   // 点击输入框时触发

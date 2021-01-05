@@ -42,9 +42,13 @@
           </view>
         </view>
         <view class="reply" style="{{!item.replyNum?'display:none':''}}">
-          <view class="comment" wx:for="{{item.replyArr}}" wx:key="replyTime" wx:for-item="i" wx:for-index="replyTime">
-            <text class="commentername">{{i.replyerInfo.nickName}}：</text>
-            <text class="commentcon">{{i.replayCtx}}</text>
+          <view class="comment" >
+            <text class="commentername">{{item.replyArr[0].replyerInfo.nickName}}：</text>
+            <text class="commentcon">{{item.replyArr[0].replayCtx}}</text>
+          </view>
+          <view class="comment" >
+            <text class="commentername">{{item.replyArr[1].replyerInfo.nickName}}{{maohao}}</text>
+            <text class="commentcon">{{item.replyArr[1].replayCtx}}</text>
           </view>
           <view class="packup">
             <text style="{{item.replyNum>2?'':'display:none'}}">查看全部{{item.replyNum}}条评论</text>
