@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello React!</title>
+</head>
+
+<body>
+  <div id="test"></div>
+  <!--引入react和核心库-->
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <!--引入react-dom,用于支持react操作dom-->
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <!--引入babel，用于将jsx转化为js-->
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+
+  <script type="text/babel"> /* 此处一定要写babel */
+
+
+    class Weather extends React.Component {
+      state = { isHot: true }
+      changeWeather = () => {
+        const isHot = this.state.isHot;
+        this.setState({
+          isHot: !isHot
+        })
+      }
+      input = () => {
+        console.log(this.x.value);
+      }
+      saveInput = (c) => {
+        this.x = c;
+        console.log('@', c);
+      }
+      render() {
+        console.log(this);
+        let { isHot } = this.state
+        return (
+          <div>
+            <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
+            {/*<input ref={c => {
+              this.x = c;
+              console.log('@', c);
+            }} type="text" />*/}
+            <input ref={this.saveInput} type="text" />
+            <button onClick={this.input}>click</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Weather />, document.getElementById('test'))
+
+
+  </script>
+</body>
+
+</html>

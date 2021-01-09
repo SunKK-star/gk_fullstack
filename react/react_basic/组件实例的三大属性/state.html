@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello React!</title>
+</head>
+<body>
+  <div id="test"></div>
+  <!--引入react和核心库-->
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <!--引入react-dom,用于支持react操作dom-->
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <!--引入babel，用于将jsx转化为js-->
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+
+  <script type="text/babel"> /* 此处一定要写babel */
+    let isHot = false 
+    // 1.定义类式组件
+    class Weather extends React.Component {
+      // constructor调用一次
+      constructor(props) {
+        super(props)
+        // 初始化状态
+        this.state = {
+          isHot: false,
+          wind: '微风'
+        }
+        // 解决changeWeather中this指向问题
+        this.changeWeather = this.changeWeather.bind(this)
+      }
+      // render调用1+n次
+      render() {
+        console.log('render');
+        // reder上的this是谁 --》MyConponent的实例对象 <= > MyConponent组件实例对象
+        console.log('render中的实例：',this);
+        return <h2 onClick={this.changeWeather}>今天天气很{this.state.isHot ? '炎热' : '凉爽'},{this.state.wind}</h2>
+      }
+      changeWeather() {
+        // changeWeather放在那里？ ----changeWeather的原型对象上，供实例使用
+        // 由于changeWeather是作为onClick的回调，所以不能通过实例调用，是直接调用
+        // 类中的方法默认开启了严格模式，所以changeWeather中的this为undefined
+        
+        // 获取原来isHot值
+        const isHot = this.state.isHot
+        // 严重注意，状态不可直接更改，要借助一个内置的API去更改！！！
+        // this.state.isHot = !this.state.isHot
+        // 严重注意状态必须通过setState进行更新，且更新是一种合并，不是替换
+        this.setState({isHot:!isHot})
+        console.log(this.state.isHot);
+      }
+    }
+    // 渲染组件到页面
+    ReactDOM.render(<Weather/>,document.getElementById('test'))
+    /* 
+      ReactDOM.render(<MyConponentt/>....后，发生了什么？
+        1.react解析组件标签，找到MyComponent组件。
+        2.发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的reder方法，
+        将返回的虚拟dom转为真实dom，随后呈现在页面中
+    */
+
+  </script>
+</body>
+</html>

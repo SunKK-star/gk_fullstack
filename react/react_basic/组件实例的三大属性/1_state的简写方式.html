@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello React!</title>
 </head>
+
 <body>
   <div id="test"></div>
   <!--引入react和核心库-->
@@ -15,19 +17,28 @@
   <script type="text/javascript" src="../js/babel.min.js"></script>
 
   <script type="text/babel"> /* 此处一定要写babel */
-    // 1.定义函数式组件
-    function MyConponentt() {
-      console.log(this); // 此处的this是undefined，因为babel开启了严格模式
-      return <h2>我是用函数定义的组件(适合于简单组件的定义)</h2>
+
+
+    class Weather extends React.Component {
+
+      state = {
+        isHot: false,
+        wind: '微风'
+      }
+      render() {
+        console.log('render中的实例：', this);
+        return <h2 onClick={this.changeWeather}>今天天气很{this.state.isHot ? '炎热' : '凉爽'},{this.state.wind}</h2>
+      }
+      changeWeather = () => {
+        const isHot = this.state.isHot
+        this.setState({ isHot: !isHot })
+      }
     }
-    // 渲染组件到页面
-    ReactDOM.render(<MyConponentt/>,document.getElementById('test'))
-    /* 
-      ReactDOM.render(<MyConponentt/>....后，发生了什么？
-        1.react解析组件标签，找到MyComponent组件。
-        2.发现组件是使用函数定义的，随后调用该函数，将返回的虚拟dom转为真实dom，随后呈现在页面中
-    */
+
+    ReactDOM.render(<Weather />, document.getElementById('test'))
+
 
   </script>
 </body>
+
 </html>
