@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id="test"></div>
+  <script src="../../js/react.development.js" type="text/javascript"></script>
+  <script src="../../js/react-dom.development.js" type="text/javascript"></script>
+  <script src="../../js/babel.min.js" type="text/javascript"></script>
+  <script type="text/babel">
+    // 创建组件
+    class Login extends React.Component {
+      state = {
+        username: '', // 用户名
+        password: ''  // 密码
+      }
+
+      // 保存表单数据到状态中
+      saveFormData = (param, value) => {
+          this.setState({
+            [param]: value
+          })
+      }
+      render() {
+        return (
+          <form action="http://www.atguigi.com" onSubmit={this.handlersubmit}>
+            用户名：<input onChange={(e) => {this.saveFormData('username',e.target.value)}} type="text" name='username' />
+            密码：<input onChange={(e) => {this.saveFormData('password',e.target.value)}} type="password" name='password' />
+            <button>登录</button>
+          </form>
+        )
+      }
+      handlersubmit = (event) => {
+        event.preventDefault() // 组织表单提交
+        const { username, password } = this
+        alert(`你输入的姓名是：${username.value},你输入的密码是：${password.value}`)
+      }
+    }
+    ReactDOM.render(<Login />, document.getElementById('test'))
+  </script>
+</body>
+
+</html>

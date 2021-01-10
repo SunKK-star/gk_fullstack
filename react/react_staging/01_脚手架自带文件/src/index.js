@@ -1,24 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals'; // 记录性能
-import CommentApp from './CommentApp';
-
-class Header extends Component {
-  render() {
-    return (
-      <div>
-        <h1 className="title">React小书</h1>
-      </div>
-    )
-  }
-}
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode> 
-    {/* <App /> */}
-    <CommentApp />
+  <React.StrictMode>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
