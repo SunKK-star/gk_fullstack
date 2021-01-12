@@ -1,10 +1,7 @@
 function getJson() {
-  return new Promise((resolve, reject) => {
-    setTimeout(function () {
-      console.log(2);
-      resolve('sadsd')
-    }, 1000)
-  })
+  setTimeout(function () {
+    console.log(111);
+  }, 1000)
 }
 function aa() {
   return new Promise((resolve, reject) => {
@@ -19,14 +16,31 @@ function bb() {
     resolve('ok')
   })
 }
-async function testAsync() {
-  let data1 = await getJson();
-  console.log(data1);
-  console.log(222);
-  let data2 = await aa();
-  let data3 = await bb()
-  console.log(data1, data2, data3);
-  console.log(111);
+// async function testAsync() {
+//   try {
+//     await getJson();
+//     console.log(222);
+//     await aa();
+//     await bb()
+//     console.log(111);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+function testAsync() {
+  return Promise.resolve().then(() => {
+    return getJson()
+  }).then((res) => {
+    console.log(222);
+    return aa();
+  }).then(() => {
+    return bb()
+  }).then(() => {
+    console.log(111);
+  }).catch((err) => {
+    console.log(err);
+  })
 }
 
 // function testAsync() {

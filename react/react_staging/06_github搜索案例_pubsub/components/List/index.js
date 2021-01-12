@@ -4,10 +4,13 @@ import PubSub from 'pubsub-js'
 
 export default class List extends Component {
   componentDidMount() {
-    PubSub.subscribe('@gk', (_, data) => {
+    this.token = PubSub.subscribe('@gk', (_, data) => {
       console.log('List组件收到数据了', data);
       this.setState(data)
     })
+  }
+  componentWillUnmount() {
+    PubSub.unsubscribe(this.token)
   }
   state = { // 初始化状态
     users: [], // users初始值为数组
