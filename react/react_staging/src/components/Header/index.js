@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import { Button } from 'antd';
+import 'antd/dist/antd.css'
 
 class Header extends Component {
   goForward = () => {
@@ -15,8 +17,9 @@ class Header extends Component {
     return (
       <div>
         <button onClick={this.goForward}>前进</button>
-        <button onClick={this.goBack}>后退</button> 
+        <button onClick={this.goBack}>后退</button>
         <button onClick={this.go}>go</button>
+        <Button type="primary">Primary Button</Button>
       </div>
     )
   }
