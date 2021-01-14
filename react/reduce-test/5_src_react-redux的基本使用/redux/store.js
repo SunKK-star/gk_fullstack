@@ -2,6 +2,6 @@
 import thunk from 'redux-thunk'
 
 import {createStore, applyMiddleware} from 'redux'
-import countReducer from '../redux/reducers/Count/count'
+import countReducer from './count_reducer'
 
 export default createStore(countReducer, applyMiddleware(thunk))
