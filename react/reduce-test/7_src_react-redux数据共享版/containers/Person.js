@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { add_person } from '../redux/actions/person'
-import { nanoid } from "nanoid"
+import {connect} from 'react-redux'
+import {createAddPersonAction} from '../redux/actions/person'
+import {nanoid} from "nanoid"
 
-class Person extends Component {
+ class Person extends Component {
   addPerson = () => {
     const name = this.nameNode.value
     const age = this.ageNode.value
-    const personObj = { id: nanoid(), name, age }
+    const personObj = {id: nanoid(), name, age}
     this.props.add_person(personObj)
     this.nameNode.value = ""
     this.ageNode.value = ""
@@ -33,10 +33,16 @@ class Person extends Component {
     )
   }
 }
-
+const a = function(state) {
+  return {personArr: state.ren, count: state.he}
+}
+const b = function(dispatch) {
+  return {
+    add_person: (data) => {
+      dispatch(createAddPersonAction(data))
+    } 
+  }
+}
 export default connect(
-  state => ({ personArr: state.persons, count: state.count }),
-
-  {add_person}
- 
+  a, b
 )(Person)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { increment, decrement, incrementAsync } from '../redux/actions/count'
+import { createIncrementAcrion, createDecrementAcrion, createAsyncIncrementSAction } from '../redux/actions/count'
 import { connect } from 'react-redux'
 
 class Count extends Component {
@@ -43,11 +43,11 @@ class Count extends Component {
 }
 
 export default connect(
-  state => ({ count: state.count, personArr: state.persons}),
+  state => ({ count: state.he, personArr: state.ren}),
   {
-    increment,
-    decrement,
-    incrementAsync
+    increment: createIncrementAcrion,
+    decrement: createDecrementAcrion,
+    incrementAsync: createAsyncIncrementSAction
 
   }
 )(Count)
