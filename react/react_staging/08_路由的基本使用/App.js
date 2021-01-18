@@ -21,7 +21,7 @@ export default class App extends Component {
               {/*原生html中，靠<a>跳转不同的页面*/}
               {/*在React中靠路由链接实现切换组件 ---编写路由链接*/}
 
-              <Link className="list-group-item" to="/about">About</Link>
+              <Link className="list-group-item" to="/about/x/y">About</Link>
               <Link className="list-group-item" to="/home">Home</Link>
 
             </div>
