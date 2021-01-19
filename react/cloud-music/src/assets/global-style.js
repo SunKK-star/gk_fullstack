@@ -19,6 +19,7 @@ const noWrap = () => {
 }
 
 export default {
+  'hei': '#000',
   'theme-color': '#d44439',
   'theme-color-shadow': 'rgba (212, 68, 57, .5)',
   'font-color-light': '#f1f1f1',

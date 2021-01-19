@@ -7,7 +7,7 @@ export const Top = styled.div`
   justify-content: space-between;
   padding: 5px 10px;
   background-color: ${style["theme-color"]};
-  &>span {
+  span {
     line-height: 40px;
     color: #f1f1ff;
     font-size: 20px;
@@ -22,7 +22,7 @@ export const Tab = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background: ${style ["theme-color"]};
+  background: ${style["theme-color"]};
   a {
     flex: 1;
     padding: 2px 0;

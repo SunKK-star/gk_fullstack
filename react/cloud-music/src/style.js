@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 	small, strike, strong, sub, sup, tt, var,
 	b, u, i, center,
 	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
+	fieldset, form, label, legend,  
 	table, caption, tbody, tfoot, thead, tr, th, td,
 	article, aside, canvas, details, embed, 
 	figure, figcaption, footer, header, hgroup, 
@@ -51,3 +51,6 @@ export const GlobalStyle = createGlobalStyle`
 		color: #fff;
 	}
 `
+
+
+
