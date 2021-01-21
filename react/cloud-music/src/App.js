@@ -6,11 +6,13 @@ import {GlobalStyle} from './style'
 import {IconStyle} from './assets/iconfont/iconfont'
 
 export default function App() {
+  const ref = React.createRef();
   return (
     <HashRouter>
       <IconStyle/>
       <GlobalStyle/>
       {renderRoutes(routes)}
     </HashRouter>
+
   )
 }

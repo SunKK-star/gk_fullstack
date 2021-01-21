@@ -18,7 +18,7 @@ export default [
       },
       {
         path: "/recommend",
-        component: Recommend
+        component: Recommend 
       },
       {
         path: "/singers",

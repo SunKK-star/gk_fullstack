@@ -7,7 +7,8 @@ if ([0]) {
 
 // [] == [] 内存地址不一致
 
-// [0] == true
+// [0] == true+-----------  
 // [0] == 1
 // "0" == 1
 // 0 == 1
+this.resizeBy(this.XMLDocument.apply(x,y,z,u))
