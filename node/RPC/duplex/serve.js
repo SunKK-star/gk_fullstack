@@ -2,11 +2,15 @@ const net = require('net')
 
 const server = net.createServer((socket) => {
   socket.on('data', function(buffer) {
-    console.log(buffer, buffer.toString());
+    const seqBuffer = buffer.slice(0,2)
     const lessonid = buffer.readInt32BE();
     setTimeout(() => {
-      socket.write(
+      const buffer = Buffer.concat([
+        seqBuffer,
         Buffer.from(data[lessonid])
+      ])
+      socket.write(
+        buffer
       )
     }, 500) 
   })
