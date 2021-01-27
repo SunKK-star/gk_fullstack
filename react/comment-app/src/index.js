@@ -1,29 +1,16 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals'; // 记录性能
-import CommentApp from './CommentApp';
-
-class Header extends Component {
-  render() {
-    return (
-      <div>
-        <h1 className="title">React小书</h1>
-      </div>
-    )
-  }
-}
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import App from './App'
 
 ReactDOM.render(
-  <React.StrictMode> 
-    {/* <App /> */}
-    <CommentApp />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'))
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// 检测redux中状态的改变，若redux的状态发生改变，那么重新渲染App组件
+// store.subscribe(() => {
+//   ReactDOM.render(<App/>, document.getElementById('root'))
+// })

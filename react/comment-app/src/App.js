@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-
-class CommentApp extends Component {
-  render() {
-    return (
-      <div>
-        评论App
-      </div>
-    )
-  }
+import React from 'react'
+import Count from './container/count'
+import Person from './container/person'
+export default function App() {
+  return (
+    <>
+      <Count />
+      <hr/>
+      <Person/>
+    </>
+    
+  )
 }
-
-export default CommentApp;

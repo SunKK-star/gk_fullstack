@@ -1,6 +1,6 @@
 import * as actionTypes from './constants'
 import { fromJS } from 'immutable'
-import { getBannerRequest, getRecommendListRequest } from '../../../api/requset'
+import {getBannerRequest, getRecommendListRequest} from '../../../api/requset'
 export const changeBannerList = (data) => ({
   type: actionTypes.CHANGE_BANNER,
   data: fromJS(data)
@@ -21,6 +21,7 @@ export const getBannerList = () => {
   }
 };
 
+
 export const getRecommendList = () => {
   return (dispatch) => {
     getRecommendListRequest().then(data => {
@@ -29,4 +30,4 @@ export const getRecommendList = () => {
       console.log("推荐歌单数据传输错误");
     });
   }
-};
+};  

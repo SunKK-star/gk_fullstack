@@ -2,9 +2,12 @@ import React, { useRef, useEffect } from 'react'
 import Slider from '../../components/Slider/slider'
 import Scroll from '../../components/Scroll'
 import RecommendList from '../../components/RecommendList'
+import { } from './store/action'
+import { connect } from 'react-redux'
 import { Content } from './style'
 
 function Recommend(props) {
+  console.log(props);
   const bannerList = [1, 2, 3, 4].map(() => {
     return { imageUrl: 'http://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg' }
   })
@@ -28,4 +31,17 @@ function Recommend(props) {
   )
 }
 
-export default React.memo(Recommend)
+const mapStateToProps = (state) => {
+  return {
+    
+    recommendList: state.recommend.get(['recommend', 'bannerList'])
+  }
+}
+const mapDisPatchToProps = (dispatch) => {
+  return {
+    getBanners: () => { },
+    getRecommendList: () => { }
+  }
+}
+
+export default connect(mapStateToProps, mapDisPatchToProps)(React.memo(Recommend)) 
