@@ -80,9 +80,6 @@ const Scroll = React.forwardRef((props, ref) => {
   });
 
   useImperativeHandle(ref, () => ({
-    x() {
-      console.log(1111);
-    },
     refresh() {
       if (bScroll) {
         bScroll.refresh();
