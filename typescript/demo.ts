@@ -28,5 +28,3 @@ function fn1(): never {
 }
 
 let sentence: string = `this is a new sentence ${e}
-
-console.log(sentence);
