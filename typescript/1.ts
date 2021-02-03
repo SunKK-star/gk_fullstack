@@ -23,7 +23,8 @@ enum Gender{
   Male = 1,
   Female = 0
 }
-let i: { name: string, gender: Gender }
+export let hi: { name: string, age: number } = {name: 'swk', age: 18}
+export let i: { name: string, gender: Gender }
 i = {
   name: "孙悟空",
   gender: Gender.Male
