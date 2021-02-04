@@ -24,31 +24,46 @@ const obj: myInterface = {
 }
 
 interface myinter{
-  _name: string;
   dayhello(): void
 }
 
 class Studen implements myinter{
-  public _name: string
-  private _gender: string
-  public age: number
-  constructor(name: string, gender: string, age: number) {
+  private _name: string
+  private age: number
+  constructor(name: string,public gender: string, age: number) {
     this._name = name
-    this._gender = gender
     this.age = age
   }
   dayhello(): void {
     console.log(132);
   }
-  setGender(gender: string): void {
-    this._gender = gender
+  // setGender(gender: string): void {
+  //   this._gender = gender
+  // }
+  // getGender(): string {
+  //   return this._gender
+  // }
+
+  // ts中设置getter方法
+  get name() {
+    return this._name
   }
-  getGender(): string {
-    return this._gender
+  set name(value) {
+    this._name = value
+  }
+  get _age() {
+    return this.age
+  }
+  set _age(value) {
+    if (value >= 0) {
+      this.age = value
+    }
   }
 }
 
 const s = new Studen('sd', 'm', 18)
-s._name = 'swk'
-s.setGender('man')
-console.log(s.getGender());
+s.name = '孙悟空'
+s._age = -1
+console.log(s);
+
+
