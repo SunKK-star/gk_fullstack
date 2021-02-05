@@ -3,6 +3,7 @@ import {todoReducer} from './reducer'
 import { ITd, ACTION_TYPE } from '../../typings'
 import TdInput from './Input'
 import TdList from './List'
+import TdFooter from '../Footer'
 
 
 const TodoList: FC = (): ReactElement => {
@@ -39,7 +40,9 @@ const TodoList: FC = (): ReactElement => {
   return (
     <div>
       <TdInput addTo={addTodo} todoList={state.todoList} />
-      <TdList todoList={state.todoList} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+      <TdList todoList={state.todoList} removeTodo={removeTodo} toggleTodo={toggleTodo} /> 
+      <hr/>
+      <TdFooter/>
     </div>
   )
 }

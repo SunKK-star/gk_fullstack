@@ -1,0 +1,4 @@
+.all_select {
+  color: aqua;
+  margin-left: 20x;
+}
