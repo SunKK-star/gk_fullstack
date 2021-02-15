@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import { Content } from './style'
 import {forceCheck} from 'react-lazyload'
 
+import Loading from '../../components/Loading'
+
 function Recommend(props) {
   const { bannerList, recommendList } = props;
   const bannerListJS = bannerList ? bannerList.toJS() : [];
@@ -18,10 +20,11 @@ function Recommend(props) {
 
   return (
     <Content>
+      <Loading></Loading>
       <Scroll className="list" onScroll={forceCheck}>
         <div >
           <Slider bannerList={bannerListJS} />
-          <RecommendList recommendList={recommendListJS} />
+          <RecommendList recommendList={recommendListJS} />fd
         </div>
       </Scroll>
     </Content>

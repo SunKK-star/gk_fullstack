@@ -16,10 +16,12 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": true,"jsxFactory": "GXC",
+    "ispation": "jsxFactory",
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "exclude": ["react-jsx"],
   "include": [
     "src"
   ]
