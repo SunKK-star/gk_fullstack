@@ -4,7 +4,6 @@ import LazyLoad from 'react-lazyload'
 import { getCount } from '../../api/utils'
 
 function RecommendList(props) {
-  console.log(props);
   return (
     <ListContainer>
       <h1>推荐歌单</h1>

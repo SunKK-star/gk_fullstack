@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, {  useEffect } from 'react'
 import Slider from '../../components/Slider/slider'
 import Scroll from '../../components/Scroll'
 import RecommendList from '../../components/RecommendList'
@@ -10,21 +10,25 @@ import {forceCheck} from 'react-lazyload'
 import Loading from '../../components/Loading'
 
 function Recommend(props) {
-  const { bannerList, recommendList } = props;
+  const { bannerList, recommendList, enterLoading} = props;
   const bannerListJS = bannerList ? bannerList.toJS() : [];
   const recommendListJS = recommendList ? recommendList.toJS() : [];
   useEffect(() => {
-    props.getRecommendList()
-    props.getBanners()
+    if(!bannerList.size) {
+      props.getRecommendList()
+    }
+    if(!recommendList.size) {
+      props.getBanners()
+    }
   }, [])
 
   return (
     <Content>
-      <Loading></Loading>
+      {enterLoading?<Loading/>:null}
       <Scroll className="list" onScroll={forceCheck}>
         <div >
           <Slider bannerList={bannerListJS} />
-          <RecommendList recommendList={recommendListJS} />fd
+          <RecommendList recommendList={recommendListJS} />
         </div>
       </Scroll>
     </Content>
@@ -34,7 +38,8 @@ function Recommend(props) {
 const mapStateToProps = (state) => {
   return {
     recommendList: state.getIn(['recommend', 'recommendList']),
-    bannerList: state.getIn(['recommend', 'bannerList'])
+    bannerList: state.getIn(['recommend', 'bannerList']),
+    enterLoading: state.getIn(['recommend', 'enterLoading'])
   }
 }
 const mapDisPatchToProps = (dispatch) => {
