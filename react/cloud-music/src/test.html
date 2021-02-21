@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+        .ss{
+            width: 400px;
+            height: 200px;
+            background-color: red;
+        }
+        p:nth-child(2){
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ss">
+        <p class="example">使用 class="example" 的标题</p>
+        <p class="example">使用 class="example" 的段落</p>
+        <p>点击按钮为 class="example" (索引为 0) 的第一个元素设置背景颜色。</p>
+    </div>
+
+    <span>dsadsadadsasfasfsafaf</span>
+
+    <button onclick="myFunction()">点我</button>
+
+    <p><strong>注意:</strong>Internet Explorer 8 及更早版本不支持 querySelectorAll() 方法。</p>
+
+    <script>
+        function myFunction() {
+            let ss = document.querySelector('p')
+            console.log(ss);
+            console.log(ss.offsetParent);
+        }
+    </script>
+
+</body>
+
+</html>

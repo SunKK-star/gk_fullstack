@@ -10,7 +10,7 @@ const ScrollContainer = styled.div`
 `
 // 父组件想拿到子组件的dom节点
 const Scroll = React.forwardRef((props, ref) => {
-  const [bScroll, setBScroll] = useState();
+  const [bScroll, setBScroll] = useState(); 
 
   const scrollContaninerRef = useRef();
 
