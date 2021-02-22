@@ -1,10 +1,14 @@
 import React from 'react'
-
+import Loading from '../../components/Loading-v2'
 
 
 function Rank() {
   return (
-    <h1>Rank</h1>
+    <>
+      <h1>Rank</h1>
+      <Loading/>
+    </>
+
   )
 }
 

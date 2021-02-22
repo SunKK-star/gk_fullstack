@@ -13,19 +13,19 @@ export const changePageCount = (data) => ({
 })
 
 // 进场Loading
-const changeEnterLoading = (data) => ({
+export const changeEnterLoading = (data) => ({
   type: CHANGE_ENTER_LOADING,
   data
 })
 
 // 滑动最底部上拉Loading
-const changePullUpLoading = (data) => ({
+export const changePullUpLoading = (data) => ({
   type: CHANGE_PULLUP_LOADING,
   data
 })
 
 // 顶部下拉刷新Loading
-const changePullDownLoading = (data) => ({
+export const changePullDownLoading = (data) => ({
   type: CHANGE_PULLDOWN_LOADING,
   data
 })
@@ -60,9 +60,9 @@ export const getMoreHotSingerList = () => {
 }
 
 // 第一次加载对应类别的歌手
-export const getSingerList = (category, alpha) => {
+export const getSingerList = (category, area, alpha) => {
   return (dispatch) => {
-    getSingerListRequest(category, alpha, 0).then(res => {
+    getSingerListRequest(category,area, alpha, 0).then(res => {
       const data = res.artists;
       dispatch(changeSingerList(data));
       dispatch(changeEnterLoading(false));
@@ -74,11 +74,11 @@ export const getSingerList = (category, alpha) => {
 }
 
 // 加载更多对应类别歌手数据
-export const getMoreSingerList = (category, alpha) => {
+export const getMoreSingerList = (category, area, alpha) => {
   return (dispatch, getState) => {
     const pageCount = getState().getIn(['singers', 'pageCount'])
     const singerList = getState().getIn(['singers', 'singerList']).toJS();
-    getSingerListRequest(category, alpha, pageCount).then(res => {
+    getSingerListRequest(category, area, alpha, pageCount).then(res => {
       const data = [...singerList, ...res.artists]
       dispatch(changeSingerList(data))
       dispatch(changePullUpLoading(false))

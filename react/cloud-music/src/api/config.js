@@ -12,173 +12,259 @@ axiosInstance.interceptors.response.use(
   }
 )
 
-export {axiosInstance}
+export { axiosInstance }
 
 export const categoryTypes = [{
+  id: 0,
   name: "华语男",
-  key: "1001"
+  key: {
+    type: '1',
+    area: '7'
+  }
 },
 {
+  id: 1,
   name: "华语女",
-  key: "1002"
+  key: {
+    type: '2',
+    area: '7'
+  }
 },
 {
+  id: 2,
   name: "华语组合",
-  key: "1003"
+  key: {
+    type: '3',
+    area: '7'
+  }
 },
 {
+  id: 3,
   name: "欧美男",
-  key: "2001"
+  key: {
+    type: '1',
+    area: '96'
+  }
 },
 {
+  id: 4,
   name: "欧美女",
-  key: "2002"
+  key: {
+    type: '2',
+    area: '96'
+  }
 },
 {
+  id: 5,
   name: "欧美组合",
-  key: "2003"
+  key: {
+    type: '3',
+    area: '96'
+  }
 },
 {
+  id: 6,
   name: "日本男",
-  key: "6001"
+  key: {
+    type: '1',
+    area: '8'
+  }
 },
 {
+  id: 7,
   name: "日本女",
-  key: "6002"
+  key: {
+    type: '2',
+    area: '8'
+  }
 },
 {
+  id: 8,
   name: "日本组合",
-  key: "6003"
+  key: {
+    type: '3',
+    area: '8'
+  }
 },
 {
+  id: 9,
   name: "韩国男",
-  key: "7001"
+  key: {
+    type: '1',
+    area: '16'
+  }
 },
 {
+  id: 10,
   name: "韩国女",
-  key: "7002"
+  key: {
+    type: '2',
+    area: '16'
+  }
 },
 {
+  id: 11,
   name: "韩国组合",
-  key: "7003"
+  key: {
+    type: '3',
+    area: '16'
+  }
 },
 {
+  id: 12,
   name: "其他男歌手",
-  key: "4001"
+  key: {
+    type: '1',
+    area: '0'
+  }
 },
 {
+  id: 13,
   name: "其他女歌手",
-  key: "4002"
+  key: {
+    type: '2',
+    area: '0'
+  }
 },
 {
+  id: 14,
   name: "其他组合",
-  key: "4003"
+  key: {
+    type: '3',
+    area: '0'
+  }
 },
 ];
 
 // 歌手首字母
 export const alphaTypes = [{
-    key: "A",
-    name: "A"
-  },
-  {
-    key: "B",
-    name: "B"
-  },
-  {
-    key: "C",
-    name: "C"
-  },
-  {
-    key: "D",
-    name: "D"
-  },
-  {
-    key: "E",
-    name: "E"
-  },
-  {
-    key: "F",
-    name: "F"
-  },
-  {
-    key: "G",
-    name: "G"
-  },
-  {
-    key: "H",
-    name: "H"
-  },
-  {
-    key: "I",
-    name: "I"
-  },
-  {
-    key: "J",
-    name: "J"
-  },
-  {
-    key: "K",
-    name: "K"
-  },
-  {
-    key: "L",
-    name: "L"
-  },
-  {
-    key: "M",
-    name: "M"
-  },
-  {
-    key: "N",
-    name: "N"
-  },
-  {
-    key: "O",
-    name: "O"
-  },
-  {
-    key: "P",
-    name: "P"
-  },
-  {
-    key: "Q",
-    name: "Q"
-  },
-  {
-    key: "R",
-    name: "R"
-  },
-  {
-    key: "S",
-    name: "S"
-  },
-  {
-    key: "T",
-    name: "T"
-  },
-  {
-    key: "U",
-    name: "U"
-  },
-  {
-    key: "V",
-    name: "V"
-  },
-  {
-    key: "W",
-    name: "W"
-  },
-  {
-    key: "X",
-    name: "X"
-  },
-  {
-    key: "Y",
-    name: "Y"
-  },
-  {
-    key: "Z",
-    name: "Z"
-  }
+  id: 0,
+  key: "A",
+  name: "A"
+},
+{
+  id: 1,
+  key: "B",
+  name: "B"
+},
+{
+  id: 2,
+  key: "C",
+  name: "C"
+},
+{
+  id: 3,
+  key: "D",
+  name: "D"
+},
+{
+  id: 4,
+  key: "E",
+  name: "E"
+},
+{
+  id: 5,
+  key: "F",
+  name: "F"
+},
+{
+  id: 6,
+  key: "G",
+  name: "G"
+},
+{
+  id: 7,
+  key: "H",
+  name: "H"
+},
+{
+  id: 8,
+  key: "I",
+  name: "I"
+},
+{
+  id: 9,
+  key: "J",
+  name: "J"
+},
+{
+  id: 10,
+  key: "K",
+  name: "K"
+},
+{
+  id: 11,
+  key: "L",
+  name: "L"
+},
+{
+  id: 12,
+  key: "M",
+  name: "M"
+},
+{
+  id: 13,
+  key: "N",
+  name: "N"
+},
+{
+  id: 14,
+  key: "O",
+  name: "O"
+},
+{
+  id: 15,
+  key: "P",
+  name: "P"
+},
+{
+  id: 16,
+  key: "Q",
+  name: "Q"
+},
+{
+  id: 17,
+  key: "R",
+  name: "R"
+},
+{
+  id: 18,
+  key: "S",
+  name: "S"
+},
+{
+  id: 19,
+  key: "T",
+  name: "T"
+},
+{
+  id: 20,
+  key: "U",
+  name: "U"
+},
+{
+  id: 21,
+  key: "V",
+  name: "V"
+},
+{
+  id: 22,
+  key: "W",
+  name: "W"
+},
+{
+  id: 23,
+  key: "X",
+  name: "X"
+},
+{
+  id: 24,
+  key: "Y",
+  name: "Y"
+},
+{
+  id: 25,
+  key: "Z",
+  name: "Z"
+}
 ];

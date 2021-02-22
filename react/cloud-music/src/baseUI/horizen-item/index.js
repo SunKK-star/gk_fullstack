@@ -33,7 +33,7 @@ const ListItem = styled.span`
 
 function Horizen(props) {
   const { list, oldVal, title } = props;
-  const { handleClick } = props;
+  const { handleClick, handleSelected } = props;
   const Category = useRef(null);
 
   // 加入初始化内容宽度的逻辑
@@ -55,9 +55,12 @@ function Horizen(props) {
             list.map((item) => {
               return (
                 <ListItem
-                  key={item.key}
-                  className={`${oldVal === item.key ? 'selected' : ''}`}
-                  onClick={() => handleClick(item.key)}>
+                  key={item.id}
+                  className={`${oldVal === item.id ? 'selected' : ''}`}
+                  onClick={() => {
+                    handleClick(item.key)
+                    handleSelected(item.id)
+                  }}>
                   {item.name}
                 </ListItem>
               )
@@ -76,14 +79,14 @@ function Horizen(props) {
 //handleClick 为点击不同的 item 执行的方法
 Horizen.defaultProps = {
   list: [],
-  oldVal: '',
+  oldVal: 0,
   title: '',
   handleClick: null
 };
 
 Horizen.propTypes = {
   list: PropTypes.array,
-  oldVal: PropTypes.string,
+  oldVal: PropTypes.number,
   title: PropTypes.string,
   handleClick: PropTypes.func
 };

@@ -1,22 +1,41 @@
-import React, { useState, useEffect, useRef, useImperativeHandle } from "react"
+import React, { useState, useEffect, useRef, useImperativeHandle, useMemo } from "react"
 import PropTypes from "prop-types"
 import BScroll from "better-scroll"
 import styled from 'styled-components';
+import Loading from "../Loading";
+import LoadingV2 from "../Loading-v2";
+import {debounce} from '../../api/utils';
+
 
 const ScrollContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
 `
+const PullUpLoading = styled.div`
+`
+const PullDownLoading = styled.div`
+`
+
 // 父组件想拿到子组件的dom节点
 const Scroll = React.forwardRef((props, ref) => {
   const [bScroll, setBScroll] = useState(); 
 
   const scrollContaninerRef = useRef();
 
-  const { direction, click, refresh, bounceTop, bounceBottom } = props;
+  const { direction, click, refresh, bounceTop, bounceBottom, pullUpLoading, pullDownLoading } = props;
 
   const { pullUp, pullDown, onScroll } = props;
+
+  let pullUpDebounce = useMemo (() => {
+    return debounce (pullUp, 300)
+  }, [pullUp]);
+  // 千万注意，这里不能省略依赖，
+  // 不然拿到的始终是第一次 pullUp 函数的引用，相应的闭包作用域变量都是第一次的，产生闭包陷阱。下同。
+  
+  let pullDownDebounce = useMemo (() => {
+    return debounce (pullDown, 300)
+  }, [pullDown]);
 
   useEffect(() => {
     const scroll = new BScroll(scrollContaninerRef.current, {
@@ -50,27 +69,27 @@ const Scroll = React.forwardRef((props, ref) => {
     if (!bScroll || !pullUp) return;
     bScroll.on('scrollEnd', () => {
       // 判断是否滑动到了底部
-      if (bScroll.y <= bScroll.maxScrollY + 100) {
-        pullUp();
+      if(bScroll.y <= bScroll.maxScrollY + 100){
+        pullUpDebounce()
       }
     });
     return () => {
       bScroll.off('scrollEnd');
     }
-  }, [pullUp, bScroll]);
+  }, [pullUp, bScroll, pullUpDebounce]);
 
   useEffect(() => {
     if (!bScroll || !pullDown) return;
     bScroll.on('touchEnd', (pos) => {
       // 判断用户的下拉动作
       if (pos.y > 50) {
-        pullDown();
+        pullDownDebounce();
       }
     });
     return () => {
       bScroll.off('touchEnd');
-    }
-  }, [pullDown, bScroll]);
+    } 
+  }, [pullDown, bScroll, pullDownDebounce]);
 
 
   useEffect(() => {
@@ -93,9 +112,16 @@ const Scroll = React.forwardRef((props, ref) => {
     }
   }));
 
+  const pullUpDisplayStyle = pullUpLoading? {display: ''}: {display: 'none'};
+  const pullDownDisplayStyle = pullDownLoading? {display: ''}: {display: 'none'};
+
   return (
     <ScrollContainer ref={scrollContaninerRef}>
       {props.children}
+      {/* 滑到底部加载动画 */}
+      <PullUpLoading style={pullUpDisplayStyle}><Loading></Loading></PullUpLoading>
+      {/* 底部下拉刷新动画 */}
+      <PullDownLoading style={pullDownDisplayStyle}><LoadingV2></LoadingV2></PullDownLoading>
     </ScrollContainer>
   );
 })
@@ -122,7 +148,7 @@ Scroll.propTypes = {
   pullUpLoading: PropTypes.bool,
   pullDownLoading: PropTypes.bool,
   bounceTop: PropTypes.bool,// 是否支持向上吸顶
-  bounceBottom: PropTypes.bool// 是否支持向上吸顶
+  bounceBottom: PropTypes.bool// 是否支持向下吸顶
 };
 
 export default Scroll;
