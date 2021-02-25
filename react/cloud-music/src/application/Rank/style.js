@@ -26,13 +26,19 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   position: relative;
-  margin-left: 2px;
-  margin-bottom: 5px;
+  margin-left: 3px;
+  padding: 3px 0;
+  border-bottom: 1px solid ${style['border-color']};
   display: flex;
   align-items: center;
   .img_wrapper{
     width: 120px;
     height: 120px;  
+    border-radius: 3px;
+    position: relative;
+    img{
+      border-radius: 3px;
+    }
     .decorate{
       position: absolute;
       bottom: 0;

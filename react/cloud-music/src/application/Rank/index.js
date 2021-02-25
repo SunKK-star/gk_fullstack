@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getRankList } from '../Rank/store/actionCreator'
-import { getRankListRequest } from '../../api/requset'
 import { filterIndex } from '../../api/utils'
 import { List, Container, ListItem, SongList } from './style'
 import Loading from '../../components/Loading'
@@ -22,9 +21,6 @@ function Rank(props) {
   let globalList = rankList.slice(globalStartIndex);
   useEffect(() => {
     getRankListDispatch();
-    getRankListRequest().then(res => {
-      console.log(res);
-    })
   }, [])
 
   const renderRankList = (list, global) => {

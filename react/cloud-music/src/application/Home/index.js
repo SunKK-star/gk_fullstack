@@ -7,7 +7,7 @@ import {
 } from './style';
 import { NavLink } from 'react-router-dom';// 利用 NavLink 组件进行路由跳转
 
-function Home (props){
+function Home(props) {
   const { route } = props;
 
   return (
@@ -22,9 +22,9 @@ function Home (props){
         <NavLink to="/singers" activeClassName="selected"><TabItem><span > 歌手 </span></TabItem></NavLink>
         <NavLink to="/rank" activeClassName="selected"><TabItem><span > 排行榜 </span></TabItem></NavLink>
       </Tab>
-      { renderRoutes (route.routes) }
+      { renderRoutes(route.routes)}
     </div>
   );
 }
- 
-export default React.memo (Home);
+
+export default React.memo(Home);
