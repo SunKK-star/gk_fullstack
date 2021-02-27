@@ -8,3 +8,10 @@ function foo() {
   showName()
 }
 foo()
+
+function bar() {
+  var a = 2;
+  var b = 3;
+  let c = 5;
+  var d = 6;;
+  }
