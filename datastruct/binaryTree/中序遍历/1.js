@@ -1,12 +1,13 @@
 // 运用递归
 
-let inorderTraversal = (root) => {
-  let arr = [];
-  let traverse = (node) => {
-    if (node == null) return
-    traverse(node.val);
-    arr.push(node.val);
-    traverse(node.right)
+const inorderTraversal = (root) => {
+  const res = [];
+  const inorder = (root) => {
+    if(!root) return 
+    inorder(root.left)
+    res.push(root.val);
+    inorder(root.right)
   }
-  return arr
+  inorder(root);
+  return res;
 }
