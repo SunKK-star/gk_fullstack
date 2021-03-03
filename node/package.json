@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "- 这个属性保存的是当前执行的函数对象",
+  "main": "index.js",
+  "dependencies": {
+    "dsaf": "^1.0.0",
+    "mkdirp": "^1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
