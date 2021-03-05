@@ -1,26 +1,33 @@
 <template>
   <div id="app">
-    <Count></Count>
+    <h1>{{$store.state.count}}</h1>
+    <button @click="addition">+</button>
+    <button @click="reducer">-</button>
+
+    <h1><!--33 getters相关信息 --></h1>
+    <h2>{{$store.getters.powerCount}}</h2>
   </div>
 </template>
 
 <script>
-import Count from './components/count'
+
 export default {
   name: 'App',
   components: {
-    Count
+  },
+  methods: {
+    addition() {
+      this.$store.commit('increment')
+    },
+    reducer() {
+      this.$store.commit('decrement')
+    }
+  },
+  created: () => {
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

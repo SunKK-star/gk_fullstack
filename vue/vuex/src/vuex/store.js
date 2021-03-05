@@ -1,54 +1,34 @@
-// 状态管理器，也被称为仓库
+// 状态管理器
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+// 1. 安装插件
+Vue.use(Vuex);
 
-const state = {
-  count: 1
-}
-const mutations = { // 必须是同步代码
-  add(state, num) {
-    state.count += num
+const store = new Vuex.Store({
+  state: {
+    count: 0
   },
-  reduce(state, num) {
-    state.count -= num
-  }
-}
+  mutations: {
+    // 方法
+    increment(state) {
+      state.count++
+    },
+    decrement(state) {
+      state.count--
+    }
+  },
+  actions: {
 
-const getters = {
-  newCount (state) {
-    return state.count**3
-  }
-}
-
-const actions = { // context参数代表vuex对象
-  addAction (context, n) { // 不会主动修改数据源中的数据
-    // context.commit('add', 5)
-    setTimeout(() => {
-      context.commit('add', n)
-    },3000)
-    console.log('我先出现');
-  }
-}
-
-const moduleA = {
-  state,
-  mutations,
-  getters,
-  actions
-}
-
-const state2 = {
-  count1: 2
-}
-const moudleB = {
-  state2
-}
-
-export default new Vuex.Store({
+  },
+  getters: {
+    powerCount: (state) => {
+      return state.count*state.count
+    }
+  },
   modules: {
-    a: moduleA,
-    b: moudleB
+
   }
 })
+
+export default store
