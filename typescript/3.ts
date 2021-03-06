@@ -55,4 +55,23 @@
 // getProperty(x, "a"); // okay
 // getProperty(x, "m");
 
+interface Ipros{
+  name: string,
+  age: number,
+  gender: string
+}
+
+
+interface myIpros extends Omit<Ipros, 'age'>{
+  id: number,
+  isAdmin: boolean
+}
+
+let stu: myIpros = {
+  name: 'gk',
+  gender: 'male',
+  id: 1811526,
+  isAdmin: false
+}
+
 

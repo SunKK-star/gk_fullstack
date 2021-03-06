@@ -1,5 +1,8 @@
 <template>
   <div id="app" >
+    <router-link to="/home" replace="true" active-class="">首页</router-link>
+    <router-link to="/login">登录页</router-link>
+    <router-view></router-view>
     <ul>
       <li @click="tapHandle(inx)" :class="{'active': currentInx === inx}" v-for="(m, inx) in movies" :key="inx">{{m}}</li>
     </ul>
@@ -18,7 +21,7 @@
     <!-- 监听键盘某个键帽的点击 -->
     <input type="text" name="" id="" @keyup.enter="handleKey">
     <!-- once修饰符的使用 -->
-    <Hello1/>
+    <Hello1 :fYd="movies" @handleTap="handleTap" />
   </div>
 </template> 
 
@@ -27,7 +30,7 @@ import Hello from './components/Hello'
 export default {
   name: 'App',
   components: {
-    Hello1: Hello
+    Hello1: Hello 
   },
   data() {
     return {
@@ -46,6 +49,7 @@ export default {
   methods: {
     addition(){
       this.count++;
+      this.$router
     },
     tapHandle(idx) {
       this.currentInx = idx
@@ -64,6 +68,9 @@ export default {
     },
     handleKey(e) {
       console.log(e);
+    },
+    handleTap(e,r) {
+      console.log(e,r);
     }
   },
   computed: {
