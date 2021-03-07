@@ -12,3 +12,13 @@ if ([0]) {
 // "0" == 1
 // 0 == 1
 this.resizeBy(this.XMLDocument.apply(x,y,z,u))
+
+
+
+
+function foo() {
+  let a = 1;
+  function bar() {
+    bar = 2;
+  }
+}

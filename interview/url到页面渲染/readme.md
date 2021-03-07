@@ -2,11 +2,6 @@
 # 定位
 IP协议 =》DNS解析 
 
-
-
-
-
-
 <!-- 下 -->
 # 浏览器收到HTML文件
 1. 词法分析 -> 解析为标记（一段又一段的代码） =》 node节点 =》 DOM树
@@ -56,4 +51,3 @@ for (let i = 0; i < 100; i++) {
     console.log(document.querySelector('.text').style.offsetTop);
   }
 3. 尽量不要用table布局
-

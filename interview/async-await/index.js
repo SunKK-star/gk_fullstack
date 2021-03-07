@@ -16,47 +16,47 @@ function bb() {
     resolve('ok')
   })
 }
-// async function testAsync() {
-//   try {
-//     await getJson();
-//     console.log(222);
-//     await aa();
-//     await bb()
-//     console.log(111);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-function testAsync() {
-  return Promise.resolve().then(() => {
-    return getJson()
-  }).then((res) => {
+async function testAsync() {
+  try {
+    await getJson();
     console.log(222);
-    return aa();
-  }).then(() => {
-    return bb()
-  }).then(() => {
+    await aa();
+    await bb()
     console.log(111);
-  }).catch((err) => {
-    console.log(err);
-  })
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // function testAsync() {
 //   return Promise.resolve().then(() => {
 //     return getJson()
 //   }).then((res) => {
-//     let data1 = res
-//     console.log(3);
-//     return aa()
-//   }).then((res) => {
-//     let data2 = res;
-//     console.log(data2);
+//     console.log(222);
+//     return aa();
+//   }).then(() => {
 //     return bb()
-//   }).then((res) => {
-//     let data3 = res
+//   }).then(() => {
+//     console.log(111);
+//   }).catch((err) => {
+//     console.log(err);
 //   })
 // }
 
-testAsync()
+// // function testAsync() {
+// //   return Promise.resolve().then(() => {
+// //     return getJson()
+// //   }).then((res) => {
+// //     let data1 = res
+// //     console.log(3);
+// //     return aa()
+// //   }).then((res) => {
+// //     let data2 = res;
+// //     console.log(data2);
+// //     return bb()
+// //   }).then((res) => {
+// //     let data3 = res
+// //   })
+// // }
+
+console.log(testAsync());
