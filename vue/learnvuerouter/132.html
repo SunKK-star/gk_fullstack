@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="http://api.github.com/search/users?q=atguigu?callback=getData"></script>
+  // 向服务器test.com发出请求，该请求的查询字符串有一个callback参数，用来指定回调函数的名字
+
+  // 处理服务器返回回调函数的数据
+  <script type="text/javascript">
+    // 服务器返回的数据会放到回调函数里面
+    function getData(res) {
+      // 处理获得的数据
+      console.log(res.data)
+    }
+  </script>
+</body>
+
+</html>

@@ -1,62 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/home">首页</router-link> |
-      <router-link to="/about">关于</router-link> |
-      <router-link :to="'/login/'+msg">登录</router-link>
-    </div>
-    <router-view />
-    <hr/>
+    {{ $store.state.count }}
   </div>
 </template>
 
 <script>
-import About from './views/About.vue'
+import axios from "axios";
+import $ from "jquery";
 export default {
-  name: 'App',
-  components: {
-    About
-  },
+  name: "App",
+  components: {},
   data() {
-    return {
-      msg: "gk",
-    };
+    return {};
   },
-  methods: {
-    toPage() {
-      this.$router.push('/login')
-    },
-    handleTap(e) {
-      console.log(e);
-    }
+  mounted() {
+    $.ajax({
+      url: "http://localhost:8080/a/b",
+      type: "get",
+      dataType: "jsonp", // 请求方式为jsonp
+      jsonpCallback: "handleCallback", // 自定义回调函数名
+      data: {},
+      success: function(res) {
+        console.log(res);
+      }
+    })
+   
   },
-  computed: {
-    getParams() {
-      return this.$route.params.id || '没有东西'
-    }
-  }
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

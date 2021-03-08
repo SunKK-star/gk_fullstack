@@ -6,8 +6,8 @@ function newOperator(ctor, ...args) {
   let res = ctor.apply(obj, args);
   
   let isObject = typeof res === 'object' && res !== null;
-  let isFunction = typoof res === 'function';
-  return isObect || isFunction ? res : obj;
+  let isFunction = typeof res === 'function';
+  return isObject || isFunction ? res : obj;
 };
 
 
