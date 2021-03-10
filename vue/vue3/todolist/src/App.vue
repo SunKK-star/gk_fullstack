@@ -1,12 +1,19 @@
 <template>
   <div class="wrapper">
-    <h1>App..</h1>
+    <TodoInput/>
+    <TodoList/>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import TodoInput from './components/TodoInput/index.vue'
+import TodoList from './components/TodoList/index.vue'
 export default {
-
+  name: 'App',
+  components: {
+    TodoInput,
+    TodoList
+  }
 }
 </script>
 

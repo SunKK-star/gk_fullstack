@@ -11,11 +11,6 @@ const addStrings = (num1, num2) => {
   return res.reverse().join("")
 }
 
-let a='9'
-let b='99'
+let data = new Date().toLocaleDateString()
 
-let x = "fdsfs"
-
-let u = Object.prototype.toString.call(x)
-console.log(u.slice(8,-1));
-
+console.log(data.toString());

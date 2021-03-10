@@ -1,16 +1,12 @@
-// let postorderTraversal = (root) => {
-//   let res = [];
-//   let traverse = (node) => {
-//     if (node == null) return
-//     traverse(node.left);
-//     traverse(node.right);
-//     res.push(node.val)
-//   }
-//   traverse(root)
-//   return res
-// }
-
-function bar(x = 2, y = x) {
-  return [x, y];
+let postorderTraversal = (root) => {
+  let res = [];
+  let traverse = (node) => {
+    if (node == null) return
+    traverse(node.left);
+    traverse(node.right);
+    res.push(node.val)
+  }
+  traverse(root)
+  return res
 }
-console.log(bar());
+
