@@ -1,12 +1,13 @@
 import React from 'react'
-import { Redirect, RouteComponentProps } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import {RouteConfig} from 'react-router-config'
 import Home from '../application/Home'
 import Rank from '../application/Rank'
 import Recommend from '../application/Recommend'
 import Singer from '../application/Singer'
 
-const routes = [
+
+const routes: RouteConfig[] = [
   {
     path: '/',
     component: Home,
