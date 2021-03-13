@@ -1,16 +1,26 @@
-import styled from'styled-components';
+import styled from 'styled-components';
 import style from '../../assets/global-style';
 
 export const SliderContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  &.swiper-container {
-    width: 98%;
-    height: 160px;
-    border-radius: 5px;
-    &.img_wrapper {
+  position: relative;
 
-    }
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: white;
+  .before {
+    position: absolute;
+    top: -300px;
+    height: 400px;
+    width: 100%;
+    background-color: ${style['theme-color']};
+  }
+  .swiper-container-initialized {
+    width: 98%;
+    border-radius: 6px;
+    margin: auto;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: ${style['theme-color']};
   }
 `

@@ -1,13 +1,12 @@
 import * as actionTypes from './constants';
 import { fromJS } from 'immutable';// 这里用到 fromJS 把 JS 数据结构转化成 immutable 数据结构
-import {Action} from 'redux'
 
 const defaultState = fromJS ({
   bannerList: [],
   recommendList: [],
 });
 
-export default (state: any, action: any) => {
+export default (state = defaultState, action: any) => {
   switch (action.type) {
     case actionTypes.CHANGE_BANNER:
       return state.set ('bannerList', action.data);

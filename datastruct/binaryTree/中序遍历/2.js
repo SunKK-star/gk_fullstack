@@ -29,3 +29,153 @@ let inorderTraversal = (root) => {
   }
   return res
 }
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
+
+let inorderTraversal = (root) => {
+  if(!root) return [];
+  let res = [], stk = [];
+  while (root || stk.length) {
+    while (root) {
+      stk.push(root);
+      root = root.left;
+    }
+    let cur = stk.pop();
+    res.push(cur.val);
+    root = root.right;
+  }
+  return res
+}
