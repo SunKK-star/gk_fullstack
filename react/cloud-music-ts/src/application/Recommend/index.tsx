@@ -3,45 +3,61 @@ import Slider from '../../components/Slider/'
 import RecommendList from '../../components/List'
 import Scroll from '../../baseUI/MyScroll'
 import { Content } from './style'
-import {axiosInstance} from '../../api/config'
+import { connect } from 'react-redux'
+import * as actionTypes from './store/actionCreators'
 
 interface IProps {
-
+  bannerList: any;
+  recommendList: any;
+  getBannerDataDispatch: any;
+  getRecommendListDataDispatch: any
 }
 
-const Recommend: FC<IProps> = (): ReactElement => {
+const Recommend: FC<IProps> = (props): ReactElement => {
+  let { bannerList, recommendList } = props
+  let {getRecommendListDataDispatch, getBannerDataDispatch} = props
+  console.log(bannerList, recommendList);
+  let bannerListJS = bannerList ? bannerList : [];
+  let recommendListJS = recommendList ? recommendList : [];
 
   useEffect(() => {
-    axiosInstance.get('/top/artists').then(res => {
-      console.log(res);
-      
-    })
+    getRecommendListDataDispatch();
+    getBannerDataDispatch();
   },[])
-
-  const bannerList = [1, 2, 3, 4].map(item => {
-    return { imageUrl: "http://p1.music.126.net/ZYLJ2oZn74yUz5x8NBGkVA==/109951164331219056.jpg" }
-  });
-  console.log(bannerList);
-
-  const recommendList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(item => {
-    return {
-      id: 1,
-      picUrl: "https://p1.music.126.net/fhmefjUfMD-8qtj3JKeHbA==/18999560928537533.jpg",
-      playCount: 17171122,
-      name: "朴树、许巍、李健、郑钧、老狼、赵雷"
-    }
-  })
+  
 
   return (
     <Content>
       <Scroll>
         <div>
-          <Slider bannerList={bannerList} />
-          <RecommendList recommendList={recommendList}></RecommendList>
+          {
+            bannerListJS.map((item: any) => {
+              return (
+                <h1>{ item.encodeId}</h1>
+              )
+            })
+          }
         </div>
       </Scroll>
     </Content>
   )
 }
 
-export default React.memo(Recommend)
+const mapStateToprops = (state: any) => {
+  return {
+    bannerList: state.getIn(['recommend', 'bannerList']).toJS(),
+    recommendList: state.getIn(['recommend', 'recommendList']).toJS()
+  }
+}
+const mapDispatchToprpps = (dispatch: any) => {
+  return {
+    getBannerDataDispatch() {
+      dispatch(actionTypes.getBannerList());
+    },
+    getRecommendListDataDispatch() {
+      dispatch(actionTypes.getRecommendList());
+    },
+  }
+}
+
+export default connect(mapStateToprops, mapDispatchToprpps)(React.memo(Recommend))

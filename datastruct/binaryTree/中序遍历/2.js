@@ -175,7 +175,7 @@ let inorderTraversal = (root) => {
     }
     let cur = stk.pop();
     res.push(cur.val);
-    root = root.right;
+    root = cur.right;  
   }
   return res
 }

@@ -5,7 +5,7 @@ import { ListContainer, ListItem, ListWrapper } from './style'
 import {getCount} from '../../api/utils'
 
 interface IProps {
-  recommendList: IRecommend[]
+  recommendList: any[]
 }
 
 const List: FC<IProps> = (props): ReactElement => {

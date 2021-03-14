@@ -10,7 +10,7 @@ const postorderTraversal = (root) => {
     if(cur.right && !visited.has(cur.right)) {
       visited.add(cur.right);
       stk.push(cur);
-      root = root.right;
+      root = cur.right;
       return;
     } else {
       res.push(cur);

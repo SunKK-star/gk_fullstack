@@ -1,34 +1,62 @@
-//actionCreators.js
-import * as actionTypes from './constants';
-import { fromJS } from 'immutable';// 将 JS 对象转换成 immutable 对象
-// import { getBannerRequest, getRecommendListRequest } from '../../../api/request';
+import { ActionRecommendConstants } from './constants'
+import { fromJS } from 'immutable'
+import { ThunkAction } from 'redux-thunk'
+import {AxiosResponse} from 'axios'
+import { getBannerRequest, getRecommendListRequest } from '../../../api/request'
+import { IBannerData, IRecommend, RootState } from '../../../typings'
+import {IAction} from './types'
 
-// export const changeBannerList = (data) => ({
-//   type: actionTypes.CHANGE_BANNER,
-//   data: fromJS (data)
-// });
+interface Banner {
+  banners: IBannerData[],
+}
+interface Recommend extends AxiosResponse{
+  result?: IRecommend[]
+}
 
-// export const changeRecommendList = (data) => ({
-//   type: actionTypes.CHANGE_RECOMMEND_LIST,
-//   data: fromJS (data)
-// });
 
-// export const getBannerList = () => {
-//   return (dispatch) => {
-//     getBannerRequest ().then (data => {
-//       dispatch (changeBannerList (data.banners));
-//     }).catch (() => {
-//       console.log ("轮播图数据传输错误");
-//     }) 
-//   }
-// };
+export const changeBannerList = (data: Banner) => ({
+  type: ActionRecommendConstants.CHANGE_BANNER,
+  data: fromJS(data)
+})
 
-// export const getRecommendList = () => {
-//   return (dispatch) => {
-//     getRecommendListRequest ().then (data => {
-//       dispatch (changeRecommendList (data.result));
-//     }).catch (() => {
-//       console.log ("推荐歌单数据传输错误");
-//     });
-//   }
-// };
+export const changeRecommendList = (data: Recommend) => ({
+  type: ActionRecommendConstants.CHANGE_RECOMMEND_LIST,
+  data: fromJS(data)
+})
+
+export const getBannerList = (): ThunkActionType => {
+  return (dispatch) => {
+    getBannerRequest().then((data: any) => {
+      dispatch(changeBannerList(data.banners))
+    }).catch(() => {
+      console.log('轮播图数据传输错误');
+    })
+  }
+}
+
+export const getRecommendList = (): ThunkActionType => {
+  return (dispatch) => {
+    getRecommendListRequest().then((data: any) => {
+      dispatch(changeRecommendList(data.result))
+    }).catch(() => {
+      console.log("推荐歌单数据传输错误");
+    });
+  }
+}
+
+
+
+export interface BannerAction {
+  type: ActionRecommendConstants.CHANGE_BANNER
+  [extryProp: string]: any
+}
+export interface RecommendAction {
+  type: ActionRecommendConstants.CHANGE_RECOMMEND_LIST
+  [extryProp: string]: any
+}
+
+
+
+// 声明thunkAction
+export type ThunkActionType = ThunkAction<any,RootState,any,IAction>
+

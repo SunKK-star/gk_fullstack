@@ -2,13 +2,12 @@ import React, { FC, ReactElement } from 'react'
 import SwiperCore, { Pagination, Autoplay  } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper-bundle.css'
-import { IList } from '../../typings'
 import { SliderContainer } from './style'
 import { nanoid } from 'nanoid'
 
 SwiperCore.use([Pagination, Autoplay]);
 interface Iprops {
-  bannerList: IList[]
+  bannerList: any[]
 }
 
 const Slider: FC<Iprops> = ({
