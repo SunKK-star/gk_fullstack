@@ -1,12 +1,20 @@
-function foo() {
-  console.log("name: " + this.name);
+function foo(name) {
+  this.name = name
 }
 
+let fo = new foo('fds')
+
+foo.prototype.str = 'fdsa'
+
+function Bar() {
+
+}
+Bar.prototype = Object.create(foo.prototype)
+
+let bar = new Bar()
+console.log(bar.str);
+Bar.prototype.str = 'gfdgdgfdgdgdfg'
+console.log(foo.prototype.str);
+console.log(fo.str);
 
 
-let obj = {name: "obj"}, 
-    obj2 = {name: "obj1"},
-    obj3 = {name: "obj3"}
-
-let fooOBJ = foo.bind(obj);
-fooOBJ.call(obj2)
