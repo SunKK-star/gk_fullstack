@@ -1,53 +1,61 @@
+/**循环队列 */
 class MyCircularQueue {
-  constructor(k) {
-    this.list = Array(k);
-    this.front = 0;
-    this.tail = (front + used) % max;
-    this.used = 0;
-    this.max = k;
+  /**初始化队列容量 */
+  constructor(capacity) {
+      /**队列容量 */
+      this.cap = capacity;
+      /**队列头部 */
+      this.head = -1;
+      /**队列尾部 */
+      this.tail = -1;
+      /**数据源 */
+      this.arr = [];
   }
-  // 获取队首元素
-  Front() {
-    if(this.isEmpty()) {
-      return -1;
-    } else {
-      return this.list[this.front]
-    }
+  /**向循环队列插入一个元素 */
+  enQueue(value) {
+      if(this.isFull()){
+          return false;
+      }
+      if (this.isEmpty()) {
+          this.head = 0;
+      }
+      this.tail = (this.tail + 1) % this.cap;
+      this.arr[this.tail] = value;
+      return true;
   }
-  // 获取队尾元素
-  Rear() {
-    if(this.isEmpty()) {
-      return -1;
-    } else {
-      return this.list[this.tail]
-    }
-  }
-  // 从循环队列中插入元素
-  enQueue() {
-    if(this.isFull()) {
-      console.log('队列已满');
-    } else {
-      
-    }
-  }
-  // 从循环队列中删除元素
+  /**从循环队列中删除一个元素 */
   deQueue() {
-
+      if(this.isEmpty()){
+          return false;
+      }
+      if(this.head == this.tail){
+          this.head = this.tail = -1;
+      }else{
+          this.head = (this.head + 1) % this.cap;
+      }
+      return true;
   }
-  // 判断循环队列是否已满
-  isFull() {
-    if(this.front === this.real && this.used === this.max) {
-      return true
-    } else {
-      return false
-    }
+  /**从队首获取元素 */
+  Front() {
+      if (this.isEmpty()) {
+          return -1;
+      }
+      return this.arr[this.head];
   }
-  // 判空
+  /**从队尾获取元素 */
+  Rear() {
+      if (this.isEmpty()) {
+          return -1;
+      }
+      return this.arr[this.tail];
+  }
+  /**队列是否为空 */
   isEmpty() {
-    if(this.front == this.real && this.used == 0) {
-      return true
-    } else {
-      return false
-    }
+      return this.head == -1;
+  }
+  /**队列是否已满 */
+  isFull() {
+      return this.head == (this.tail + 1) % this.cap;
   }
 }
+

@@ -15,28 +15,22 @@ interface IProps {
 
 const Recommend: FC<IProps> = (props): ReactElement => {
   let { bannerList, recommendList } = props
-  let {getRecommendListDataDispatch, getBannerDataDispatch} = props
-  console.log(bannerList, recommendList);
+  let { getRecommendListDataDispatch, getBannerDataDispatch } = props
   let bannerListJS = bannerList ? bannerList : [];
   let recommendListJS = recommendList ? recommendList : [];
 
   useEffect(() => {
     getRecommendListDataDispatch();
     getBannerDataDispatch();
-  },[])
-  
+  }, [])
+
 
   return (
     <Content>
       <Scroll>
         <div>
-          {
-            bannerListJS.map((item: any) => {
-              return (
-                <h1>{ item.encodeId}</h1>
-              )
-            })
-          }
+          <Slider bannerList={bannerListJS} />
+          <RecommendList recommendList={recommendListJS} />
         </div>
       </Scroll>
     </Content>

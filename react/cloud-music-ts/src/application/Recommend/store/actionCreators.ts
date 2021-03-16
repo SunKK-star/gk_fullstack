@@ -16,12 +16,12 @@ interface Recommend extends AxiosResponse{
 
 export const changeBannerList = (data: Banner) => ({
   type: ActionRecommendConstants.CHANGE_BANNER,
-  data: fromJS(data)
+  payload: fromJS(data)
 })
 
 export const changeRecommendList = (data: Recommend) => ({
   type: ActionRecommendConstants.CHANGE_RECOMMEND_LIST,
-  data: fromJS(data)
+  payload: fromJS(data)
 })
 
 export const getBannerList = (): ThunkActionType => {

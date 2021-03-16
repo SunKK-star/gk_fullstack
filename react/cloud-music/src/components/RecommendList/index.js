@@ -7,7 +7,6 @@ import {nanoid} from 'nanoid'
 
 function RecommendList(props) {
   const enterDetail = (id) => {
-    console.log(111);
     props.history.push(`/recommend/${id}`)
   }
   return (

@@ -2,10 +2,11 @@ import { nanoid } from 'nanoid'
 import React, { FC, ReactElement } from 'react'
 import { IRecommend } from '../../typings'
 import { ListContainer, ListItem, ListWrapper } from './style'
-import {getCount} from '../../api/utils'
+import { getCount } from '../../api/utils'
+import LazyLoad from 'react-lazyload'
 
 interface IProps {
-  recommendList: any[]
+  recommendList: IRecommend[]
 }
 
 const List: FC<IProps> = (props): ReactElement => {
@@ -20,7 +21,10 @@ const List: FC<IProps> = (props): ReactElement => {
             return (
               <ListItem key={nanoid()}>
                 <div className="img_wrapper">
-                  <img width="100%" height="100%" src={item.picUrl} alt="music" />
+                  <LazyLoad placeholder={<img width="100%" height="100%" src={require ('./music.png')} alt="music"/>}>
+                    <img width="100%" height="100%" src={item.picUrl} alt="music" />
+                  </LazyLoad>
+
                   <div className="decorate"></div>
                 </div>
                 <div className="detail">
