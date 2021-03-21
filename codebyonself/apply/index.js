@@ -1,6 +1,7 @@
 Function.prototype.call = function (context) {
   let contet = context | window;
   let fn = Symbol('fn');
+  let fn = Symbol('fn');
   contet.fn = this;
 
   let agrs = [];

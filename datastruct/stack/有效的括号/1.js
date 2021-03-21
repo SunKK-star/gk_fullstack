@@ -1,18 +1,34 @@
-// 三个判断条件：
-// 1. 左边的括号数量不能多于右边 => 循环完毕后判断条件 stack.length 是否等于0
-// 2. 右边的括号数量不能多于左边 => 循环体里判断条件 stack.length是否为空 
-// 3. 左右括号是否匹配
-let isValid = (s) => {
-  let stack = [];
-  for (let i = 0; i < s.length; i++) {
-    let ch = s.charAt(i);
-    if (ch === '(' || '[' || '{') {
-      stack.push(ch)
+const isValid = (str) => {
+  let arr = str.split("");
+  if(!str.length) return true
+  if(str.length % 2 !== 0 ) return false;
+  let match = (bracket) => {
+    if (bracket === "}") {
+      return "{"
+    } else if (bracket === ")") {
+      return "("
+    } else {
+      return "["
     }
-    if (!stack.length) return false 
-    if (ch == '(' && stack.pop() !== ')') return false
-    if (ch == '[' && stack.pop() !== ']') return false
-    if (ch == '{' && stack.pop() !== '}') return false
-   }
-  return stack.length === 0
+  }
+  let stack = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == "(" || arr[i] == "{" || arr[i] == "[") {
+      stack.push(arr[i])
+    } else {
+
+      let node = stack.pop()
+     if(match(arr[i]) !== node) {
+       return false;
+     }
+    }
+  }
+  if(!stack.length) {
+    return true
+  } else {
+    return false
+  }
 }
+
+
+console.log(isValid("(({{}}))"));

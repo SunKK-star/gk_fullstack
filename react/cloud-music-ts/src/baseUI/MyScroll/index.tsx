@@ -1,17 +1,21 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes, ReactElement } from 'react'
 import BScroll from 'better-scroll'
 import styled from 'styled-components'
+import Loading from '../loading'
+import LoadingV2 from '../loading-v2'
 
 const ScrollContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
 `
+const PullUpLoading = styled.div``;
+const PullDownLoading = styled.div``;
 
 interface Iprops {
   bounce?: boolean | Object;
   probeType?: number;
-  direction: 'vertical' | 'horizental';
+  direction: 'horizental' | 'vertical';
   refresh?: boolean;
   pullUpLoading?: boolean;
   pullDownLoading?: boolean;
@@ -27,20 +31,22 @@ const MyScroll = React.forwardRef<Iprops, any>((props, ref) => {
 
   const [bScroll, setBScroll] = useState<BScroll | null>(null);
   const scrollContainerRef = useRef<any>()
+
   const {
-    direction = 'vertical',
-    click = 'true',
-    refresh = 'true',
-    pullUpLoading = 'false',
-    pullDownLoading = 'false',
-    bounceTop = 'true',
-    bounceBottom = 'true'
+    direction = "vertical",
+    click = true,
+    refresh = true,
+    pullUpLoading,
+    pullDownLoading,
+    bounceTop = true,
+    bounceBottom = true
   } = props;
   const {
     pullUp,
     pullDown,
     onScroll = null
   } = props;
+  
   useEffect(() => {
     const scroll = new BScroll(scrollContainerRef.current, {
       scrollX: direction === "horizental",
@@ -102,13 +108,17 @@ const MyScroll = React.forwardRef<Iprops, any>((props, ref) => {
     }
   });
 
-
-
-
+  const PullUpdisplayStyle = pullUpLoading ? { display: "" } : { display: "none" };
+  const PullDowndisplayStyle = pullDownLoading ? { display: "" } : { display: "none" };
   return (
     <ScrollContainer ref={scrollContainerRef}>
       {props.children}
+      {/* 滑到底部加载动画 */}
+      <PullUpLoading style={PullUpdisplayStyle}><Loading></Loading></PullUpLoading>
+      {/* 顶部下拉刷新动画 */}
+      <PullDownLoading style={PullDowndisplayStyle}><LoadingV2></LoadingV2></PullDownLoading>
     </ScrollContainer>
+
   );
 })
 

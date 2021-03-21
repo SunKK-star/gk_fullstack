@@ -1,20 +1,16 @@
-function foo(name) {
-  this.name = name
+let obj = {
+  name: 'fdsfs'
+}
+obj.ffff = function() {
+  this.name = 'kgdfgd'
+  console.log(1235);
 }
 
-let fo = new foo('fds')
+function ooo () {
 
-foo.prototype.str = 'fdsa'
-
-function Bar() {
-
+  console.log(1);
 }
-Bar.prototype = Object.create(foo.prototype)
 
-let bar = new Bar()
-console.log(bar.str);
-Bar.prototype.str = 'gfdgdgfdgdgdfg'
-console.log(foo.prototype.str);
-console.log(fo.str);
+let a = new obj.ffff()
 
-
+console.log(a);

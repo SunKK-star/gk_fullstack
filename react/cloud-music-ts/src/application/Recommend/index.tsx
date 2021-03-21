@@ -27,7 +27,7 @@ const Recommend: FC<IProps> = (props): ReactElement => {
 
   return (
     <Content>
-      <Scroll>
+      <Scroll direction="vertical">
         <div>
           <Slider bannerList={bannerListJS} />
           <RecommendList recommendList={recommendListJS} />
