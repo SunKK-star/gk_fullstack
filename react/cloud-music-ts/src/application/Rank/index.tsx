@@ -1,10 +1,11 @@
 import React from 'react'
-import Singer from '../Singer'
 
-export default function index() {
+function index() {
   return (
     <div>
-      Rank..
+      
     </div>
   )
 }
+
+export default index

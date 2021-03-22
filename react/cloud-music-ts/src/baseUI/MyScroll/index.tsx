@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes, ReactElement } from 'react'
+import React, { useEffect, useState, useRef,  useMemo } from 'react'
 import BScroll from 'better-scroll'
 import styled from 'styled-components'
 import Loading from '../loading'
 import LoadingV2 from '../loading-v2'
+import { debounce } from '../../api/utils'
 
 const ScrollContainer = styled.div`
   width: 100%;
@@ -46,7 +47,15 @@ const MyScroll = React.forwardRef<Iprops, any>((props, ref) => {
     pullDown,
     onScroll = null
   } = props;
-  
+
+  let pullUpDebounce = useMemo(() => {
+    return debounce(pullUp, 300);
+  }, [pullUp])
+
+  let pullDownDebounce = useMemo(() => {
+    return debounce(pullDown, 300)
+  }, [pullDown]);
+
   useEffect(() => {
     const scroll = new BScroll(scrollContainerRef.current, {
       scrollX: direction === "horizental",
@@ -77,29 +86,31 @@ const MyScroll = React.forwardRef<Iprops, any>((props, ref) => {
 
   useEffect(() => {
     if (!bScroll || !pullUp) return;
-    bScroll.on('scrollEnd', () => {
+    let handlePullUp = () => {
       // 判断是否滑动到了底部
       if (bScroll.y <= bScroll.maxScrollY + 100) {
-        pullUp();
+        pullUpDebounce();
       }
-    });
-    return () => {
-      bScroll.off('scrollEnd');
     }
-  }, [pullUp, bScroll]);
+    bScroll.on('scrollEnd', handlePullUp);
+    return () => {
+      bScroll.off('scrollEnd', handlePullUp);
+    }
+  }, [pullUp, bScroll, pullUpDebounce]);
 
   useEffect(() => {
     if (!bScroll || !pullDown) return;
-    bScroll.on('touchEnd', (pos: any) => {
+    let handlePullDown = (pos: any) => {
       // 判断用户的下拉动作
       if (pos.y > 50) {
-        pullDown();
+        pullDownDebounce();
       }
-    });
+    };
+    bScroll.on('touchEnd', handlePullDown);
     return () => {
-      bScroll.off('touchEnd');
+      bScroll.off('touchEnd', handlePullDown);
     }
-  }, [pullDown, bScroll]);
+  }, [pullDown, bScroll, pullDownDebounce]);
 
 
   useEffect(() => {

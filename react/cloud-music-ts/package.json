@@ -60,6 +60,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/redux-immutable": "^4.0.1",
     "@types/styled-components": "^5.1.7",
+    "redux-devtools-extension": "^2.13.9",
     "styled-components": "^5.2.1"
   }
 }

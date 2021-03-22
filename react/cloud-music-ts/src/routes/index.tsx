@@ -29,7 +29,8 @@ const routes: RouteConfig[] = [
       },
       {
         path: '/rank',
-        component: Rank
+        component: Rank,
+        obj: 1
       },
     ]
   }

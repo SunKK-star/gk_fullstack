@@ -44,8 +44,8 @@ export const ListItem = styled.div`
     top: 5px;
     right: 5px;
     display: flex;
-    font-size: ${style ["font-size-s"]};
+    font-size: ${style["font-size-s"]};
     line-height: 15px;
-    color: ${style ["font-color-light"]};
+    color: ${style["font-color-light"]};
   }
 `

@@ -22,7 +22,7 @@ const Recommend: FC<IProps> = (props): ReactElement => {
   useEffect(() => {
     getRecommendListDataDispatch();
     getBannerDataDispatch();
-  }, [])
+  }, [getRecommendListDataDispatch, getBannerDataDispatch])
 
 
   return (

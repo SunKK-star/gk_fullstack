@@ -1,9 +1,14 @@
-console.log('print #1: ', typeof a)
-var a = 1
-console.log('print #2: ', typeof a)
-var a = '1'
-console.log('print #3: ', typeof a)
-function a() { console.log('print #5: ', typeof  a) }
-console.log('print #4: ', typeof a)
-a() 
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age
+  }
 
+  speak() {
+    console.log(`${this.name}在haha`);
+  }
+}
+
+let obj = new Person('gk', 23)
+let ss = obj.speak
+ss()

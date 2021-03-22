@@ -17,7 +17,7 @@ const defaultState = fromJS({
   pageCount: 0            //这里是当前页数，我们即将实现分页功能
 });
 
-export default (state: Record<IState> = defaultState, action: IAction) => {
+const SingerReducer = (state: Record<IState> = defaultState, action: IAction) => {
   const {type, payload} = action
   switch (type) {
     case actionType.CHANGE_SINGER_LIST:
@@ -28,7 +28,11 @@ export default (state: Record<IState> = defaultState, action: IAction) => {
       return state.set('enterLoading', payload)
     case actionType.CHANGE_PULLDOWN_LOADING:
       return state.set('pullDownLoading', payload)
-    default:
+    case actionType.CHANGE_PULLUP_LOADING:
       return state.set('pullUpLoading', payload)
+    default:
+      return state
   }
-}   
+}
+
+export default SingerReducer

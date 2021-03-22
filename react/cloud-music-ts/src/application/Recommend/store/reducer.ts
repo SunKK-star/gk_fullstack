@@ -1,7 +1,5 @@
 import {ActionRecommendConstants} from './constants';
-import { fromJS, List } from 'immutable';// 这里用到 fromJS 把 JS 数据结构转化成 immutable 数据结构
-import {Reducer} from 'redux'
-import { IBannerData, IRecommend } from '../../../typings'
+import { fromJS } from 'immutable';// 这里用到 fromJS 把 JS 数据结构转化成 immutable 数据结构
 import {IAction} from './types'
 
 
@@ -9,12 +7,6 @@ const initialState = fromJS ({
   bannerList: [],
   recommendList: [],
 });
-
-
-interface IState {
-  bannerList: IBannerData[];
-  recommendList: IRecommend[]
-}
 
 
 const RecommendReducer =  (state: any = initialState, {type, payload}: IAction) => {

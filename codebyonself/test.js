@@ -1,16 +1,10 @@
-let obj = {
-  name: 'fdsfs'
-}
-obj.ffff = function() {
-  this.name = 'kgdfgd'
-  console.log(1235);
+let foo = function(name, age) {
+  this.name = name;
+  this.age = age
+  return new Date()
 }
 
-function ooo () {
-
-  console.log(1);
-}
-
-let a = new obj.ffff()
-
-console.log(a);
+let obj = new foo('gk', 18)
+console.log(obj);
+let big = null
+console.log(Object.prototype.toString.call(big));

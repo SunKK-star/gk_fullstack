@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <button id="btn">点我</button>
+  <h1 id="root"> </h1>
+  <script>
+
+    let debounce = function (fn, delay) {
+      let timer = null;
+      return function (...arg) {
+        clearTimeout(timer);
+        let context = this
+        timer = setTimeout(function() {
+          fn.apply(context, arg)
+        }, delay)
+      }
+    }
+    function handle(a, b, c) {
+      console.log(a, b, c);
+      console.log(1235);
+    }
+
+
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', debounce(handle, 1000, 1,2,3))
+  </script>
+</body>
+
+</html>

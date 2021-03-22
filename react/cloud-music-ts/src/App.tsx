@@ -1,16 +1,19 @@
 import React from 'react'
-import {renderRoutes} from 'react-router-config'
+import { renderRoutes } from 'react-router-config'
 import { HashRouter } from 'react-router-dom'
 import routes from './routes'
 import { GlobalStyle } from './style'
 import { IconStyle } from './assets/iconfont/iconfont'
+import { Data } from './application/Singer/data'
 
 export default function App() {
   return (
     <HashRouter>
       <GlobalStyle />
       <IconStyle />
-      {renderRoutes(routes)}
+      <Data>
+        {renderRoutes(routes)}
+      </Data>
     </HashRouter>
   )
 }

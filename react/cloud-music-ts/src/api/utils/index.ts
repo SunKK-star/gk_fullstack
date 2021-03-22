@@ -11,15 +11,15 @@ export const getCount = (count: number) => {
 
 
 // 防抖
-export const debounce = (func: Function, delay: number) => {
-  let timer: any;
+export const debounce = function (fn: Function, delay: number) {
+  let timer: any = null;
   return function (this: any, ...args: any[]) {
-    if (timer) {
-      clearTimeout (timer);
-    }
-    timer = setTimeout (() => {
-      func.apply(this, args);
-      clearTimeout (timer);
-    }, delay);
+    if(timer) clearTimeout(timer)
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+      clearTimeout(timer);
+    }, delay)
   }
 }
+
+

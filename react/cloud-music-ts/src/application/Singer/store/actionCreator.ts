@@ -10,12 +10,6 @@ export interface IAction {
   [payload: string]: any
 }
 
-interface IAxiosData {
-  artists: IArtist[];
-  code: number;
-  more: boolean
-}
-
 
 export interface IState {
   singerList: IArtist[],
@@ -72,7 +66,7 @@ export const getMoreHotSingerList = () => {
     getHotSingerListRequest(pageCount).then((res: any) => {
       const data = [...singerList, ...res.artists];
       dispatch(changeSingerList(data));
-      dispatch(changePullUpLoading(false))
+      dispatch(changePullUpLoading(false));
     }).catch(() => {
       console.log('加载更多热门歌手失败');
     })
@@ -85,8 +79,8 @@ export const getSingerList = (category: string, area: string, alpha: string) => 
     const pageCount = getState().getIn(['singer', 'pageCount']);
     getSingerListRequest(category, area, alpha, pageCount).then((res: any) => {
       dispatch(changeSingerList(res.artists));
-      dispatch(changeEnterLoading(false))
       dispatch(changePullDownLoading(false));
+      dispatch(changeEnterLoading(false));
     }).catch(() => {
       console.log('加载歌手列表失败');
     })
@@ -101,9 +95,10 @@ export const getMoreSingerList = (category: string, area: string, alpha: string)
     getSingerListRequest(category, area, alpha, pageCount).then((res: any) => {
       const data = [...singerList ,...res.artists]
       dispatch(changeSingerList(data));
-      dispatch(changePullUpLoading(false))
+      dispatch(changePullUpLoading(false));
     }).catch(() => {
       console.log('加载更多歌手失败');
+      dispatch(changePullUpLoading(false));
     })
   }
 }
