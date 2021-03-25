@@ -61,5 +61,4 @@ export const ListItem = styled.div`
     color: ${style["font-color-desc"]};
   }
   }
-  
 `

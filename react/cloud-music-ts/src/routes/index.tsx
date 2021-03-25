@@ -1,10 +1,10 @@
-import React from 'react'
 import { Redirect } from 'react-router-dom'
 import {RouteConfig} from 'react-router-config'
 import Home from '../application/Home'
 import Rank from '../application/Rank'
 import Recommend from '../application/Recommend'
 import Singer from '../application/Singer'
+import Album from '../application/Albun'
 
 
 const routes: RouteConfig[] = [
@@ -18,10 +18,16 @@ const routes: RouteConfig[] = [
         render: () => (
           <Redirect to={'/recommend'}/>
         )
-      },
+      },  
       {
         path: '/recommend',
-        component: Recommend
+        component: Recommend,
+        routes: [
+          {
+            path: "/recommend/:id",
+            component: Album
+          }
+        ]
       },
       {
         path: '/singer',
@@ -30,7 +36,13 @@ const routes: RouteConfig[] = [
       {
         path: '/rank',
         component: Rank,
-        obj: 1
+        key: "rank",
+        routes: [
+          {
+            path: "/rank/:id",
+            component: Album
+          }
+        ]
       },
     ]
   }

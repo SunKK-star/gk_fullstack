@@ -4,13 +4,20 @@ import { IRecommend } from '../../typings'
 import { ListContainer, ListItem, ListWrapper } from './style'
 import { getCount } from '../../api/utils'
 import LazyLoad from 'react-lazyload'
+import { RouteComponentProps, withRouter } from 'react-router-dom'
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   recommendList: IRecommend[]
 }
 
-const List: FC<IProps> = (props): ReactElement => {
-  const { recommendList } = props
+
+
+const RecommendList: FC<IProps> = (props): ReactElement => {
+  const { recommendList,history } = props
+  // 进入详情页
+  const enterDetail = (id: number) => {
+    history.push(`/recommend/${id}`)
+  }
 
   return (
     <ListContainer>
@@ -19,9 +26,9 @@ const List: FC<IProps> = (props): ReactElement => {
         {
           recommendList.map(item => {
             return (
-              <ListItem key={nanoid()}>
+              <ListItem key={nanoid()} onClick={() => enterDetail(item.id)}>
                 <div className="img_wrapper">
-                  <LazyLoad placeholder={<img width="100%" height="100%" src={require ('./music.png')} alt="music"/>}>
+                  <LazyLoad placeholder={<img width="100%" height="100%" src={require('./music.png')} alt="music" />}>
                     <img width="100%" height="100%" src={item.picUrl} alt="music" />
                   </LazyLoad>
 
@@ -41,4 +48,4 @@ const List: FC<IProps> = (props): ReactElement => {
   )
 }
 
-export default React.memo(List)
+export default React.memo(withRouter(RecommendList))

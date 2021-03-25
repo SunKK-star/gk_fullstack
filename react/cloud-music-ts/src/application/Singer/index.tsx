@@ -7,13 +7,12 @@ import Scroll from '../../baseUI/MyScroll'
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { Record } from 'immutable'
-import { IState } from './store/actionCreator'
 import { getHotSingerList, getSingerList, changePageCount, changeEnterLoading, changePullDownLoading, changePullUpLoading, getMoreSingerList, getMoreHotSingerList } from './store/actionCreator'
-import { IAction } from './store/actionCreator'
-import { IArtist, keyType } from '../../typings'
+import { IArtist, keyType, StoreState, IAction, SingerState } from '../../typings'
 import { nanoid } from 'nanoid'
 import Loading from '../../baseUI/loading'
-import { CategoryDataContext, actionType } from './data'
+import { CategoryDataContext, CATEGORY } from './data'
+import { actionType } from './store/constants'
 
 
 
@@ -37,13 +36,13 @@ const Singer: FC<IProps> = (props): ReactElement => {
   const singerListJS = singerList.toJS() || [];
 
   const handleCategory: IHandleClick<keyType | string> = (categoryId, categoryKey) => {
-    dispatch({type: actionType.CHANGE_CATEGORY_ID, payload: categoryId})
-    dispatch({ type: actionType.CHANGE_CATEGORY, payload: categoryKey });
+    dispatch({ type: CATEGORY.CHANGE_CATEGORY_ID, payload: categoryId })
+    dispatch({ type: CATEGORY.CHANGE_CATEGORY, payload: categoryKey });
     getSingerListDispatch((categoryKey as keyType).type, (categoryKey as keyType).area, alphaKey);
   }
   const handleAlpha: IHandleClick<keyType | string> = (alphaId, alphaKey) => {
-    dispatch({type: actionType.CHANGE_ALPHA_ID, payload: alphaId})
-    dispatch({ type: actionType.CHANGE_ALPHA, payload: alphaKey });
+    dispatch({ type: CATEGORY.CHANGE_ALPHA_ID, payload: alphaId })
+    dispatch({ type: CATEGORY.CHANGE_ALPHA, payload: alphaKey });
     getSingerListDispatch((categoryKey as keyType).type, (categoryKey as keyType).area, alphaKey);
   }
 
@@ -113,7 +112,7 @@ const Singer: FC<IProps> = (props): ReactElement => {
   )
 }
 
-const mapStateToProps = (state: Record<IState>) => ({
+const mapStateToProps = (state: Record<SingerState>) => ({
   singerList: state.getIn(['singer', 'singerList']),
   enterLoading: state.getIn(['singer', 'enterLoading']),     //控制进场Loading
   pullUpLoading: state.getIn(['singer', 'pullUpLoading']),  //控制上拉加载动画
@@ -121,7 +120,7 @@ const mapStateToProps = (state: Record<IState>) => ({
   pageCount: state.getIn(['singer', 'pageCount'])
 })
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<Record<IState>, any, IAction>) => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<Record<StoreState>, any, IAction<actionType>>) => ({
   getHotSingerListDispatch() {
     dispatch(getHotSingerList())
   },

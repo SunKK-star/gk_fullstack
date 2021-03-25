@@ -3,14 +3,11 @@ import { renderRoutes, RouteConfigComponentProps } from 'react-router-config'
 import { Top, Tab } from './style'
 import { NavLink } from 'react-router-dom'
 
-interface Iprops extends RouteConfigComponentProps {
 
-}
-
-const Home: FC<Iprops> = ({
+const Home: FC<RouteConfigComponentProps> = ({
   route
 }): ReactElement => {
-
+  
   return (
     <>
       <Top>

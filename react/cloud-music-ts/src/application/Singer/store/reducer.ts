@@ -1,12 +1,9 @@
 import { actionType } from './constants'
 import { fromJS, Record } from 'immutable'
-import {IState} from './actionCreator'
+import { IAction } from '../../../typings'
+import {SingerState} from '../../../typings'
 
 
-interface IAction {
-  type: actionType,
-  [payload: string]: any
-}
 
 
 const defaultState = fromJS({
@@ -17,7 +14,7 @@ const defaultState = fromJS({
   pageCount: 0            //这里是当前页数，我们即将实现分页功能
 });
 
-const SingerReducer = (state: Record<IState> = defaultState, action: IAction) => {
+const SingerReducer = (state: Record<SingerState> = defaultState, action: IAction<actionType>) => {
   const {type, payload} = action
   switch (type) {
     case actionType.CHANGE_SINGER_LIST:

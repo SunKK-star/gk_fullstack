@@ -16,19 +16,14 @@ const isValid = (str) => {
     if (arr[i] == "(" || arr[i] == "{" || arr[i] == "[") {
       stack.push(arr[i])
     } else {
-
       let node = stack.pop()
      if(match(arr[i]) !== node) {
        return false;
      }
     }
   }
-  if(!stack.length) {
-    return true
-  } else {
-    return false
-  }
+ return stack.length === 0;
 }
 
 
-console.log(isValid("(({{}}))"));
+console.log(isValid("(({{}})"));

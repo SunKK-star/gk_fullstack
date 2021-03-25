@@ -1,53 +1,38 @@
 import { fromJS } from 'immutable'
 import { actionType } from './constants'
 import { ActionCreator } from 'redux'
-import { IArtist } from '../../../typings'
+import { IAction, AsyncAction } from '../../../typings'
 import { getHotSingerListRequest, getSingerListRequest } from '../../../api/request'
-import { ThunkDispatch } from 'redux-thunk'
-
-export interface IAction {
-  type: actionType,
-  [payload: string]: any
-}
 
 
-export interface IState {
-  singerList: IArtist[],
-  enterLoading: boolean,     //控制进场Loading
-  pullUpLoading: boolean,   //控制上拉加载动画
-  pullDownLoading: boolean, //控制下拉加载动画
-  pageCount: number
-}
-
-
-export const changeSingerList: ActionCreator<IAction> = (data) => ({
+export const changeSingerList: ActionCreator<IAction<actionType>> = (data) => ({
   type: actionType.CHANGE_SINGER_LIST,
   payload: fromJS(data)
 })
 
-export const changePageCount: ActionCreator<IAction> = (data) => ({
+export const changePageCount: ActionCreator<IAction<actionType>> = (data) => ({
   type: actionType.CHANGE_PAGE_COUNT,
   payload: data
 })
 
-export const changeEnterLoading: ActionCreator<IAction> = (data) => ({
+export const changeEnterLoading: ActionCreator<IAction<actionType>> = (data) => ({
   type: actionType.CHANGE_ENTER_LOADING,
   payload: data
 })
 
-export const changePullUpLoading: ActionCreator<IAction> = (data) => ({
+export const changePullUpLoading: ActionCreator<IAction<actionType>> = (data) => ({
   type: actionType.CHANGE_PULLUP_LOADING,
   payload: data
 })
 
-export const changePullDownLoading: ActionCreator<IAction> = (data) => ({
+export const changePullDownLoading: ActionCreator<IAction<actionType>> = (data) => ({
   type: actionType.CHANGE_PULLDOWN_LOADING,
   payload: data
 })
 
 // 第一次加载热门歌手列表
-export const getHotSingerList = () => {
-  return (dispatch: ThunkDispatch<IState, any, IAction>) => {
+export const getHotSingerList: AsyncAction<actionType> = () => {
+  return (dispatch) => {
     getHotSingerListRequest(0).then((res: any) => {
       dispatch(changeSingerList(res.artists));
       dispatch(changeEnterLoading(false));
@@ -59,8 +44,8 @@ export const getHotSingerList = () => {
 }
 
 // 加载更多歌手列表
-export const getMoreHotSingerList = () => {
-  return (dispatch: ThunkDispatch<IState, any, IAction>, getState: any) => {
+export const getMoreHotSingerList: AsyncAction<actionType> = () => {
+  return (dispatch, getState) => {
     const pageCount = getState().getIn(['singer', 'pageCount']);
     const singerList = getState().getIn(['singer', 'singerList']).toJS();
     getHotSingerListRequest(pageCount).then((res: any) => {
@@ -74,8 +59,8 @@ export const getMoreHotSingerList = () => {
 }
 
 // 第一次加载歌手列表
-export const getSingerList = (category: string, area: string, alpha: string) => {
-  return (dispatch: ThunkDispatch<IState, any, IAction>, getState: any) => {
+export const getSingerList: AsyncAction<actionType> = (category: string, area: string, alpha: string) => {
+  return (dispatch, getState) => {
     const pageCount = getState().getIn(['singer', 'pageCount']);
     getSingerListRequest(category, area, alpha, pageCount).then((res: any) => {
       dispatch(changeSingerList(res.artists));
@@ -88,8 +73,8 @@ export const getSingerList = (category: string, area: string, alpha: string) => 
 }
 
 // 获取更多歌手列表
-export const getMoreSingerList = (category: string, area: string, alpha: string) => {
-  return (dispatch: ThunkDispatch<IState, any, IAction>, getState: any) => {
+export const getMoreSingerList: AsyncAction<actionType> = (category: string, area: string, alpha: string) => {
+  return (dispatch, getState) => {
     const pageCount = getState().getIn(['singer', 'pageCount']);
     const singerList = getState().getIn(['singer', 'singerList'])
     getSingerListRequest(category, area, alpha, pageCount).then((res: any) => {
@@ -98,7 +83,6 @@ export const getMoreSingerList = (category: string, area: string, alpha: string)
       dispatch(changePullUpLoading(false));
     }).catch(() => {
       console.log('加载更多歌手失败');
-      dispatch(changePullUpLoading(false));
     })
   }
 }

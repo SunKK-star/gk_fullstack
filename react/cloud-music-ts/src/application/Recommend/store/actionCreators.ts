@@ -1,40 +1,37 @@
-import { ActionRecommendConstants } from './constants'
+import { RECOMMEND } from './constants'
 import { fromJS } from 'immutable'
-import { ThunkAction } from 'redux-thunk'
-import {AxiosResponse} from 'axios'
 import { getBannerRequest, getRecommendListRequest } from '../../../api/request'
-import { IBannerData, IRecommend, RootState } from '../../../typings'
-import {IAction} from './types'
-
-interface Banner {
-  banners: IBannerData[],
-}
-interface Recommend extends AxiosResponse{
-  result?: IRecommend[]
-}
+import { IAction, AsyncAction } from '../../../typings'
+import { ActionCreator } from 'redux'
 
 
-export const changeBannerList = (data: Banner) => ({
-  type: ActionRecommendConstants.CHANGE_BANNER,
+export const changeBannerList: ActionCreator<IAction<RECOMMEND>> = (data) => ({
+  type: RECOMMEND.CHANGE_BANNER,
   payload: fromJS(data)
 })
 
-export const changeRecommendList = (data: Recommend) => ({
-  type: ActionRecommendConstants.CHANGE_RECOMMEND_LIST,
+export const changeEnterLoading: ActionCreator<IAction<RECOMMEND>> = (data) => ({
+  type: RECOMMEND.CHANGE_ENTER_LOADING,
+  payload: data
+})
+
+export const changeRecommendList: ActionCreator<IAction<RECOMMEND>> = (data) => ({
+  type: RECOMMEND.CHANGE_RECOMMEND_LIST,
   payload: fromJS(data)
 })
 
-export const getBannerList = (): ThunkActionType => {
+export const getBannerList: AsyncAction<RECOMMEND> = () => {
   return (dispatch) => {
     getBannerRequest().then((data: any) => {
-      dispatch(changeBannerList(data.banners))
+      dispatch(changeBannerList(data.banners));
+      dispatch(changeEnterLoading(false));
     }).catch(() => {
       console.log('轮播图数据传输错误');
     })
   }
 }
 
-export const getRecommendList = (): ThunkActionType => {
+export const getRecommendList: AsyncAction<RECOMMEND> = () => {
   return (dispatch) => {
     getRecommendListRequest().then((data: any) => {
       dispatch(changeRecommendList(data.result))
@@ -46,17 +43,4 @@ export const getRecommendList = (): ThunkActionType => {
 
 
 
-export interface BannerAction {
-  type: ActionRecommendConstants.CHANGE_BANNER
-  [extryProp: string]: any
-}
-export interface RecommendAction {
-  type: ActionRecommendConstants.CHANGE_RECOMMEND_LIST
-  [extryProp: string]: any
-}
-
-
-
-// 声明thunkAction
-export type ThunkActionType = ThunkAction<any,RootState,any,IAction>
 

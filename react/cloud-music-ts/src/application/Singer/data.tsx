@@ -2,7 +2,7 @@ import React, { useReducer, createContext} from 'react'
 import { fromJS, Record } from 'immutable'
 import { keyType } from '../../typings'
 
-export enum actionType {
+export enum CATEGORY {
   CHANGE_CATEGORY = 'singers/CHANGE_CATEGORY',
   CHANGE_ALPHA = 'singers/CHANGE_ALPHA',
   CHANGE_CATEGORY_ID = 'singers/CHANGE_CATEGORY_ID',
@@ -11,7 +11,7 @@ export enum actionType {
 
 
 interface IAction {
-  type: actionType
+  type: CATEGORY
   [extraProp: string]: any
 }
 // 分类接口
@@ -29,14 +29,14 @@ export const CategoryDataContext = createContext({});
 //categoryReducer 纯函数
 const reducer = (state: Record<IStates>, action: IAction) => {
   switch (action.type) {
-    case actionType.CHANGE_CATEGORY:
+    case CATEGORY.CHANGE_CATEGORY:
       return state.set('category', action.payload);
-    case actionType.CHANGE_ALPHA:
+    case CATEGORY.CHANGE_ALPHA:
       return state.set('alpha', action.payload);
-    case actionType.CHANGE_CATEGORY_ID:
-      return state.set("categoryId", action.payload)
-    case actionType.CHANGE_ALPHA_ID:
-      return state.set("alphaId", action.payload)
+    case CATEGORY.CHANGE_CATEGORY_ID:
+      return state.set("categoryId", action.payload);
+    case CATEGORY.CHANGE_ALPHA_ID:
+      return state.set("alphaId", action.payload);
     default:
       return state;
   }

@@ -12,7 +12,7 @@ export default function App() {
       <GlobalStyle />
       <IconStyle />
       <Data>
-        {renderRoutes(routes)}
+        {renderRoutes(routes)}                                                                                                                                                                                                                                                                                                               
       </Data>
     </HashRouter>
   )

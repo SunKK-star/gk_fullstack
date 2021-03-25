@@ -5,5 +5,4 @@ export const Content = styled.div`
   width: 100%;
   top: 90px;
   bottom: 0;
-  
 `
