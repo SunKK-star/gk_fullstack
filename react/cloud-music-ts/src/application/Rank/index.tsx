@@ -58,7 +58,7 @@ const renderRankList = (rankList: IRankListItem[], global: boolean) => {
                 <div className="update_frequency">{item.updateFrequency}</div>
               </div>
               {renderSongList(item.tracks)}
-            </ListItem>
+            </ListItem>  
           )
         })
       }

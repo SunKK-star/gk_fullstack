@@ -4,9 +4,9 @@ import { HashRouter } from 'react-router-dom'
 import routes from './routes'
 import { GlobalStyle } from './style'
 import { IconStyle } from './assets/iconfont/iconfont'
-import { Data } from './application/Singer/data'
+import { Data } from './application/Singers/data'
 
-export default function App() {
+export default function App() {  
   return (
     <HashRouter>
       <GlobalStyle />

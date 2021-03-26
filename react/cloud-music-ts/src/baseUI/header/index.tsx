@@ -24,7 +24,7 @@ const HeaderContainer = styled.div`
 `
 
 interface IProps {
-  handleClik: () => void;
+  handleClik?: () => void;
   title: string
 }
 // 处理函数组件拿不到ref的问题  

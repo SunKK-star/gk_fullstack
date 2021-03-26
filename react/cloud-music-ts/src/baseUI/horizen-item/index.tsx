@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useRef } from 'react'
 import { alphaType, categoryType, keyType } from '../../typings'
 import { HorizenItem, HorzienContainer } from './style'
-import Scroll from '../MyScroll'
-import {IHandleClick} from '../../application/Singer'
+import Scroll from '../MyScroll' 
+import {IHandleClick} from '../../application/Singers'
 
 interface IProps<T> {
   list: T[];

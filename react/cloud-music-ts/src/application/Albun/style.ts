@@ -1,4 +1,4 @@
-import styled,{ ThemedStyledProps} from 'styled-components'
+import styled from 'styled-components'
 import style from '../../assets/global-style'
 
 export const Container = styled.div`
@@ -26,7 +26,7 @@ export const Container = styled.div`
   }
   `
 
-interface StyleProps extends ThemedStyledProps<any, any> {
+interface StyleProps {
   background: string
 }
 

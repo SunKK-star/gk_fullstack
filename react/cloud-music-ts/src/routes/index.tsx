@@ -3,8 +3,9 @@ import {RouteConfig} from 'react-router-config'
 import Home from '../application/Home'
 import Rank from '../application/Rank'
 import Recommend from '../application/Recommend'
-import Singer from '../application/Singer'
+import Singers from '../application/Singers'
 import Album from '../application/Albun'
+import Singer from '../application/Singer'
 
 
 const routes: RouteConfig[] = [
@@ -30,8 +31,15 @@ const routes: RouteConfig[] = [
         ]
       },
       {
-        path: '/singer',
-        component: Singer
+        path: '/singers',
+        component: Singers,
+        key: 'singers',
+        routes: [
+          {
+            path: '/singers/:id',
+            component: Singer
+          }
+        ]
       },
       {
         path: '/rank',

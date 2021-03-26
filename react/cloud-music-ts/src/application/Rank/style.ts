@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 `
 
-export const List: StyledComponent<'div', any, ListProps, any> = styled.div`
+export const List = styled.div`
   display: ${(props: ListProps) => props.globalRank ? "" : "flex"};
   padding: 5px 2px;
   flex-wrap: wrap;

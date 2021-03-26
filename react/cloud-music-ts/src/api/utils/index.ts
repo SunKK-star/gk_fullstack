@@ -35,7 +35,7 @@ export const filterIndex = (rankList: any) => {
 // 处理歌手列表拼接歌手名字
 export const getName = (list: any) => {
   let str = "";
-  list.map ((item: any, index: any) => {
+  list.map ((item: any, index: number) => {
     str += index === 0 ? item.name : "/" + item.name;
     return item;
   });

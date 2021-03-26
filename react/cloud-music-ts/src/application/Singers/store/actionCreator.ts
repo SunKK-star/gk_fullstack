@@ -46,8 +46,8 @@ export const getHotSingerList: AsyncAction<actionType> = () => {
 // 加载更多歌手列表
 export const getMoreHotSingerList: AsyncAction<actionType> = () => {
   return (dispatch, getState) => {
-    const pageCount = getState().getIn(['singer', 'pageCount']);
-    const singerList = getState().getIn(['singer', 'singerList']).toJS();
+    const pageCount = getState().getIn(['singers', 'pageCount']);
+    const singerList = getState().getIn(['singers', 'singerList']).toJS();
     getHotSingerListRequest(pageCount).then((res: any) => {
       const data = [...singerList, ...res.artists];
       dispatch(changeSingerList(data));
@@ -61,7 +61,7 @@ export const getMoreHotSingerList: AsyncAction<actionType> = () => {
 // 第一次加载歌手列表
 export const getSingerList: AsyncAction<actionType> = (category: string, area: string, alpha: string) => {
   return (dispatch, getState) => {
-    const pageCount = getState().getIn(['singer', 'pageCount']);
+    const pageCount = getState().getIn(['singers', 'pageCount']);
     getSingerListRequest(category, area, alpha, pageCount).then((res: any) => {
       dispatch(changeSingerList(res.artists));
       dispatch(changePullDownLoading(false));
@@ -75,8 +75,8 @@ export const getSingerList: AsyncAction<actionType> = (category: string, area: s
 // 获取更多歌手列表
 export const getMoreSingerList: AsyncAction<actionType> = (category: string, area: string, alpha: string) => {
   return (dispatch, getState) => {
-    const pageCount = getState().getIn(['singer', 'pageCount']);
-    const singerList = getState().getIn(['singer', 'singerList'])
+    const pageCount = getState().getIn(['singers', 'pageCount']);
+    const singerList = getState().getIn(['singers', 'singerList'])
     getSingerListRequest(category, area, alpha, pageCount).then((res: any) => {
       const data = [...singerList ,...res.artists]
       dispatch(changeSingerList(data));
