@@ -37,7 +37,7 @@ const SongsList = React.forwardRef<HTMLDivElement, IProps>((props, refs) => {
   const collect = (count: number) => {
     return (
       <div className="add_list">
-        <i className="iconfont">&#xe62d;</i>
+        <i className="iconfont">&#xe656;</i>
         <span > 收藏 ({Math.floor(count / 1000) / 10} 万)</span>
       </div>
     )

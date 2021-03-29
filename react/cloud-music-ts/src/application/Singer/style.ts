@@ -9,9 +9,7 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   background-color: ${style['background-color']};
-  z-index: 100;
   overflow: hidden;
-  background: #f2f3f4;
   transform-origin: right bottom;
   &.fly-enter, &.fly-appear {
     transform: rotateZ(30deg) translate3d(100%, 0, 0);
@@ -34,7 +32,7 @@ export const ImgWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 0;
-  padding-top: 75%;
+  padding-top: 65%;
   transform-origin: top;
   background: url(${(props: ImgProps) => props.bgUrl});
   background-size: cover;
@@ -60,13 +58,13 @@ export const CollectButton = styled.div`
   display: flex;
   align-items: center;
   color: ${style['font-color-light']};
-  z-index: 60;
+  z-index: 50;
   border-radius: 20px;
   font-size: 0;
   line-height: 40px;
   justify-content: center;
   margin: auto;
-  margin-top: -55px;
+  margin-top: -60px;
   opacity: 0.8;
   .iconfont {
     display: inline-block;
@@ -80,13 +78,14 @@ export const CollectButton = styled.div`
     margin-left: 15px;
   }
 `
-// 白色背景这遮罩
+// 白色背景遮罩
 export const BgLayer = styled.div`
- position: absolute;
+  position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
   border-radius: 10px;
+  background-color: #fff;
   z-index: 50;
 `
 

@@ -10,7 +10,7 @@ export enum CATEGORY {
 }
 
 
-interface IAction {
+export interface CategoryAction {
   type: CATEGORY
   [extraProp: string]: any
 }
@@ -27,7 +27,7 @@ export const CategoryDataContext = createContext({});
 
 
 //categoryReducer 纯函数
-const reducer = (state: Record<IStates>, action: IAction) => {
+const reducer = (state: Record<IStates>, action: CategoryAction) => {
   switch (action.type) {
     case CATEGORY.CHANGE_CATEGORY:
       return state.set('category', action.payload);

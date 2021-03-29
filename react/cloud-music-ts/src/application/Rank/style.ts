@@ -1,4 +1,4 @@
-import styled, { StyledComponent } from 'styled-components'
+import styled from 'styled-components'
 import style from '../../assets/global-style'
 export interface ListProps {
   globalRank: boolean

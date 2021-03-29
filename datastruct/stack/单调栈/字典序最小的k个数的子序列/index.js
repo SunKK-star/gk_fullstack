@@ -12,11 +12,11 @@
 const findSmallSeq = (nums, k) => {
   let stack = [];
   for (let i = 0; i < nums.length; i++) {
-    let left = nums.length - i
-    while(stack.length && left + stack.length >  k && stack[stack.length - 1] > nums[i]) {
+    let left = nums.length - (i + 1)
+    while(stack.length && left + stack.length >=  k && stack[stack.length - 1] > nums[i]) {
       stack.pop();
     }
-    stack.push(nums[i])
+    stack.push(nums[i]);
   }
   
   while (stack.length > k) {
@@ -25,5 +25,5 @@ const findSmallSeq = (nums, k) => {
   return stack;
 }
 
-console.log(findSmallSeq([3,5,2,6], 2));
+console.log(findSmallSeq([3,5,2,6], 3));
 

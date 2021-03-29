@@ -1,31 +1,29 @@
+
+/* 
+  nums1表示鱼大小的数组
+  nums2表示鱼游动方向的数组
+*/
 const eatSmallFish = (nums1, nums2) => {
-  const fishNumber = nums1.length;
-  const left = 0;
-  const right = 1;
-  let stack = [];
-  for (let i = 0; i < fishNumber; i++) {
+  let left = 0;
+  let right = 1;
+  stack = [];
+  for (let i = 0; i < nums1.length; i++) {
     let curFishDirection = nums2[i];
     let curFishSize = nums1[i];
-    if (nums2[i] == 1) {
-      stack.push(i)
-    } else {
-      while (nums2[stack[stack.length - 1]] !== 1) {
-        if (!stack.length) {
-          stack.push(i);
-          continue;
-        }
-        let curidx = stack.pop();
-        let bigOne = nums1[curidx] > nums1[i] ? curidx : i;
-        stack.push(bigOne);
-        continue;
+    // 当前的鱼是否被栈中的鱼吃掉
+    let hasEat = false;
+    while (stack.length && nums2[stack[stack.length - 1]] == right && curFishDirection == left) {
+      if (nums1[stack[stack.length - 1]] > curFishSize) {
+        hasEat = true;
+        break;
       }
+      stack.pop();
+    }
+    // 如果新来的鱼没有被吃掉，则压入栈中
+    if (!hasEat) {
       stack.push(i);
     }
   }
-  return stack.length
+  return stack;
 }
-
-
-let arr = [4, 3, 2, 1, 5];
-let arr1 = [0, 1, 0, 0, 0];
-console.log(eatSmallFish(arr, arr1));
+  console.log(eatSmallFish([1, 2, 3,5,6,26], [1, 1, 0,1,0,1]));

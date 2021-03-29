@@ -1,4 +1,4 @@
-import React, { useEffect, FC, ReactElement, useContext } from 'react'
+import React, { useEffect, FC, ReactElement, useContext, Dispatch } from 'react'
 import Horizen from '../../baseUI/horizen-item'
 import { categoryTypes, alphaTypes } from '../../api/config'
 import { NavContainer } from './style'
@@ -11,7 +11,7 @@ import { getHotSingerList, getSingerList, changePageCount, changeEnterLoading, c
 import { IArtist, keyType, StoreState, IAction, SingerState } from '../../typings'
 import { nanoid } from 'nanoid'
 import Loading from '../../baseUI/loading'
-import { CategoryDataContext, CATEGORY } from './data'
+import { CategoryDataContext, CATEGORY, IStates, CategoryAction } from './data'
 import { actionType } from './store/constants'
 import { RouteConfigComponentProps, renderRoutes } from 'react-router-config'
 
@@ -24,6 +24,10 @@ export interface IHandleClick<T> {
   (id: number, key: T): void
 }
 
+interface IValue {
+  data?: Record<IStates>;
+  dispatch?: Dispatch<CategoryAction>
+}
 
 
 const Singers: FC<IProps> = (props): ReactElement => {
@@ -32,18 +36,18 @@ const Singers: FC<IProps> = (props): ReactElement => {
   
   const { getHotSingerListDispatch, getSingerListDispatch, pullUpRefreshDispatch, pullDownRefreshDispatch } = props
 
-  const { data, dispatch } = useContext<any>(CategoryDataContext);
-  const { category: categoryKey, alpha: alphaKey, categoryId, alphaId } = data.toJS();
+  const { data, dispatch } = useContext<IValue>(CategoryDataContext);
+  const { category: categoryKey, alpha: alphaKey, categoryId, alphaId } = data!.toJS();
   const singerListJS = singerList.toJS() || [];
   
   const handleCategory: IHandleClick<keyType | string> = (categoryId, categoryKey) => {
-    dispatch({ type: CATEGORY.CHANGE_CATEGORY_ID, payload: categoryId })
-    dispatch({ type: CATEGORY.CHANGE_CATEGORY, payload: categoryKey });
+    dispatch!({ type: CATEGORY.CHANGE_CATEGORY_ID, payload: categoryId })
+    dispatch!({ type: CATEGORY.CHANGE_CATEGORY, payload: categoryKey });
     getSingerListDispatch((categoryKey as keyType).type, (categoryKey as keyType).area, alphaKey);
   }
   const handleAlpha: IHandleClick<keyType | string> = (alphaId, alphaKey) => {
-    dispatch({ type: CATEGORY.CHANGE_ALPHA_ID, payload: alphaId })
-    dispatch({ type: CATEGORY.CHANGE_ALPHA, payload: alphaKey });
+    dispatch!({ type: CATEGORY.CHANGE_ALPHA_ID, payload: alphaId });
+    dispatch!({ type: CATEGORY.CHANGE_ALPHA, payload: alphaKey });
     getSingerListDispatch((categoryKey as keyType).type, (categoryKey as keyType).area, alphaKey);
   }
 
