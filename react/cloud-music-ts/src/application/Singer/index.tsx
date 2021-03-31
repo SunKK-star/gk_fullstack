@@ -17,7 +17,6 @@ import Loading from '../../baseUI/loading'
 
 const Singer: FC<IProps> = (props) => {
   const { getSingerDataDispatch, loading, artist, songsOfArtist } = props
-  console.log(loading);
   useEffect(() => {
     getSingerDataDispatch(props.match.params.id)
   }, [])

@@ -32,7 +32,7 @@ export const ImgWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 0;
-  padding-top: 65%;
+  padding-top: 75%;
   transform-origin: top;
   background: url(${(props: ImgProps) => props.bgUrl});
   background-size: cover;

@@ -30,7 +30,7 @@ interface StyleProps {
   background: string
 }
 
-export const TopDesc = styled.div`
+export const TopDesc = styled.div<StyleProps>`
   background-size: 100%;
   padding: 5px 20px;
   padding-bottom: 50px;
@@ -44,7 +44,7 @@ export const TopDesc = styled.div`
   position: relative;
   .background {
     z-index: -1;
-    background: url(${(props: StyleProps) => props.background}) no-repeat;
+    background: url(${props => props.background}) no-repeat;
     background-position: 0 0;
     background-size: 100% 100%;
     position: absolute;

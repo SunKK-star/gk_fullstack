@@ -92,7 +92,7 @@ const MyScroll = React.forwardRef<IRefProps, Iprops>((props, ref) => {
     if (!bScroll || !pullUp) return;
     let handlePullUp = (pos: BScroll) => {
       console.log(bScroll.y);
-      
+
       // 判断是否滑动到了底部
       if (bScroll.y <= bScroll.maxScrollY + 100) {
         pullUpDebounce();
