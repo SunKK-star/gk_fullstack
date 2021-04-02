@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <form action="<%=basePath%>driver" method="post">
-    <select id="select" name="partion"></select>
-  </form>
-  <script>
-    const selectContainer = document.getElementById("select")
-    for (let i = 0; i < 26; i++) {
-      const node = document.createElement("option");
-      const attribute = document.createAttribute("value");
-      attribute.nodeValue = i + 65
-      node.setAttributeNode(attribute)
-      node.innerHTML = String.fromCharCode(i + 65)
-      selectContainer.appendChild(node)
+<script>
+  const foo = () => {
+    const bar = () => {
+      let d = 9;
+      const baz = () => {
+        var a = 1;
+        var b = 2
+        let c= 4;
+        console.log(a, d);
+        d++
+      }
+      baz()
+      console.log(d);
     }
-  </script>
-</body>
+    bar()
+  }
 
-</html>
+  foo()
+</script>

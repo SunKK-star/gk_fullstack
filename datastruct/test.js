@@ -1,10 +1,39 @@
-var myname = "极客时间"
-function showName(){
-  console.log(myname);
-  if(0){
-   var myname = "极客邦"
-  }
-  console.log(myname);
+// function myNew () {
+//   let bar = Array.prototype.shift.call(arguments)
+//   let obj ={};
+//   bar.call(obj, ...arguments);
+//   return obj;
+// }
+
+
+// function foo(name, age) {
+//   this.name = name;
+//   this.age = age
+// } 
+
+// foo.prototype.gender = "male";
+// let nn = myNew(foo, 'gk', 18);
+// console.log(nn);
+
+// console.log(a)  // undefined
+// let a = 5
+// function test() {
+//   console.log(a)  // undefined
+//   let a = 10
+// }
+// test()
+
+// function test(arg){
+//   console.log(arg);  // hi
+//   var arg = 'hello'; 
+ 
+//   console.log(arg); // hello 
+// }
+// test('hi');
+
+function aa() {
+
 }
-const showName = 123;
-console.log(showName);
+
+let b = new aa()
+console.log(b instanceof aa);

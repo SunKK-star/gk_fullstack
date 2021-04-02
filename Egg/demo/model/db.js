@@ -12,3 +12,4 @@ mongoose.connect('mongodb://eggadmin:123456@localhost:27017/eggcms',
 
 
 module.exports = mongoose
+
