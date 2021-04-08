@@ -37,6 +37,7 @@ const Singer: FC<IProps> = (props) => {
   useEffect(() => {
     let h = imageWrapper.current!.offsetHeight;
     initialHight.current = h;
+
     songScrollWrapper.current!.style.top = `${h - OFFSET}px`;
     // 把遮罩先放在下面，以裹住歌曲列表
     layer.current!.style.top = `${h - OFFSET}px`;
@@ -51,6 +52,8 @@ const Singer: FC<IProps> = (props) => {
   const handleScroll = useCallback((pos: BScroll) => {
     let height = initialHight.current;
     const newY = pos.y;
+    console.log(newY);
+
     const imageDOM = imageWrapper.current;
     const buttonDOM = collectButton.current;
     const headerDOM = header.current;
@@ -67,21 +70,19 @@ const Singer: FC<IProps> = (props) => {
     }
     // 往上滑动，但是遮罩还没超过 Header
     else if (newY >= minScrollY) {
-      layerDOM!.style.top = `${height - OFFSET - Math.abs(newY)}px`;
-      // 这时候保证遮罩的层叠优先级比图片高，不至于被图片挡住
-      layerDOM!.style.zIndex = '1';
+      layerDOM!.style.top = `${height - OFFSET + newY}px`;
+      layerDOM!.style.zIndex = "1";
       imageDOM!.style.paddingTop = "75%";
-      imageDOM!.style.height = '0';
-      imageDOM!.style.zIndex = '-1';
-      // 按钮跟着移动且渐渐变透明
-      buttonDOM!.style["transform"] = `translate3d(0, ${newY}px, 0)`;
-      buttonDOM!.style["opacity"] = `${1 - percent * 2}`;
+      imageDOM!.style.height = "0";
+      imageDOM!.style.zIndex = "-1";
+      buttonDOM!.style.transform = `translate3d(0,${newY}px,0)`;
+      buttonDOM!.style.opacity = `${1 - percent * 2}`
     }
 
     //往上滑动，但是遮罩超过 Header 部分
     else if (newY < minScrollY) {
       // 往上滑动，但是超过 Header 部分
-      layerDOM!.style.top = `${HEADER_HEIGHT - OFFSET}px`;
+      layerDOM!.style.top = `${HEADER_HEIGHT}px`;
       layerDOM!.style.zIndex = '1';
       // 防止溢出的歌单内容遮住 Header
       headerDOM!.style.zIndex = '100';

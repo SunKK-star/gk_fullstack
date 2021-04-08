@@ -34,3 +34,6 @@ let Foo = function (name, age) {
 let obj = myNew(Foo, 'gk', 18)
 console.log(obj);
 
+
+
+

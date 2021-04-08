@@ -1,13 +1,16 @@
+Function.prototype.myCall = function (context, ...arg) {
+  const ctx = context || window;
+  ctx.fn = this;
+  let res = eval('ctx.fn(...arg)')
+  delete ctx.fn;
+  return res
+}
 
-let a = 'fds'
+let obj = {
+  name: 18
+}
 
-Object.defineProperty(a, a, {
-  set() {
-    console.log(123);
-  },
-  get() {
-    console.log(156);
-  }
-})
-
-console.log(a);
+function foo (a) {
+  console.log(this.name, a);
+}
+foo.myCall(obj,1)

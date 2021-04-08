@@ -31,9 +31,5 @@
 // }
 // test('hi');
 
-function aa() {
-
-}
-
-let b = new aa()
-console.log(b instanceof aa);
+let str = new String('fdsa')
+str.toString()

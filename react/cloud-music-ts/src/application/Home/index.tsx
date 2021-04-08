@@ -2,11 +2,12 @@ import React, { FC, ReactElement } from 'react'
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config'
 import { Top, Tab } from './style'
 import { NavLink } from 'react-router-dom'
+import Player from '../Player'
 
 
 const Home: FC<RouteConfigComponentProps> = ({
   route
-}): ReactElement => {
+}) => {
   
   return (
     <>
@@ -21,7 +22,8 @@ const Home: FC<RouteConfigComponentProps> = ({
         <NavLink to="/rank" activeClassName="selected"><span>排行榜</span></NavLink>
       </Tab>
       {renderRoutes(route!.routes)}
-    </>
+      <Player/>
+    </> 
   )
 }
 
