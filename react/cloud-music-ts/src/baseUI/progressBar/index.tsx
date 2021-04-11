@@ -1,4 +1,4 @@
-import React, { TouchEventHandler, useEffect, useRef, useState } from 'react'
+import React, { EventHandler, MouseEventHandler, TouchEventHandler, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import style from '../../assets/global-style'
 
@@ -10,6 +10,7 @@ interface IStartTouch {
 const ProgressBarWrapper = styled.div`
   height: 30px;
   flex: 1;
+  margin-right: 10px;
   .bar-inner {
     position: relative;
     top: 13px;
@@ -25,11 +26,11 @@ const ProgressBarWrapper = styled.div`
       width: 15px;
       height: 15px;
       border-radius: 50%;
-      transform: translate(-40%, -60%);
       background-color: ${style["font-color-light"]};
       display: flex;
       justify-content: center;
       align-items: center;
+      transform: translateY(-60%);
       .progress-btn {
         position: absolute;
         width: 7px;
@@ -44,8 +45,10 @@ const ProgressBar = () => {
   const progressRef = useRef<HTMLDivElement>(null);
   const progressBtnRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
+  const progressBarWidth = useRef<number>(0);
   const [touch, setTouch] = useState<Partial<IStartTouch>>({})
   useEffect(() => {
+    progressBarWidth.current = progressBarRef.current!.offsetWidth
   }, [])
 
   // 处理进度条的偏移
@@ -53,22 +56,42 @@ const ProgressBar = () => {
     progressRef.current!.style.width = `${offsetWidth}px`;
     progressBtnRef.current!.style.transform = `translate(${offsetWidth}px, -60%)`;
   }
-  const touchStart:TouchEventHandler = (e) => {
+  const touchStart: TouchEventHandler = (e) => {
     const startTouch: Partial<IStartTouch> = {};
     startTouch.initiated = true;
     startTouch.startX = e.touches[0].clientX;
     startTouch.Plength = progressRef.current!.offsetWidth;
-    setTouch(startTouch!)
+    setTouch(startTouch!);
   }
-  const touchMove:TouchEventHandler = (e) => {
+  const touchMove: TouchEventHandler = (e) => {
+    if (!touch.initiated) return;
     let moveLength = e.touches[0].clientX - touch.startX!;
-    _offset(moveLength)
+    const offsetWidth = Math.min(Math.max(0, touch.Plength! + moveLength), progressBarWidth.current)
+    _offset(offsetWidth);
+    _changePercent();
   }
-  const touchEnd:TouchEventHandler = (e) => {
+  const touchEnd: TouchEventHandler = () => {
+    const endTouch = JSON.parse(JSON.stringify(touch));
+    endTouch.initiated = false;
+    setTouch(endTouch);
+    _changePercent();
+  }
+
+  // 进度条点击事件
+  const progressClick: MouseEventHandler = (e) => {
+    const rect = progressBarRef.current!.getBoundingClientRect();
+    const offsetWidth = e.pageX - rect.left;
+    _offset(offsetWidth);
+    _changePercent();
+  }
+
+  // 改变新的进度
+  const _changePercent = () => {
+    const percent = progressRef.current!.offsetWidth / progressBarRef.current!.clientWidth
   }
   return (
     <ProgressBarWrapper>
-      <div className="bar-inner" ref={progressBarRef}>
+      <div className="bar-inner" ref={progressBarRef} onClick={progressClick}>
         <div className="progress" ref={progressRef}></div>
         <div className="progress-btn-wrapper" ref={progressBtnRef}
           onTouchStart={touchStart}

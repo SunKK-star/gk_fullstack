@@ -45,4 +45,9 @@ export const getName = (list: any) => {
 // 判断一个对象是否为空
 export const isEmptyObject = (obj: any) => !obj || Object.keys(obj).length === 0;
 
+// 拼接处歌曲的URL链接
+export const getSongUrl = (id: number) => {
+  return `https://music.163.com/song/media/outer/url?id=${id}.mp3`
+}
+
 

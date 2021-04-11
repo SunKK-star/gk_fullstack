@@ -9,7 +9,7 @@ import {
   ProgressWrapper
 } from "./style";
 import { INormalProps } from '../types'
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'  
 import ProgressBar from '../../../baseUI/progressBar'
 
 const NormalPlayer: FC<INormalProps> = (props) => {
@@ -60,7 +60,7 @@ const NormalPlayer: FC<INormalProps> = (props) => {
         <Bottom className="bottom">
           <ProgressWrapper>
             <span className="time time-l">0:00</span>
-            <ProgressBar />
+            <ProgressBar/>
             <span className="time time-r">4:17</span>
           </ProgressWrapper>
           <Operators>

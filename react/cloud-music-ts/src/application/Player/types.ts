@@ -24,7 +24,8 @@ export type IProps = TStateProps & TDispatchProps
 // normalPlayer/index
 export interface INormalProps {
   fullScreen: boolean
-  toggleFullScreen: (data: boolean) => void
+  toggleFullScreen: (data: boolean) => void,
+  
 }
 // normalPlayer/style
 export interface IShowState {
@@ -35,6 +36,10 @@ export interface IShowState {
 export interface IMinProps {
   fullScreen: boolean
   toggleFullScreen: (data: boolean) => void
+  togglePlayingDispatch: (data: boolean) => void,
+  playing: boolean
+  song: any
+  percent: number
 }
 
 export interface TStateProps {

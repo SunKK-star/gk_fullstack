@@ -1,5 +1,14 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import style from '../../../assets/global-style'
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+`
 
 export const MiniPlayerContainer = styled.div`
   /* &.mini-enter{
@@ -40,9 +49,14 @@ export const MiniPlayerContainer = styled.div`
     .imgWrapper {
       flex: 0 0 40px;
       margin-left: 15px;
-      .play {
+      img {
         border-radius: 50%;
-        background-color: #000;
+        &.play {
+          animation: ${rotate} 10s linear infinite;
+        }
+        &.pause {
+          animation-play-state: paused;
+        }
       }
     }
   .text {
